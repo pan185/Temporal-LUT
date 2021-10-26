@@ -1,0 +1,31 @@
+ 
+****************************************
+Report : area
+Design : mux_enable
+Version: S-2021.06
+Date   : Tue Oct 26 12:13:44 2021
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    saed32rvt_tt0p85v25c (File: /cae/apps/data/saed32_edk-2018/lib/stdcell_rvt/db_nldm/saed32rvt_tt0p85v25c.db)
+
+Number of ports:                          814
+Number of nets:                           880
+Number of cells:                          452
+Number of combinational cells:            452
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                         68
+Number of references:                       3
+
+Combinational area:               1089.769480
+Buf/Inv area:                      113.856516
+Noncombinational area:               0.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:             467.929611
+
+Total cell area:                  1089.769480
+Total area:                       1557.699091
+1
