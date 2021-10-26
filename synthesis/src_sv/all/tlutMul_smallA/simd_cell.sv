@@ -21,7 +21,7 @@ module simd_cell
     input logic [`DIM_A-1:0][`INPUT_WIDTH-1:0]input_bin, // input in binary
     input logic [`DIM_C-1:0][`WEIGHT_WIDTH-1:0]weight_bin, // weight in binary
     //output logic [`DIM_C-1:0][`DIM_A-1:0][`ACC_WIDTH+`DIM_B-1:0]product_acc
-    output logic [`DIM_C-1:0][`DIM_A-1:0][`ACC_WIDTH-1:0] product_reg;
+    output logic [`DIM_C-1:0][`DIM_A-1:0][`ACC_WIDTH-1:0] product_reg
 );
     logic [`DIM_C-1:0][`DIM_A-1:0][`ACC_WIDTH-1:0] product_;
     //logic [`DIM_C-1:0][`DIM_A-1:0][`ACC_WIDTH-1:0] product_reg;
