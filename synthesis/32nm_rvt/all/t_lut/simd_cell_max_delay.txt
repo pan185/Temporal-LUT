@@ -1,0 +1,81 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : simd_cell
+Version: S-2021.06
+Date   : Mon Oct 25 19:55:56 2021
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: tt0p85v25c   Library: saed32rvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: U_accumulator_prod/sum__reg[0][2][0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: U_accumulator_prod/sum__reg[0][2][16]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  simd_cell          35000                 saed32rvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  U_accumulator_prod/sum__reg[0][2][0]/CLK (DFFARX1_RVT)
+                                                          0.00 #     0.00 r
+  U_accumulator_prod/sum__reg[0][2][0]/Q (DFFARX1_RVT)
+                                                          0.16       0.16 r
+  U1737/Y (AND2X1_RVT)                                    0.07       0.23 r
+  U_accumulator_prod/add_25_G3_G1/U1_1/CO (FADDX1_RVT)
+                                                          0.11       0.34 r
+  U_accumulator_prod/add_25_G3_G1/U1_2/CO (FADDX1_RVT)
+                                                          0.12       0.46 r
+  U_accumulator_prod/add_25_G3_G1/U1_3/CO (FADDX1_RVT)
+                                                          0.12       0.58 r
+  U_accumulator_prod/add_25_G3_G1/U1_4/CO (FADDX1_RVT)
+                                                          0.12       0.70 r
+  U_accumulator_prod/add_25_G3_G1/U1_5/CO (FADDX1_RVT)
+                                                          0.12       0.81 r
+  U_accumulator_prod/add_25_G3_G1/U1_6/CO (FADDX1_RVT)
+                                                          0.12       0.93 r
+  U_accumulator_prod/add_25_G3_G1/U1_7/CO (FADDX1_RVT)
+                                                          0.12       1.05 r
+  U_accumulator_prod/add_25_G3_G1/U1_8/CO (FADDX1_RVT)
+                                                          0.12       1.16 r
+  U_accumulator_prod/add_25_G3_G1/U1_9/CO (FADDX1_RVT)
+                                                          0.12       1.28 r
+  U_accumulator_prod/add_25_G3_G1/U1_10/CO (FADDX1_RVT)
+                                                          0.12       1.40 r
+  U_accumulator_prod/add_25_G3_G1/U1_11/CO (FADDX1_RVT)
+                                                          0.11       1.51 r
+  U993/Y (AND4X1_RVT)                                     0.11       1.62 r
+  U992/Y (AND2X1_RVT)                                     0.07       1.69 r
+  U991/Y (NAND2X0_RVT)                                    0.05       1.74 f
+  U2134/Y (XOR2X1_RVT)                                    0.13       1.87 r
+  U_accumulator_prod/sum__reg[0][2][16]/D (DFFARX1_RVT)
+                                                          0.01       1.88 r
+  data arrival time                                                  1.88
+
+  clock clk (rise edge)                                   2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.15       2.35
+  U_accumulator_prod/sum__reg[0][2][16]/CLK (DFFARX1_RVT)
+                                                          0.00       2.35 r
+  library setup time                                     -0.06       2.29
+  data required time                                                 2.29
+  --------------------------------------------------------------------------
+  data required time                                                 2.29
+  data arrival time                                                 -1.88
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.41
+
+
+1

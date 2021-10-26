@@ -1,0 +1,62 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : multiplication_baseline
+Version: S-2021.06
+Date   : Mon Oct 25 19:49:36 2021
+****************************************
+
+Operating Conditions: tt0p85v25c   Library: saed32rvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: U_reg_weight/out__reg[1][1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: U_reg_product/out__reg[0][14][10]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  multiplication_baseline
+                     8000                  saed32rvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  U_reg_weight/out__reg[1][1]/CLK (DFFARX1_RVT)           0.00       0.00 r
+  U_reg_weight/out__reg[1][1]/QN (DFFARX1_RVT)            0.13       0.13 r
+  U1715/Y (INVX1_RVT)                                     0.10       0.23 f
+  U1196/Y (AND2X1_RVT)                                    0.11       0.34 f
+  U1712/Y (XNOR2X1_RVT)                                   0.13       0.47 f
+  U_multipler/mult_13_G15_G1/S2_2_3/S (FADDX1_RVT)        0.17       0.64 r
+  U_multipler/mult_13_G15_G1/S4_2/S (FADDX1_RVT)          0.17       0.81 f
+  U1590/Y (XOR2X1_RVT)                                    0.14       0.95 r
+  U723/Y (NAND3X0_RVT)                                    0.09       1.04 f
+  U1446/Y (OAI21X1_RVT)                                   0.16       1.20 r
+  U718/Y (AO21X1_RVT)                                     0.09       1.29 r
+  U715/Y (AO21X1_RVT)                                     0.09       1.37 r
+  U712/Y (AOI21X1_RVT)                                    0.10       1.47 f
+  U710/Y (NAND2X0_RVT)                                    0.06       1.53 r
+  U1455/Y (XOR2X1_RVT)                                    0.13       1.66 f
+  U_reg_product/out__reg[0][14][10]/D (DFFARX1_RVT)       0.01       1.67 f
+  data arrival time                                                  1.67
+
+  clock clk (rise edge)                                   2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.15       2.35
+  U_reg_product/out__reg[0][14][10]/CLK (DFFARX1_RVT)     0.00       2.35 r
+  library setup time                                     -0.06       2.29
+  data required time                                                 2.29
+  --------------------------------------------------------------------------
+  data required time                                                 2.29
+  data arrival time                                                 -1.67
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+1

@@ -1,0 +1,31 @@
+ 
+****************************************
+Report : area
+Design : register_bit1
+Version: S-2021.06
+Date   : Mon Oct 25 19:54:33 2021
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    saed32rvt_tt0p85v25c (File: /cae/apps/data/saed32_edk-2018/lib/stdcell_rvt/db_nldm/saed32rvt_tt0p85v25c.db)
+
+Number of ports:                            4
+Number of nets:                             4
+Number of cells:                            1
+Number of combinational cells:              0
+Number of sequential cells:                 1
+Number of macros/black boxes:               0
+Number of buf/inv:                          0
+Number of references:                       1
+
+Combinational area:                  0.000000
+Buf/Inv area:                        0.000000
+Noncombinational area:               7.116032
+Macro/Black Box area:                0.000000
+Net Interconnect area:               0.331001
+
+Total cell area:                     7.116032
+Total area:                          7.447034
+1

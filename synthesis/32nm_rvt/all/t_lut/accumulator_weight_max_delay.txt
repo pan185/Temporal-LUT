@@ -1,0 +1,59 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : accumulator_weight
+Version: S-2021.06
+Date   : Mon Oct 25 19:53:12 2021
+****************************************
+
+Operating Conditions: tt0p85v25c   Library: saed32rvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: val[1][0] (input port clocked by clk)
+  Endpoint: sum__reg[1][11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  accumulator_weight 8000                  saed32rvt_tt0p85v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.25       0.25 r
+  val[1][0] (in)                           0.00       0.25 r
+  U229/Y (AND2X1_RVT)                      0.06       0.31 r
+  add_22_G2/U1_1/CO (FADDX1_RVT)           0.11       0.42 r
+  add_22_G2/U1_2/CO (FADDX1_RVT)           0.12       0.54 r
+  add_22_G2/U1_3/CO (FADDX1_RVT)           0.12       0.66 r
+  add_22_G2/U1_4/CO (FADDX1_RVT)           0.12       0.78 r
+  add_22_G2/U1_5/CO (FADDX1_RVT)           0.12       0.90 r
+  add_22_G2/U1_6/CO (FADDX1_RVT)           0.12       1.02 r
+  add_22_G2/U1_7/CO (FADDX1_RVT)           0.13       1.15 r
+  U154/Y (NAND3X0_RVT)                     0.08       1.23 f
+  U153/Y (AO21X1_RVT)                      0.11       1.34 f
+  U152/Y (AO21X1_RVT)                      0.06       1.39 f
+  U150/Y (AO21X1_RVT)                      0.08       1.47 f
+  sum__reg[1][11]/D (DFFARX1_RVT)          0.01       1.48 f
+  data arrival time                                   1.48
+
+  clock clk (rise edge)                    2.50       2.50
+  clock network delay (ideal)              0.00       2.50
+  clock uncertainty                       -0.15       2.35
+  sum__reg[1][11]/CLK (DFFARX1_RVT)        0.00       2.35 r
+  library setup time                      -0.05       2.30
+  data required time                                  2.30
+  -----------------------------------------------------------
+  data required time                                  2.30
+  data arrival time                                  -1.48
+  -----------------------------------------------------------
+  slack (MET)                                         0.81
+
+
+1

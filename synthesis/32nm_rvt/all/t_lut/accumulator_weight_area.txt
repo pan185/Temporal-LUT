@@ -1,0 +1,31 @@
+ 
+****************************************
+Report : area
+Design : accumulator_weight
+Version: S-2021.06
+Date   : Mon Oct 25 19:53:12 2021
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    saed32rvt_tt0p85v25c (File: /cae/apps/data/saed32_edk-2018/lib/stdcell_rvt/db_nldm/saed32rvt_tt0p85v25c.db)
+
+Number of ports:                          104
+Number of nets:                           346
+Number of cells:                          242
+Number of combinational cells:            182
+Number of sequential cells:                60
+Number of macros/black boxes:               0
+Number of buf/inv:                         25
+Number of references:                       9
+
+Combinational area:                495.834942
+Buf/Inv area:                       31.768000
+Noncombinational area:             426.961927
+Macro/Black Box area:                0.000000
+Net Interconnect area:             218.242852
+
+Total cell area:                   922.796869
+Total area:                       1141.039721
+1

@@ -1,0 +1,1566 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+                 Version S-2021.06 for linux64 - Jun 17, 2021 
+
+                    Copyright (c) 1988 - 2021 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+# ECE552 Extra Credit
+read_file -format sverilog {simd_cell.sv}
+Loading db file '/cae/apps/data/saed32_edk-2018/lib/stdcell_rvt/db_nldm/saed32rvt_tt0p85v25c.db'
+Loading db file '/cae/apps/data/saed32_edk-2018/lib/io_std/db_nldm/saed32io_wb_tt1p05v25c_2p5v.db'
+Loading db file '/cae/apps/data/synopsys-2021/syn/S-2021.06/libraries/syn/gtech.db'
+Loading db file '/cae/apps/data/synopsys-2021/syn/S-2021.06/libraries/syn/standard.sldb'
+  Loading link library 'saed32rvt_tt0p85v25c'
+  Loading link library 'saed32io_wb_tt1p05v25c_2p5v'
+  Loading link library 'gtech'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /filespace/z/zpan52/Desktop/syn_script/synthesis/32nm_rvt/all/t_lut/simd_cell.sv
+Opening include file DEF.sv
+Opening include file accumulator_weight.sv
+Opening include file DEF.sv
+Opening include file accumulator_prod.sv
+Opening include file DEF.sv
+Opening include file cmp.sv
+Opening include file DEF.sv
+Opening include file cntWithEn.sv
+Opening include file DEF.sv
+Opening include file register_bit1.sv
+Opening include file register_bit2.sv
+Opening include file register_product.sv
+Opening include file DEF.sv
+Opening include file rollover_cnt.sv
+Opening include file DEF.sv
+Opening include file mux_enable.sv
+Opening include file DEF.sv
+
+Inferred memory devices in process
+	in routine accumulator_weight line 15 in file
+		'accumulator_weight.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      sum__reg       | Flip-flop |  60   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine accumulator_prod line 18 in file
+		'accumulator_prod.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      sum__reg       | Flip-flop |  765  |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine cmp line 15 in file
+		'cmp.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      cmp__reg       | Flip-flop |   9   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine cntWithEn line 12 in file
+		'cntWithEn.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       cnt_reg       | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine register_bit1 line 11 in file
+		'register_bit1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      out__reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine register_bit2 line 11 in file
+		'register_bit2.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      out__reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine register_product line 16 in file
+		'register_product.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      out__reg       | Flip-flop |  540  |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine rollover_cnt line 14 in file
+		'rollover_cnt.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       cnt_reg       | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Loaded 10 designs.
+Current design is 'accumulator_weight'.
+accumulator_weight accumulator_prod cmp cntWithEn register_bit1 register_bit2 register_product rollover_cnt mux_enable simd_cell
+set current_design simd_cell
+simd_cell
+link
+
+  Linking design 'simd_cell'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  simd_cell                   /filespace/z/zpan52/Desktop/syn_script/synthesis/32nm_rvt/all/t_lut/simd_cell.db
+  saed32rvt_tt0p85v25c (library) /cae/apps/data/saed32_edk-2018/lib/stdcell_rvt/db_nldm/saed32rvt_tt0p85v25c.db
+  saed32io_wb_tt1p05v25c_2p5v (library) /cae/apps/data/saed32_edk-2018/lib/io_std/db_nldm/saed32io_wb_tt1p05v25c_2p5v.db
+  * (9 designs)               /filespace/z/zpan52/Desktop/syn_script/synthesis/32nm_rvt/all/t_lut/accumulator_weight.db, etc
+
+Information: Building the design 'register_bit1' instantiated from design 'simd_cell' with
+	the parameters "1". (HDL-193)
+
+Inferred memory devices in process
+	in routine register_bit1_ADDR_WIDTH1 line 11 in file
+		'register_bit1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      out__reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (register_bit1_ADDR_WIDTH1)
+Information: Building the design 'register_bit2' instantiated from design 'simd_cell' with
+	the parameters "1". (HDL-193)
+
+Inferred memory devices in process
+	in routine register_bit2_ADDR_WIDTH1 line 11 in file
+		'register_bit2.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      out__reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (register_bit2_ADDR_WIDTH1)
+1
+###########################################
+# Define clock and set don't mess with it #
+###########################################
+# clk with frequency of 400 MHz
+create_clock -name "clk" -period 2.5 -waveform { 0 1.25 } { clk }
+1
+set_dont_touch_network [find port clk]
+1
+# pointer to all inputs except clk
+set prim_inputs [remove_from_collection [all_inputs] [find port clk]]
+{rst_n enable input_bin[8][3] input_bin[8][2] input_bin[8][1] input_bin[8][0] input_bin[7][3] input_bin[7][2] input_bin[7][1] input_bin[7][0] input_bin[6][3] input_bin[6][2] input_bin[6][1] input_bin[6][0] input_bin[5][3] input_bin[5][2] input_bin[5][1] input_bin[5][0] input_bin[4][3] input_bin[4][2] input_bin[4][1] input_bin[4][0] input_bin[3][3] input_bin[3][2] input_bin[3][1] input_bin[3][0] input_bin[2][3] input_bin[2][2] input_bin[2][1] input_bin[2][0] input_bin[1][3] input_bin[1][2] input_bin[1][1] input_bin[1][0] input_bin[0][3] input_bin[0][2] input_bin[0][1] input_bin[0][0] weight_bin[4][7] weight_bin[4][6] weight_bin[4][5] weight_bin[4][4] weight_bin[4][3] weight_bin[4][2] weight_bin[4][1] weight_bin[4][0] weight_bin[3][7] weight_bin[3][6] weight_bin[3][5] weight_bin[3][4] weight_bin[3][3] weight_bin[3][2] weight_bin[3][1] weight_bin[3][0] weight_bin[2][7] weight_bin[2][6] weight_bin[2][5] weight_bin[2][4] weight_bin[2][3] weight_bin[2][2] weight_bin[2][1] weight_bin[2][0] weight_bin[1][7] weight_bin[1][6] weight_bin[1][5] weight_bin[1][4] weight_bin[1][3] weight_bin[1][2] weight_bin[1][1] weight_bin[1][0] weight_bin[0][7] weight_bin[0][6] weight_bin[0][5] weight_bin[0][4] weight_bin[0][3] weight_bin[0][2] weight_bin[0][1] weight_bin[0][0]}
+# pointer to all inputs except clk and rst_n
+set prim_inputs_no_rst [remove_from_collection $prim_inputs [find port rst_n]]
+{enable input_bin[8][3] input_bin[8][2] input_bin[8][1] input_bin[8][0] input_bin[7][3] input_bin[7][2] input_bin[7][1] input_bin[7][0] input_bin[6][3] input_bin[6][2] input_bin[6][1] input_bin[6][0] input_bin[5][3] input_bin[5][2] input_bin[5][1] input_bin[5][0] input_bin[4][3] input_bin[4][2] input_bin[4][1] input_bin[4][0] input_bin[3][3] input_bin[3][2] input_bin[3][1] input_bin[3][0] input_bin[2][3] input_bin[2][2] input_bin[2][1] input_bin[2][0] input_bin[1][3] input_bin[1][2] input_bin[1][1] input_bin[1][0] input_bin[0][3] input_bin[0][2] input_bin[0][1] input_bin[0][0] weight_bin[4][7] weight_bin[4][6] weight_bin[4][5] weight_bin[4][4] weight_bin[4][3] weight_bin[4][2] weight_bin[4][1] weight_bin[4][0] weight_bin[3][7] weight_bin[3][6] weight_bin[3][5] weight_bin[3][4] weight_bin[3][3] weight_bin[3][2] weight_bin[3][1] weight_bin[3][0] weight_bin[2][7] weight_bin[2][6] weight_bin[2][5] weight_bin[2][4] weight_bin[2][3] weight_bin[2][2] weight_bin[2][1] weight_bin[2][0] weight_bin[1][7] weight_bin[1][6] weight_bin[1][5] weight_bin[1][4] weight_bin[1][3] weight_bin[1][2] weight_bin[1][1] weight_bin[1][0] weight_bin[0][7] weight_bin[0][6] weight_bin[0][5] weight_bin[0][4] weight_bin[0][3] weight_bin[0][2] weight_bin[0][1] weight_bin[0][0]}
+# Set clk uncertainty (skew)
+set_clock_uncertainty 0.15 clk
+1
+#########################################
+# Set input delay & drive on all inputs #
+#########################################
+set_input_delay -clock clk 0.25 [copy_collection $prim_inputs]
+1
+#set_driving_cell -lib_cell ND2D2BWP -library tcbn40lpbwptc $prim_inputs_no_rst
+# rst_n goes to many places so don't touch
+set_dont_touch_network [find port rst_n]
+1
+##########################################
+# Set output delay & load on all outputs #
+##########################################
+set_output_delay -clock clk 0.5 [all_outputs]
+1
+set_load 0.1 [all_outputs]
+1
+#############################################################
+# Wire load model allows it to estimate internal parasitics #
+#############################################################
+# set_wire_load_model -name TSMC32K_Lowk_Conservative -library tcbn40lpbwptc
+######################################################
+# Max transition time is important for Hot-E reasons #
+######################################################
+set_max_transition 0.1 [current_design]
+1
+########################################
+# Now actually synthesize for 1st time #
+########################################
+compile -map_effort medium
+Warning: Setting attribute 'fix_multiple_port_nets' on design 'simd_cell'. (UIO-59)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | S-2021.06-DWBB_202106.0 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 20 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Warning: Operating condition tt0p85v25c set on design simd_cell has different process,
+voltage and temperatures parameters than the parameters at which target library 
+saed32io_wb_tt1p05v25c_2p5v is characterized. Delays may be inaccurate as a result. (OPT-998)
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'register_bit2_ADDR_WIDTH1'
+  Processing 'register_bit1_ADDR_WIDTH1'
+  Processing 'rollover_cnt'
+  Processing 'accumulator_prod'
+  Processing 'register_product'
+  Processing 'mux_enable'
+  Processing 'accumulator_weight'
+  Processing 'cmp'
+  Processing 'cntWithEn'
+  Processing 'simd_cell'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'accumulator_prod_DW01_add_0_DW01_add_2'
+  Processing 'accumulator_prod_DW01_add_1_DW01_add_3'
+  Processing 'accumulator_prod_DW01_add_2_DW01_add_4'
+  Processing 'accumulator_prod_DW01_add_3_DW01_add_5'
+  Processing 'accumulator_prod_DW01_add_4_DW01_add_6'
+  Processing 'accumulator_prod_DW01_add_5_DW01_add_7'
+  Processing 'accumulator_prod_DW01_add_6_DW01_add_8'
+  Processing 'accumulator_prod_DW01_add_7_DW01_add_9'
+  Processing 'accumulator_prod_DW01_add_8_DW01_add_10'
+  Processing 'accumulator_prod_DW01_add_9_DW01_add_11'
+  Processing 'accumulator_prod_DW01_add_10_DW01_add_12'
+  Processing 'accumulator_prod_DW01_add_11_DW01_add_13'
+  Processing 'accumulator_prod_DW01_add_12_DW01_add_14'
+  Processing 'accumulator_prod_DW01_add_13_DW01_add_15'
+  Processing 'accumulator_prod_DW01_add_14_DW01_add_16'
+  Processing 'accumulator_prod_DW01_add_15_DW01_add_17'
+  Processing 'accumulator_prod_DW01_add_16_DW01_add_18'
+  Processing 'accumulator_prod_DW01_add_17_DW01_add_19'
+  Processing 'accumulator_prod_DW01_add_18_DW01_add_20'
+  Processing 'accumulator_prod_DW01_add_19_DW01_add_21'
+  Processing 'accumulator_prod_DW01_add_20_DW01_add_22'
+  Processing 'accumulator_prod_DW01_add_21_DW01_add_23'
+  Processing 'accumulator_prod_DW01_add_22_DW01_add_24'
+  Processing 'accumulator_prod_DW01_add_23_DW01_add_25'
+  Processing 'accumulator_prod_DW01_add_24_DW01_add_26'
+  Processing 'accumulator_prod_DW01_add_25_DW01_add_27'
+  Processing 'accumulator_prod_DW01_add_26_DW01_add_28'
+  Processing 'accumulator_prod_DW01_add_27_DW01_add_29'
+  Processing 'accumulator_prod_DW01_add_28_DW01_add_30'
+  Processing 'accumulator_prod_DW01_add_29_DW01_add_31'
+  Processing 'accumulator_prod_DW01_add_30_DW01_add_32'
+  Processing 'accumulator_prod_DW01_add_31_DW01_add_33'
+  Processing 'accumulator_prod_DW01_add_32_DW01_add_34'
+  Processing 'accumulator_prod_DW01_add_33_DW01_add_35'
+  Processing 'accumulator_prod_DW01_add_34_DW01_add_36'
+  Processing 'accumulator_prod_DW01_add_35_DW01_add_37'
+  Processing 'accumulator_prod_DW01_add_36_DW01_add_38'
+  Processing 'accumulator_prod_DW01_add_37_DW01_add_39'
+  Processing 'accumulator_prod_DW01_add_38_DW01_add_40'
+  Processing 'accumulator_prod_DW01_add_39_DW01_add_41'
+  Processing 'accumulator_prod_DW01_add_40_DW01_add_42'
+  Processing 'accumulator_prod_DW01_add_41_DW01_add_43'
+  Processing 'accumulator_prod_DW01_add_42_DW01_add_44'
+  Processing 'accumulator_prod_DW01_add_43_DW01_add_45'
+  Processing 'accumulator_prod_DW01_add_44_DW01_add_46'
+  Processing 'accumulator_weight_DW01_add_0_DW01_add_47'
+  Processing 'accumulator_weight_DW01_add_1_DW01_add_48'
+  Processing 'accumulator_weight_DW01_add_2_DW01_add_49'
+  Processing 'accumulator_weight_DW01_add_3_DW01_add_50'
+  Processing 'accumulator_weight_DW01_add_4_DW01_add_51'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:07   22448.5      0.00       0.0       0.0                          
+    0:00:07   22448.5      0.00       0.0       0.0                          
+    0:00:07   22448.5      0.00       0.0       0.0                          
+    0:00:07   22448.5      0.00       0.0       0.0                          
+    0:00:07   22448.5      0.00       0.0       0.0                          
+    0:00:08   18438.1      0.00       0.0       0.0                          
+    0:00:08   18435.9      0.00       0.0       0.0                          
+    0:00:09   18435.9      0.00       0.0       0.0                          
+    0:00:09   18435.9      0.00       0.0       0.0                          
+    0:00:09   18435.9      0.00       0.0       0.0                          
+    0:00:09   18435.9      0.00       0.0       0.0                          
+    0:00:09   18435.9      0.00       0.0       0.0                          
+    0:00:09   18435.9      0.00       0.0       0.0                          
+    0:00:09   18435.9      0.00       0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:09   18435.9      0.00       0.0       0.0                          
+    0:00:09   18435.9      0.00       0.0       0.0                          
+    0:00:09   18321.5      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:09   18321.5      0.00       0.0       0.0                          
+    0:00:09   18321.5      0.00       0.0       0.0                          
+    0:00:09   18301.4      0.00       0.0       0.0                          
+    0:00:09   18284.9      0.00       0.0       0.0                          
+    0:00:09   18268.4      0.00       0.0       0.0                          
+    0:00:09   18244.2      0.00       0.0       0.0                          
+    0:00:09   18241.7      0.00       0.0       0.0                          
+    0:00:09   18239.2      0.00       0.0       0.0                          
+    0:00:10   18236.6      0.00       0.0       0.0                          
+    0:00:10   18234.1      0.00       0.0       0.0                          
+    0:00:10   18231.5      0.00       0.0       0.0                          
+    0:00:10   18229.0      0.00       0.0       0.0                          
+    0:00:10   18226.4      0.00       0.0       0.0                          
+    0:00:10   18223.9      0.00       0.0       0.0                          
+    0:00:10   18221.4      0.00       0.0       0.0                          
+    0:00:10   18218.8      0.00       0.0       0.0                          
+    0:00:10   18216.3      0.00       0.0       0.0                          
+    0:00:10   18213.7      0.00       0.0       0.0                          
+    0:00:10   18211.2      0.00       0.0       0.0                          
+    0:00:10   18211.2      0.00       0.0       0.0                          
+    0:00:10   18211.2      0.00       0.0       0.0                          
+    0:00:10   18211.2      0.00       0.0       0.0                          
+    0:00:10   18211.2      0.00       0.0       0.0                          
+    0:00:10   18211.2      0.00       0.0       0.0                          
+    0:00:10   18211.2      0.00       0.0       0.0                          
+    0:00:10   18211.2      0.00       0.0       0.0                          
+    0:00:10   18211.2      0.00       0.0       0.0                          
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'simd_cell' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+1
+check_design
+ 
+****************************************
+check_design summary:
+Version:     S-2021.06
+Date:        Mon Oct 25 19:55:50 2021
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                    347
+    Unconnected ports (LINT-28)                                   347
+
+Cells                                                             346
+    Connected to power or ground (LINT-32)                        296
+    Nets connected to multiple pins on same cell (LINT-33)         50
+--------------------------------------------------------------------------------
+
+Warning: In design 'mux_enable', port 'clk' is not connected to any nets. (LINT-28)
+Warning: In design 'mux_enable', port 'rst_n' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_0_DW01_add_2', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_0_DW01_add_2', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_0_DW01_add_2', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_0_DW01_add_2', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_0_DW01_add_2', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_0_DW01_add_2', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_0_DW01_add_2', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_1_DW01_add_3', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_1_DW01_add_3', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_1_DW01_add_3', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_1_DW01_add_3', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_1_DW01_add_3', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_1_DW01_add_3', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_1_DW01_add_3', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_2_DW01_add_4', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_2_DW01_add_4', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_2_DW01_add_4', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_2_DW01_add_4', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_2_DW01_add_4', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_2_DW01_add_4', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_2_DW01_add_4', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_3_DW01_add_5', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_3_DW01_add_5', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_3_DW01_add_5', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_3_DW01_add_5', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_3_DW01_add_5', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_3_DW01_add_5', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_3_DW01_add_5', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_4_DW01_add_6', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_4_DW01_add_6', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_4_DW01_add_6', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_4_DW01_add_6', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_4_DW01_add_6', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_4_DW01_add_6', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_4_DW01_add_6', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_5_DW01_add_7', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_5_DW01_add_7', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_5_DW01_add_7', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_5_DW01_add_7', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_5_DW01_add_7', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_5_DW01_add_7', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_5_DW01_add_7', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_6_DW01_add_8', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_6_DW01_add_8', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_6_DW01_add_8', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_6_DW01_add_8', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_6_DW01_add_8', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_6_DW01_add_8', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_6_DW01_add_8', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_7_DW01_add_9', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_7_DW01_add_9', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_7_DW01_add_9', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_7_DW01_add_9', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_7_DW01_add_9', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_7_DW01_add_9', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_7_DW01_add_9', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_8_DW01_add_10', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_8_DW01_add_10', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_8_DW01_add_10', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_8_DW01_add_10', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_8_DW01_add_10', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_8_DW01_add_10', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_8_DW01_add_10', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_9_DW01_add_11', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_9_DW01_add_11', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_9_DW01_add_11', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_9_DW01_add_11', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_9_DW01_add_11', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_9_DW01_add_11', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_9_DW01_add_11', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_10_DW01_add_12', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_10_DW01_add_12', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_10_DW01_add_12', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_10_DW01_add_12', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_10_DW01_add_12', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_10_DW01_add_12', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_10_DW01_add_12', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_11_DW01_add_13', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_11_DW01_add_13', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_11_DW01_add_13', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_11_DW01_add_13', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_11_DW01_add_13', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_11_DW01_add_13', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_11_DW01_add_13', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_12_DW01_add_14', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_12_DW01_add_14', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_12_DW01_add_14', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_12_DW01_add_14', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_12_DW01_add_14', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_12_DW01_add_14', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_12_DW01_add_14', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_13_DW01_add_15', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_13_DW01_add_15', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_13_DW01_add_15', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_13_DW01_add_15', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_13_DW01_add_15', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_13_DW01_add_15', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_13_DW01_add_15', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_14_DW01_add_16', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_14_DW01_add_16', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_14_DW01_add_16', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_14_DW01_add_16', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_14_DW01_add_16', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_14_DW01_add_16', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_14_DW01_add_16', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_15_DW01_add_17', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_15_DW01_add_17', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_15_DW01_add_17', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_15_DW01_add_17', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_15_DW01_add_17', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_15_DW01_add_17', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_15_DW01_add_17', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_16_DW01_add_18', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_16_DW01_add_18', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_16_DW01_add_18', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_16_DW01_add_18', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_16_DW01_add_18', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_16_DW01_add_18', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_16_DW01_add_18', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_17_DW01_add_19', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_17_DW01_add_19', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_17_DW01_add_19', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_17_DW01_add_19', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_17_DW01_add_19', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_17_DW01_add_19', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_17_DW01_add_19', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_18_DW01_add_20', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_18_DW01_add_20', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_18_DW01_add_20', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_18_DW01_add_20', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_18_DW01_add_20', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_18_DW01_add_20', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_18_DW01_add_20', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_19_DW01_add_21', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_19_DW01_add_21', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_19_DW01_add_21', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_19_DW01_add_21', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_19_DW01_add_21', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_19_DW01_add_21', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_19_DW01_add_21', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_20_DW01_add_22', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_20_DW01_add_22', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_20_DW01_add_22', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_20_DW01_add_22', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_20_DW01_add_22', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_20_DW01_add_22', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_20_DW01_add_22', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_21_DW01_add_23', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_21_DW01_add_23', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_21_DW01_add_23', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_21_DW01_add_23', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_21_DW01_add_23', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_21_DW01_add_23', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_21_DW01_add_23', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_22_DW01_add_24', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_22_DW01_add_24', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_22_DW01_add_24', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_22_DW01_add_24', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_22_DW01_add_24', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_22_DW01_add_24', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_22_DW01_add_24', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_23_DW01_add_25', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_23_DW01_add_25', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_23_DW01_add_25', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_23_DW01_add_25', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_23_DW01_add_25', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_23_DW01_add_25', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_23_DW01_add_25', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_24_DW01_add_26', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_24_DW01_add_26', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_24_DW01_add_26', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_24_DW01_add_26', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_24_DW01_add_26', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_24_DW01_add_26', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_24_DW01_add_26', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_25_DW01_add_27', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_25_DW01_add_27', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_25_DW01_add_27', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_25_DW01_add_27', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_25_DW01_add_27', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_25_DW01_add_27', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_25_DW01_add_27', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_26_DW01_add_28', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_26_DW01_add_28', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_26_DW01_add_28', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_26_DW01_add_28', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_26_DW01_add_28', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_26_DW01_add_28', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_26_DW01_add_28', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_27_DW01_add_29', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_27_DW01_add_29', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_27_DW01_add_29', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_27_DW01_add_29', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_27_DW01_add_29', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_27_DW01_add_29', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_27_DW01_add_29', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_28_DW01_add_30', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_28_DW01_add_30', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_28_DW01_add_30', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_28_DW01_add_30', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_28_DW01_add_30', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_28_DW01_add_30', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_28_DW01_add_30', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_29_DW01_add_31', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_29_DW01_add_31', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_29_DW01_add_31', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_29_DW01_add_31', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_29_DW01_add_31', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_29_DW01_add_31', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_29_DW01_add_31', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_30_DW01_add_32', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_30_DW01_add_32', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_30_DW01_add_32', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_30_DW01_add_32', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_30_DW01_add_32', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_30_DW01_add_32', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_30_DW01_add_32', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_31_DW01_add_33', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_31_DW01_add_33', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_31_DW01_add_33', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_31_DW01_add_33', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_31_DW01_add_33', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_31_DW01_add_33', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_31_DW01_add_33', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_32_DW01_add_34', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_32_DW01_add_34', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_32_DW01_add_34', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_32_DW01_add_34', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_32_DW01_add_34', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_32_DW01_add_34', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_32_DW01_add_34', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_33_DW01_add_35', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_33_DW01_add_35', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_33_DW01_add_35', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_33_DW01_add_35', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_33_DW01_add_35', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_33_DW01_add_35', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_33_DW01_add_35', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_34_DW01_add_36', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_34_DW01_add_36', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_34_DW01_add_36', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_34_DW01_add_36', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_34_DW01_add_36', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_34_DW01_add_36', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_34_DW01_add_36', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_35_DW01_add_37', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_35_DW01_add_37', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_35_DW01_add_37', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_35_DW01_add_37', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_35_DW01_add_37', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_35_DW01_add_37', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_35_DW01_add_37', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_36_DW01_add_38', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_36_DW01_add_38', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_36_DW01_add_38', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_36_DW01_add_38', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_36_DW01_add_38', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_36_DW01_add_38', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_36_DW01_add_38', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_37_DW01_add_39', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_37_DW01_add_39', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_37_DW01_add_39', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_37_DW01_add_39', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_37_DW01_add_39', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_37_DW01_add_39', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_37_DW01_add_39', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_38_DW01_add_40', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_38_DW01_add_40', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_38_DW01_add_40', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_38_DW01_add_40', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_38_DW01_add_40', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_38_DW01_add_40', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_38_DW01_add_40', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_39_DW01_add_41', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_39_DW01_add_41', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_39_DW01_add_41', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_39_DW01_add_41', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_39_DW01_add_41', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_39_DW01_add_41', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_39_DW01_add_41', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_40_DW01_add_42', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_40_DW01_add_42', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_40_DW01_add_42', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_40_DW01_add_42', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_40_DW01_add_42', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_40_DW01_add_42', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_40_DW01_add_42', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_41_DW01_add_43', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_41_DW01_add_43', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_41_DW01_add_43', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_41_DW01_add_43', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_41_DW01_add_43', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_41_DW01_add_43', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_41_DW01_add_43', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_42_DW01_add_44', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_42_DW01_add_44', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_42_DW01_add_44', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_42_DW01_add_44', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_42_DW01_add_44', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_42_DW01_add_44', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_42_DW01_add_44', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_43_DW01_add_45', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_43_DW01_add_45', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_43_DW01_add_45', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_43_DW01_add_45', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_43_DW01_add_45', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_43_DW01_add_45', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_43_DW01_add_45', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_44_DW01_add_46', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_44_DW01_add_46', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_44_DW01_add_46', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_44_DW01_add_46', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_44_DW01_add_46', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_44_DW01_add_46', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_prod_DW01_add_44_DW01_add_46', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_47', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_47', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_47', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_47', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_47', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_47', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_1_DW01_add_48', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_1_DW01_add_48', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_1_DW01_add_48', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_1_DW01_add_48', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_1_DW01_add_48', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_1_DW01_add_48', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_2_DW01_add_49', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_2_DW01_add_49', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_2_DW01_add_49', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_2_DW01_add_49', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_2_DW01_add_49', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_2_DW01_add_49', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_3_DW01_add_50', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_3_DW01_add_50', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_3_DW01_add_50', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_3_DW01_add_50', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_3_DW01_add_50', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_3_DW01_add_50', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_4_DW01_add_51', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_4_DW01_add_51', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_4_DW01_add_51', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_4_DW01_add_51', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_4_DW01_add_51', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_4_DW01_add_51', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'simd_cell', a pin on submodule 'U_accumulator_prod' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'clear' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G9_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G8_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G7_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G6_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G5_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G4_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G3_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25_G2_G1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'accumulator_prod', a pin on submodule 'add_25' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_weight', the same net is connected to more than one pin on submodule 'add_22_G5'. (LINT-33)
+   Net 'n1' is connected to pins 'B[11]', 'B[10]'', 'B[9]', 'B[8]', 'CI'.
+Warning: In design 'accumulator_weight', the same net is connected to more than one pin on submodule 'add_22_G4'. (LINT-33)
+   Net 'n2' is connected to pins 'B[11]', 'B[10]'', 'B[9]', 'B[8]', 'CI'.
+Warning: In design 'accumulator_weight', the same net is connected to more than one pin on submodule 'add_22_G3'. (LINT-33)
+   Net 'n3' is connected to pins 'B[11]', 'B[10]'', 'B[9]', 'B[8]', 'CI'.
+Warning: In design 'accumulator_weight', the same net is connected to more than one pin on submodule 'add_22_G2'. (LINT-33)
+   Net 'n4' is connected to pins 'B[11]', 'B[10]'', 'B[9]', 'B[8]', 'CI'.
+Warning: In design 'accumulator_weight', the same net is connected to more than one pin on submodule 'add_22'. (LINT-33)
+   Net 'n5' is connected to pins 'B[11]', 'B[10]'', 'B[9]', 'B[8]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G9_G5'. (LINT-33)
+   Net 'n1' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G8_G5'. (LINT-33)
+   Net 'n2' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G7_G5'. (LINT-33)
+   Net 'n3' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G6_G5'. (LINT-33)
+   Net 'n4' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G5_G5'. (LINT-33)
+   Net 'n5' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G4_G5'. (LINT-33)
+   Net 'n6' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G3_G5'. (LINT-33)
+   Net 'n7' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G2_G5'. (LINT-33)
+   Net 'n8' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G5'. (LINT-33)
+   Net 'n9' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G9_G4'. (LINT-33)
+   Net 'n10' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G8_G4'. (LINT-33)
+   Net 'n11' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G7_G4'. (LINT-33)
+   Net 'n12' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G6_G4'. (LINT-33)
+   Net 'n13' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G5_G4'. (LINT-33)
+   Net 'n14' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G4_G4'. (LINT-33)
+   Net 'n15' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G3_G4'. (LINT-33)
+   Net 'n16' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G2_G4'. (LINT-33)
+   Net 'n17' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G4'. (LINT-33)
+   Net 'n18' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G9_G3'. (LINT-33)
+   Net 'n19' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G8_G3'. (LINT-33)
+   Net 'n20' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G7_G3'. (LINT-33)
+   Net 'n21' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G6_G3'. (LINT-33)
+   Net 'n22' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G5_G3'. (LINT-33)
+   Net 'n23' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G4_G3'. (LINT-33)
+   Net 'n24' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G3_G3'. (LINT-33)
+   Net 'n25' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G2_G3'. (LINT-33)
+   Net 'n26' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G3'. (LINT-33)
+   Net 'n27' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G9_G2'. (LINT-33)
+   Net 'n28' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G8_G2'. (LINT-33)
+   Net 'n29' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G7_G2'. (LINT-33)
+   Net 'n30' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G6_G2'. (LINT-33)
+   Net 'n31' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G5_G2'. (LINT-33)
+   Net 'n32' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G4_G2'. (LINT-33)
+   Net 'n33' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G3_G2'. (LINT-33)
+   Net 'n34' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G2_G2'. (LINT-33)
+   Net 'n35' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G2'. (LINT-33)
+   Net 'n36' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G9_G1'. (LINT-33)
+   Net 'n37' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G8_G1'. (LINT-33)
+   Net 'n38' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G7_G1'. (LINT-33)
+   Net 'n39' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G6_G1'. (LINT-33)
+   Net 'n40' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G5_G1'. (LINT-33)
+   Net 'n41' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G4_G1'. (LINT-33)
+   Net 'n42' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G3_G1'. (LINT-33)
+   Net 'n43' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25_G2_G1'. (LINT-33)
+   Net 'n44' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+Warning: In design 'accumulator_prod', the same net is connected to more than one pin on submodule 'add_25'. (LINT-33)
+   Net 'n45' is connected to pins 'B[16]', 'B[15]'', 'B[14]', 'B[13]', 'B[12]', 'CI'.
+1
+# Unflatten design now that its compiled
+ungroup -all -flatten
+Information: Updating graph... (UID-83)
+Warning: Design 'simd_cell' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+1
+# force hold time to be met for all flops
+set_fix_hold clk
+1
+# Compile again with higher effort
+compile -map_effort high
+
+Information: There are 50 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Warning: Operating condition tt0p85v25c set on design simd_cell has different process,
+voltage and temperatures parameters than the parameters at which target library 
+saed32io_wb_tt1p05v25c_2p5v is characterized. Delays may be inaccurate as a result. (OPT-998)
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'simd_cell'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Mapping Optimizations  (High effort)
+  -------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:02   21313.8      0.00       0.0      50.4                                0.00  
+    0:00:02   21313.8      0.00       0.0      50.4                                0.00  
+    0:00:02   21313.8      0.00       0.0      50.4                                0.00  
+    0:00:02   21313.8      0.00       0.0      50.4                                0.00  
+    0:00:02   21313.8      0.00       0.0      50.4                                0.00  
+    0:00:03   17773.6      0.00       0.0       0.0                                0.00  
+    0:00:03   17773.6      0.00       0.0       0.0                                0.00  
+    0:00:03   17773.6      0.00       0.0       0.0                                0.00  
+    0:00:03   17773.6      0.00       0.0       0.0                                0.00  
+    0:00:03   17773.6      0.00       0.0       0.0                                0.00  
+    0:00:03   17773.6      0.00       0.0       0.0                                0.00  
+    0:00:03   17773.6      0.00       0.0       0.0                                0.00  
+    0:00:03   17773.6      0.00       0.0       0.0                                0.00  
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:03   17773.6      0.00       0.0       0.0                                0.00  
+    0:00:03   17773.6      0.00       0.0       0.0                                0.00  
+    0:00:03   17772.3      0.00       0.0       0.0                                0.00  
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:03   17772.3      0.00       0.0       0.0                                0.00  
+    0:00:03   17772.3      0.00       0.0       0.0                                0.00  
+    0:00:03   17724.0      0.00       0.0       0.0                                0.00  
+    0:00:03   17708.8      0.00       0.0       0.0                                0.00  
+    0:00:03   17695.3      0.00       0.0       0.0                                0.00  
+    0:00:03   17682.6      0.00       0.0       0.0                                0.00  
+    0:00:04   17669.9      0.00       0.0       0.0                                0.00  
+    0:00:04   17657.2      0.00       0.0       0.0                                0.00  
+    0:00:04   17655.9      0.00       0.0       0.0                                0.00  
+    0:00:04   17654.6      0.00       0.0       0.0                                0.00  
+    0:00:04   17653.4      0.00       0.0       0.0                                0.00  
+    0:00:04   17652.1      0.00       0.0       0.0                                0.00  
+    0:00:04   17650.8      0.00       0.0       0.0                                0.00  
+    0:00:04   17649.5      0.00       0.0       0.0                                0.00  
+    0:00:04   17648.3      0.00       0.0       0.0                                0.00  
+    0:00:04   17647.0      0.00       0.0       0.0                                0.00  
+    0:00:04   17645.7      0.00       0.0       0.0                                0.00  
+    0:00:04   17644.5      0.00       0.0       0.0                                0.00  
+    0:00:04   17644.5      0.00       0.0       0.0                                0.00  
+    0:00:04   17644.5      0.00       0.0       0.0                                0.00  
+    0:00:04   17644.5      0.00       0.0       0.0                                0.00  
+    0:00:04   17644.5      0.00       0.0       0.0                                0.00  
+    0:00:04   17644.5      0.00       0.0       0.0                                0.00  
+    0:00:04   17644.5      0.00       0.0       0.0                                0.00  
+    0:00:04   17644.5      0.00       0.0       0.0                                0.00  
+    0:00:04   17644.5      0.00       0.0       0.0                                0.00  
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'simd_cell' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+1
+check_design
+1
+#############################################
+# Take a look at area, max, and min timings #
+#############################################
+report_area > simd_cell_area.txt
+report_power > simd_cell_power.txt
+report_timing -delay min > simd_cell_min_delay.txt
+report_timing -delay max > simd_cell_max_delay.txt
+#### write out final netlist ######
+write -format verilog simd_cell -output simd_cell.vg
+Writing verilog file '/filespace/z/zpan52/Desktop/syn_script/synthesis/32nm_rvt/all/t_lut/simd_cell.vg'.
+1
+exit
+Memory usage for this session 178 Mbytes.
+Memory usage for this session including child processes 178 Mbytes.
+CPU usage for this session 18 seconds ( 0.01 hours ).
+Elapsed time for this session 20 seconds ( 0.01 hours ).
+
+Thank you...
