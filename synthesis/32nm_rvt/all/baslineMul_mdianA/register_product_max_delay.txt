@@ -6,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : register_product
 Version: S-2021.06
-Date   : Mon Oct 25 19:50:30 2021
+Date   : Wed Oct 27 09:31:31 2021
 ****************************************
 
 Operating Conditions: tt0p85v25c   Library: saed32rvt_tt0p85v25c
@@ -29,8 +29,8 @@ Wire Load Model Mode: enclosed
   clock network delay (ideal)              0.00       0.00
   out__reg[0][0][0]/CLK (DFFARX1_RVT)      0.00       0.00 r
   out__reg[0][0][0]/Q (DFFARX1_RVT)        0.15       0.15 r
-  out[0][0][0] (out)                       0.00       0.15 r
-  data arrival time                                   0.15
+  out[0][0][0] (out)                       0.00       0.16 r
+  data arrival time                                   0.16
 
   clock clk (rise edge)                    2.50       2.50
   clock network delay (ideal)              0.00       2.50
@@ -39,9 +39,9 @@ Wire Load Model Mode: enclosed
   data required time                                  1.85
   -----------------------------------------------------------
   data required time                                  1.85
-  data arrival time                                  -0.15
+  data arrival time                                  -0.16
   -----------------------------------------------------------
-  slack (MET)                                         1.70
+  slack (MET)                                         1.69
 
 
 1

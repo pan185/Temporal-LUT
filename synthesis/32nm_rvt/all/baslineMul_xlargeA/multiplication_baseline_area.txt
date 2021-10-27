@@ -1,0 +1,32 @@
+ 
+****************************************
+Report : area
+Design : multiplication_baseline
+Version: S-2021.06
+Date   : Wed Oct 27 09:34:26 2021
+****************************************
+
+Information: Updating design information... (UID-85)
+Warning: Design 'multiplication_baseline' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Library(s) Used:
+
+    saed32rvt_tt0p85v25c (File: /cae/apps/data/saed32_edk-2018/lib/stdcell_rvt/db_nldm/saed32rvt_tt0p85v25c.db)
+
+Number of ports:                         1034
+Number of nets:                          8651
+Number of cells:                         7481
+Number of combinational cells:           6449
+Number of sequential cells:              1032
+Number of macros/black boxes:               0
+Number of buf/inv:                        355
+Number of references:                      21
+
+Combinational area:              18701.694497
+Buf/Inv area:                      451.105602
+Noncombinational area:            7343.745152
+Macro/Black Box area:                0.000000
+Net Interconnect area:            7106.871507
+
+Total cell area:                 26045.439649
+Total area:                      33152.311155
+1

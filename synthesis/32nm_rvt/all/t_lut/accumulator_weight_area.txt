@@ -3,7 +3,7 @@
 Report : area
 Design : accumulator_weight
 Version: S-2021.06
-Date   : Mon Oct 25 19:53:12 2021
+Date   : Wed Oct 27 09:36:38 2021
 ****************************************
 
 Information: Updating design information... (UID-85)

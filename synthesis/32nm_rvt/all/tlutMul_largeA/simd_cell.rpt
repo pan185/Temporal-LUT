@@ -47,13 +47,13 @@ Opening include file accumulator_weight.sv
 Opening include file DEF.sv
 Opening include file cmp.sv
 Opening include file DEF.sv
-Opening include file cntWithEn.sv
-Opening include file DEF.sv
 Opening include file register_product.sv
 Opening include file DEF.sv
-Opening include file rollover_cnt.sv
+Opening include file register_weight.sv
 Opening include file DEF.sv
-Opening include file mux_enable.sv
+Opening include file register_input.sv
+Opening include file DEF.sv
+Opening include file rollover_cnt.sv
 Opening include file DEF.sv
 
 Inferred memory devices in process
@@ -75,21 +75,30 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine cntWithEn line 12 in file
-		'cntWithEn.sv'.
-===============================================================================
-|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-===============================================================================
-|       cnt_reg       | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
-===============================================================================
-
-Inferred memory devices in process
 	in routine register_product line 16 in file
 		'register_product.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
 |      out__reg       | Flip-flop |  384  |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine register_weight line 13 in file
+		'register_weight.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      out__reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine register_input line 13 in file
+		'register_input.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      out__reg       | Flip-flop |  128  |  Y  | N  | Y  | N  | N  | N  | N  |
 ===============================================================================
 
 Inferred memory devices in process
@@ -103,7 +112,7 @@ Inferred memory devices in process
 Presto compilation completed successfully.
 Loaded 7 designs.
 Current design is 'accumulator_weight'.
-accumulator_weight cmp cntWithEn register_product rollover_cnt mux_enable simd_cell
+accumulator_weight cmp register_product register_weight register_input rollover_cnt simd_cell
 set current_design simd_cell
 simd_cell
 link
@@ -174,7 +183,7 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 ============================================================================
 
 
-Information: There are 10 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+Information: There are 3 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
 
 
 Warning: Operating condition tt0p85v25c set on design simd_cell has different process,
@@ -185,10 +194,10 @@ saed32io_wb_tt1p05v25c_2p5v is characterized. Delays may be inaccurate as a resu
   ------------------------
   Processing 'rollover_cnt'
   Processing 'register_product'
-  Processing 'mux_enable'
   Processing 'accumulator_weight'
   Processing 'cmp'
-  Processing 'cntWithEn'
+  Processing 'register_weight'
+  Processing 'register_input'
   Processing 'simd_cell'
 
   Updating timing information
@@ -196,7 +205,7 @@ Information: Updating design information... (UID-85)
 
   Beginning Implementation Selection
   ----------------------------------
-  Processing 'accumulator_weight_DW01_add_0_DW01_add_2'
+  Processing 'accumulator_weight_DW01_add_0_DW01_add_1'
 
   Beginning Mapping Optimizations  (Medium effort)
   -------------------------------
@@ -205,20 +214,20 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:01    5892.3      0.00       0.0       0.0                          
-    0:00:01    5892.3      0.00       0.0       0.0                          
-    0:00:01    5892.3      0.00       0.0       0.0                          
-    0:00:01    5892.3      0.00       0.0       0.0                          
-    0:00:01    5892.3      0.00       0.0       0.0                          
-    0:00:01    5028.0      0.00       0.0       0.0                          
-    0:00:01    5024.4      0.00       0.0       0.0                          
-    0:00:02    5024.4      0.00       0.0       0.0                          
-    0:00:02    5024.4      0.00       0.0       0.0                          
-    0:00:02    5024.4      0.00       0.0       0.0                          
-    0:00:02    5024.4      0.00       0.0       0.0                          
-    0:00:02    5024.4      0.00       0.0       0.0                          
-    0:00:02    5024.4      0.00       0.0       0.0                          
-    0:00:02    5024.4      0.00       0.0       0.0                          
+    0:00:02    6932.8      0.00       0.0       0.0                          
+    0:00:02    6932.8      0.00       0.0       0.0                          
+    0:00:02    6932.8      0.00       0.0       0.0                          
+    0:00:02    6932.8      0.00       0.0       0.0                          
+    0:00:02    6932.8      0.00       0.0       0.0                          
+    0:00:02    6032.4      0.00       0.0       0.0                          
+    0:00:02    6028.8      0.00       0.0       0.0                          
+    0:00:02    6028.8      0.00       0.0       0.0                          
+    0:00:02    6028.8      0.00       0.0       0.0                          
+    0:00:02    6028.8      0.00       0.0       0.0                          
+    0:00:02    6028.8      0.00       0.0       0.0                          
+    0:00:02    6028.8      0.00       0.0       0.0                          
+    0:00:02    6028.8      0.00       0.0       0.0                          
+    0:00:02    6028.8      0.00       0.0       0.0                          
 
 
 
@@ -229,9 +238,9 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:02    5024.4      0.00       0.0       0.0                          
-    0:00:02    5024.4      0.00       0.0       0.0                          
-    0:00:02    5009.2      0.00       0.0       0.0                          
+    0:00:02    6028.8      0.00       0.0       0.0                          
+    0:00:02    6028.8      0.00       0.0       0.0                          
+    0:00:02    6013.6      0.00       0.0       0.0                          
 
 
   Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
@@ -241,8 +250,8 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:02    5009.2      0.00       0.0      21.4                          
-    0:00:02    5009.7      0.00       0.0       0.0                          
+    0:00:02    6013.6      0.00       0.0      21.4                          
+    0:00:02    6014.1      0.00       0.0       0.0                          
 
 
   Beginning Area-Recovery Phase  (cleanup)
@@ -252,19 +261,19 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:02    5009.7      0.00       0.0       0.0                          
-    0:00:02    5009.7      0.00       0.0       0.0                          
-    0:00:02    4994.4      0.00       0.0       0.0                          
-    0:00:02    4994.4      0.00       0.0       0.0                          
-    0:00:02    4994.4      0.00       0.0       0.0                          
-    0:00:02    4994.4      0.00       0.0       0.0                          
-    0:00:02    4993.4      0.00       0.0       0.0                          
-    0:00:02    4993.4      0.00       0.0       0.0                          
-    0:00:02    4993.4      0.00       0.0       0.0                          
-    0:00:02    4993.4      0.00       0.0       0.0                          
-    0:00:02    4993.4      0.00       0.0       0.0                          
-    0:00:02    4993.4      0.00       0.0       0.0                          
-    0:00:02    4993.4      0.00       0.0       0.0                          
+    0:00:02    6014.1      0.00       0.0       0.0                          
+    0:00:02    6014.1      0.00       0.0       0.0                          
+    0:00:03    5993.5      0.00       0.0       0.0                          
+    0:00:03    5993.5      0.00       0.0       0.0                          
+    0:00:03    5993.5      0.00       0.0       0.0                          
+    0:00:03    5993.5      0.00       0.0       0.0                          
+    0:00:03    5994.7      0.00       0.0       0.0                          
+    0:00:03    5994.7      0.00       0.0       0.0                          
+    0:00:03    5994.7      0.00       0.0       0.0                          
+    0:00:03    5994.7      0.00       0.0       0.0                          
+    0:00:03    5994.7      0.00       0.0       0.0                          
+    0:00:03    5994.7      0.00       0.0       0.0                          
+    0:00:03    5994.7      0.00       0.0       0.0                          
 
 
 Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
@@ -278,27 +287,25 @@ check_design
 ****************************************
 check_design summary:
 Version:     S-2021.06
-Date:        Tue Oct 26 12:15:10 2021
+Date:        Wed Oct 27 09:41:54 2021
 ****************************************
 
                    Name                                            Total
 --------------------------------------------------------------------------------
-Inputs/Outputs                                                      8
-    Unconnected ports (LINT-28)                                     8
+Inputs/Outputs                                                      6
+    Unconnected ports (LINT-28)                                     6
 
 Cells                                                               6
     Connected to power or ground (LINT-32)                          5
     Nets connected to multiple pins on same cell (LINT-33)          1
 --------------------------------------------------------------------------------
 
-Warning: In design 'mux_enable', port 'clk' is not connected to any nets. (LINT-28)
-Warning: In design 'mux_enable', port 'rst_n' is not connected to any nets. (LINT-28)
-Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_2', port 'B[11]' is not connected to any nets. (LINT-28)
-Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_2', port 'B[10]' is not connected to any nets. (LINT-28)
-Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_2', port 'B[9]' is not connected to any nets. (LINT-28)
-Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_2', port 'B[8]' is not connected to any nets. (LINT-28)
-Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_2', port 'CI' is not connected to any nets. (LINT-28)
-Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_2', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_1', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_1', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_1', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_1', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_1', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_1', port 'CO' is not connected to any nets. (LINT-28)
 Warning: In design 'accumulator_weight', a pin on submodule 'add_22' is connected to logic 1 or logic 0. (LINT-32)
    Pin 'B[11]' is connected to logic 0. 
 Warning: In design 'accumulator_weight', a pin on submodule 'add_22' is connected to logic 1 or logic 0. (LINT-32)
@@ -343,20 +350,20 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
   --------- --------- --------- --------- --------- ------------------------- -----------
-    0:00:01    5843.8      0.00       0.0       0.0                                0.00  
-    0:00:01    5843.8      0.00       0.0       0.0                                0.00  
-    0:00:01    5843.8      0.00       0.0       0.0                                0.00  
-    0:00:01    5843.8      0.00       0.0       0.0                                0.00  
-    0:00:01    5843.8      0.00       0.0       0.0                                0.00  
-    0:00:01    4965.0      0.00       0.0       0.0                                0.00  
-    0:00:01    4962.7      0.00       0.0       0.0                                0.00  
-    0:00:01    4962.7      0.00       0.0       0.0                                0.00  
-    0:00:01    4962.7      0.00       0.0       0.0                                0.00  
-    0:00:01    4962.7      0.00       0.0       0.0                                0.00  
-    0:00:01    4962.7      0.00       0.0       0.0                                0.00  
-    0:00:01    4962.7      0.00       0.0       0.0                                0.00  
-    0:00:01    4962.7      0.00       0.0       0.0                                0.00  
-    0:00:01    4962.7      0.00       0.0       0.0                                0.00  
+    0:00:00    6746.0      0.00       0.0     128.1                                0.00  
+    0:00:00    6746.0      0.00       0.0     128.1                                0.00  
+    0:00:00    6746.0      0.00       0.0     128.1                                0.00  
+    0:00:01    6746.0      0.00       0.0     128.1                                0.00  
+    0:00:01    6746.0      0.00       0.0     128.1                                0.00  
+    0:00:01    6008.0      0.00       0.0       0.0                                0.00  
+    0:00:01    6003.4      0.00       0.0       0.0                                0.00  
+    0:00:01    6003.4      0.00       0.0       0.0                                0.00  
+    0:00:01    6003.4      0.00       0.0       0.0                                0.00  
+    0:00:01    6003.4      0.00       0.0       0.0                                0.00  
+    0:00:01    6003.4      0.00       0.0       0.0                                0.00  
+    0:00:01    6003.4      0.00       0.0       0.0                                0.00  
+    0:00:01    6003.4      0.00       0.0       0.0                                0.00  
+    0:00:01    6003.4      0.00       0.0       0.0                                0.00  
 
 
 
@@ -367,9 +374,9 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
   --------- --------- --------- --------- --------- ------------------------- -----------
-    0:00:01    4962.7      0.00       0.0       0.0                                0.00  
-    0:00:01    4962.7      0.00       0.0       0.0                                0.00  
-    0:00:01    4906.2      0.00       0.0      14.3                                0.00  
+    0:00:01    6003.4      0.00       0.0       0.0                                0.00  
+    0:00:01    6003.4      0.00       0.0       0.0                                0.00  
+    0:00:01    5940.6      0.00       0.0      14.3                                0.00  
 
 
   Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
@@ -379,8 +386,8 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
   --------- --------- --------- --------- --------- ------------------------- -----------
-    0:00:01    4906.2      0.00       0.0      14.3                                0.00  
-    0:00:01    4907.3      0.00       0.0       0.0                                0.00  
+    0:00:01    5940.6      0.00       0.0      14.3                                0.00  
+    0:00:01    5941.6      0.00       0.0       0.0                                0.00  
 
 
   Beginning Area-Recovery Phase  (cleanup)
@@ -390,21 +397,22 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
   --------- --------- --------- --------- --------- ------------------------- -----------
-    0:00:01    4907.3      0.00       0.0       0.0                                0.00  
-    0:00:01    4907.3      0.00       0.0       0.0                                0.00  
-    0:00:01    4878.3      0.00       0.0       0.1                                0.00  
-    0:00:01    4869.9      0.00       0.0       0.1                                0.00  
-    0:00:01    4854.9      0.00       0.0       0.1                                0.00  
-    0:00:01    4846.3      0.00       0.0       0.1                                0.00  
-    0:00:01    4846.3      0.00       0.0       0.1                                0.00  
-    0:00:01    4846.3      0.00       0.0       0.1                                0.00  
-    0:00:01    4848.8      0.00       0.0       0.0                                0.00  
-    0:00:01    4848.8      0.00       0.0       0.0                                0.00  
-    0:00:01    4848.8      0.00       0.0       0.0                                0.00  
-    0:00:01    4848.8      0.00       0.0       0.0                                0.00  
-    0:00:01    4848.8      0.00       0.0       0.0                                0.00  
-    0:00:01    4848.8      0.00       0.0       0.0                                0.00  
-    0:00:01    4848.8      0.00       0.0       0.0                                0.00  
+    0:00:01    5941.6      0.00       0.0       0.0                                0.00  
+    0:00:01    5941.6      0.00       0.0       0.0                                0.00  
+    0:00:01    5912.7      0.00       0.0       0.0                                0.00  
+    0:00:01    5902.5      0.00       0.0       0.0                                0.00  
+    0:00:01    5893.6      0.00       0.0       0.0                                0.00  
+    0:00:01    5889.8      0.00       0.0       0.0                                0.00  
+    0:00:01    5889.8      0.00       0.0       0.0                                0.00  
+    0:00:01    5889.8      0.00       0.0       0.0                                0.00  
+    0:00:01    5889.8      0.00       0.0       0.0                                0.00  
+    0:00:01    5887.5      0.00       0.0       0.0                                0.00  
+    0:00:01    5887.5      0.00       0.0       0.0                                0.00  
+    0:00:01    5887.5      0.00       0.0       0.0                                0.00  
+    0:00:01    5887.5      0.00       0.0       0.0                                0.00  
+    0:00:01    5887.5      0.00       0.0       0.0                                0.00  
+    0:00:01    5887.5      0.00       0.0       0.0                                0.00  
+    0:00:01    5887.5      0.00       0.0       0.0                                0.00  
 
 
 Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 

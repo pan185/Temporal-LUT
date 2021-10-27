@@ -3,7 +3,7 @@
 Report : area
 Design : mux_enable
 Version: S-2021.06
-Date   : Mon Oct 25 19:54:16 2021
+Date   : Wed Oct 27 09:37:42 2021
 ****************************************
 
 Information: Updating design information... (UID-85)

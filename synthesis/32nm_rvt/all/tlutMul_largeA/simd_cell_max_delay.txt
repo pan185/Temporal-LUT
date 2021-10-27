@@ -6,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : simd_cell
 Version: S-2021.06
-Date   : Tue Oct 26 12:15:13 2021
+Date   : Wed Oct 27 09:41:57 2021
 ****************************************
 
 Operating Conditions: tt0p85v25c   Library: saed32rvt_tt0p85v25c
@@ -28,21 +28,21 @@ Wire Load Model Mode: enclosed
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   U_accumulator/sum__reg[0][1]/CLK (DFFARX1_RVT)          0.00       0.00 r
-  U_accumulator/sum__reg[0][1]/QN (DFFARX1_RVT)           0.11       0.11 f
-  U702/Y (INVX4_RVT)                                      0.12       0.23 r
-  U_accumulator/add_22/U1_1/CO (FADDX1_RVT)               0.30       0.53 r
-  U_accumulator/add_22/U1_2/CO (FADDX1_RVT)               0.12       0.65 r
-  U_accumulator/add_22/U1_3/CO (FADDX1_RVT)               0.12       0.77 r
-  U_accumulator/add_22/U1_4/CO (FADDX1_RVT)               0.12       0.89 r
-  U_accumulator/add_22/U1_5/CO (FADDX1_RVT)               0.12       1.01 r
-  U_accumulator/add_22/U1_6/CO (FADDX1_RVT)               0.12       1.13 r
-  U_accumulator/add_22/U1_7/CO (FADDX1_RVT)               0.13       1.26 r
-  U652/Y (NAND3X0_RVT)                                    0.08       1.33 f
-  U651/Y (AO21X1_RVT)                                     0.11       1.44 f
-  U650/Y (AO21X1_RVT)                                     0.06       1.50 f
-  U648/Y (AO21X1_RVT)                                     0.08       1.58 f
-  U_accumulator/sum__reg[0][11]/D (DFFARX1_RVT)           0.01       1.59 f
-  data arrival time                                                  1.59
+  U_accumulator/sum__reg[0][1]/QN (DFFARX1_RVT)           0.09       0.09 f
+  U653/Y (IBUFFX8_RVT)                                    0.10       0.19 r
+  U_accumulator/add_22/U1_1/CO (FADDX1_RVT)               0.29       0.48 r
+  U_accumulator/add_22/U1_2/CO (FADDX1_RVT)               0.12       0.60 r
+  U_accumulator/add_22/U1_3/CO (FADDX1_RVT)               0.12       0.72 r
+  U_accumulator/add_22/U1_4/CO (FADDX1_RVT)               0.12       0.84 r
+  U_accumulator/add_22/U1_5/CO (FADDX1_RVT)               0.12       0.96 r
+  U_accumulator/add_22/U1_6/CO (FADDX1_RVT)               0.12       1.08 r
+  U_accumulator/add_22/U1_7/CO (FADDX1_RVT)               0.13       1.21 r
+  U640/Y (NAND3X0_RVT)                                    0.08       1.29 f
+  U639/Y (AO21X1_RVT)                                     0.11       1.40 f
+  U638/Y (AO21X1_RVT)                                     0.06       1.46 f
+  U636/Y (AO21X1_RVT)                                     0.08       1.54 f
+  U_accumulator/sum__reg[0][11]/D (DFFARX1_RVT)           0.01       1.55 f
+  data arrival time                                                  1.55
 
   clock clk (rise edge)                                   2.50       2.50
   clock network delay (ideal)                             0.00       2.50
@@ -52,9 +52,9 @@ Wire Load Model Mode: enclosed
   data required time                                                 2.30
   --------------------------------------------------------------------------
   data required time                                                 2.30
-  data arrival time                                                 -1.59
+  data arrival time                                                 -1.55
   --------------------------------------------------------------------------
-  slack (MET)                                                        0.70
+  slack (MET)                                                        0.75
 
 
 1

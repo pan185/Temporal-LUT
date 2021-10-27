@@ -6,7 +6,7 @@ Report : power
         -analysis_effort low
 Design : mux_enable
 Version: S-2021.06
-Date   : Tue Oct 26 12:13:45 2021
+Date   : Wed Oct 27 09:40:28 2021
 ****************************************
 
 

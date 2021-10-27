@@ -16,7 +16,7 @@ module cmp
         if(~rst_n) begin
             cmp_[i] <= 0;
         end else begin
-            cmp_[i] <= (in[i] > rng) & enable;
+            cmp_[i] <= (in[i] == rng) & enable;
         end
     end
     end

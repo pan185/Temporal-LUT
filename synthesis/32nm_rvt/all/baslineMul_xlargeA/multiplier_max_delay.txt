@@ -1,0 +1,51 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : multiplier
+Version: S-2021.06
+Date   : Wed Oct 27 09:34:58 2021
+****************************************
+
+Operating Conditions: tt0p85v25c   Library: saed32rvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: in8[0][6] (input port)
+  Endpoint: out12[0][63][10]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  multiplier         35000                 saed32rvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 f
+  in8[0][6] (in)                                          0.00       0.00 f
+  U5791/Y (INVX1_RVT)                                     0.08       0.08 r
+  U5718/Y (INVX1_RVT)                                     0.11       0.19 f
+  U5529/Y (NAND2X0_RVT)                                   0.13       0.32 r
+  U5542/Y (INVX1_RVT)                                     0.11       0.43 f
+  U8539/Y (AO22X1_RVT)                                    0.14       0.57 f
+  U8538/Y (AO221X1_RVT)                                   0.07       0.64 f
+  mult_13_G64_G1/S2_2_4/S (FADDX1_RVT)                    0.17       0.81 r
+  mult_13_G64_G1/S4_3/S (FADDX1_RVT)                      0.17       0.98 f
+  U5995/Y (XNOR2X1_RVT)                                   0.14       1.12 f
+  U5994/Y (INVX0_RVT)                                     0.05       1.17 r
+  U5993/Y (NAND3X0_RVT)                                   0.06       1.23 f
+  U5992/Y (OA21X1_RVT)                                    0.09       1.32 f
+  U5989/Y (OA21X1_RVT)                                    0.08       1.40 f
+  U5986/Y (OAI21X1_RVT)                                   0.12       1.52 r
+  U5983/Y (AO221X1_RVT)                                   0.11       1.63 r
+  U5980/Y (XOR2X1_RVT)                                    0.12       1.75 f
+  out12[0][63][10] (out)                                  0.00       1.76 f
+  data arrival time                                                  1.76
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

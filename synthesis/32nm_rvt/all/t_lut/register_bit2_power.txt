@@ -7,7 +7,7 @@ Report : power
         -analysis_effort low
 Design : register_bit2
 Version: S-2021.06
-Date   : Mon Oct 25 19:54:51 2021
+Date   : Wed Oct 27 09:38:17 2021
 ****************************************
 
 

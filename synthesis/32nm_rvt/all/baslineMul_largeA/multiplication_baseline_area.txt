@@ -3,7 +3,7 @@
 Report : area
 Design : multiplication_baseline
 Version: S-2021.06
-Date   : Mon Oct 25 19:47:44 2021
+Date   : Wed Oct 27 09:28:44 2021
 ****************************************
 
 Information: Updating design information... (UID-85)
@@ -12,20 +12,20 @@ Library(s) Used:
     saed32rvt_tt0p85v25c (File: /cae/apps/data/saed32_edk-2018/lib/stdcell_rvt/db_nldm/saed32rvt_tt0p85v25c.db)
 
 Number of ports:                          522
-Number of nets:                          4430
-Number of cells:                         3836
-Number of combinational cells:           3316
+Number of nets:                          4390
+Number of cells:                         3796
+Number of combinational cells:           3276
 Number of sequential cells:               520
 Number of macros/black boxes:               0
-Number of buf/inv:                        246
-Number of references:                      20
+Number of buf/inv:                        268
+Number of references:                      17
 
-Combinational area:               9332.421796
-Buf/Inv area:                      312.597121
+Combinational area:               9164.432610
+Buf/Inv area:                      340.552961
 Noncombinational area:            3700.336704
 Macro/Black Box area:                0.000000
-Net Interconnect area:            2931.803572
+Net Interconnect area:            2908.918212
 
-Total cell area:                 13032.758501
-Total area:                      15964.562073
+Total cell area:                 12864.769314
+Total area:                      15773.687526
 1

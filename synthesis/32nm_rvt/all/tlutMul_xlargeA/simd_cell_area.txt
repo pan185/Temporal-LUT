@@ -1,0 +1,32 @@
+ 
+****************************************
+Report : area
+Design : simd_cell
+Version: S-2021.06
+Date   : Wed Oct 27 09:49:39 2021
+****************************************
+
+Information: Updating design information... (UID-85)
+Warning: Design 'simd_cell' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Library(s) Used:
+
+    saed32rvt_tt0p85v25c (File: /cae/apps/data/saed32_edk-2018/lib/stdcell_rvt/db_nldm/saed32rvt_tt0p85v25c.db)
+
+Number of ports:                         1035
+Number of nets:                          2748
+Number of cells:                         2395
+Number of combinational cells:           1283
+Number of sequential cells:              1112
+Number of macros/black boxes:               0
+Number of buf/inv:                         91
+Number of references:                      18
+
+Combinational area:               3601.220475
+Buf/Inv area:                      131.646593
+Noncombinational area:            7913.027721
+Macro/Black Box area:                0.000000
+Net Interconnect area:            3918.910380
+
+Total cell area:                 11514.248197
+Total area:                      15433.158577
+1

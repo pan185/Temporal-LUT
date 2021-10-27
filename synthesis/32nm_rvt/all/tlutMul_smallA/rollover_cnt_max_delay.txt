@@ -6,13 +6,13 @@ Report : timing
         -max_paths 1
 Design : rollover_cnt
 Version: S-2021.06
-Date   : Mon Oct 25 20:46:22 2021
+Date   : Wed Oct 27 09:46:39 2021
 ****************************************
 
 Operating Conditions: tt0p85v25c   Library: saed32rvt_tt0p85v25c
 Wire Load Model Mode: enclosed
 
-  Startpoint: cnt_reg[0] (rising edge-triggered flip-flop clocked by clk)
+  Startpoint: enable (input port clocked by clk)
   Endpoint: rollover (output port clocked by clk)
   Path Group: clk
   Path Type: max
@@ -25,11 +25,12 @@ Wire Load Model Mode: enclosed
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  cnt_reg[0]/CLK (DFFARX1_RVT)             0.00       0.00 r
-  cnt_reg[0]/QN (DFFARX1_RVT)              0.12       0.12 f
-  U11/Y (NOR4X1_RVT)                       0.16       0.28 r
-  rollover (out)                           0.01       0.28 r
-  data arrival time                                   0.28
+  input external delay                     0.25       0.25 r
+  enable (in)                              0.00       0.25 r
+  U18/Y (AND2X1_RVT)                       0.06       0.31 r
+  U17/Y (AND4X1_RVT)                       0.09       0.40 r
+  rollover (out)                           0.01       0.40 r
+  data arrival time                                   0.40
 
   clock clk (rise edge)                    2.50       2.50
   clock network delay (ideal)              0.00       2.50
@@ -38,9 +39,9 @@ Wire Load Model Mode: enclosed
   data required time                                  1.85
   -----------------------------------------------------------
   data required time                                  1.85
-  data arrival time                                  -0.28
+  data arrival time                                  -0.40
   -----------------------------------------------------------
-  slack (MET)                                         1.57
+  slack (MET)                                         1.45
 
 
 1

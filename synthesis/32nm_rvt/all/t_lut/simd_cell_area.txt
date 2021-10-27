@@ -3,7 +3,7 @@
 Report : area
 Design : simd_cell
 Version: S-2021.06
-Date   : Mon Oct 25 19:55:55 2021
+Date   : Wed Oct 27 09:39:21 2021
 ****************************************
 
 Information: Updating design information... (UID-85)

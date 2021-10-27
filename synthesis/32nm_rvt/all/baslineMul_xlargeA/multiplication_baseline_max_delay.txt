@@ -1,0 +1,72 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : multiplication_baseline
+Version: S-2021.06
+Date   : Wed Oct 27 09:34:28 2021
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: tt0p85v25c   Library: saed32rvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: U_reg_weight/out__reg[0][4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: U_reg_product/out__reg[0][44][11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  multiplication_baseline
+                     35000                 saed32rvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  U_reg_weight/out__reg[0][4]/CLK (DFFARX1_RVT)           0.00 #     0.00 r
+  U_reg_weight/out__reg[0][4]/QN (DFFARX1_RVT)            0.15       0.15 r
+  U6608/Y (INVX1_RVT)                                     0.05       0.21 f
+  U6050/Y (INVX1_RVT)                                     0.07       0.27 r
+  U5405/Y (INVX1_RVT)                                     0.09       0.36 f
+  U4000/Y (NAND2X0_RVT)                                   0.10       0.46 r
+  U6602/Y (XNOR2X1_RVT)                                   0.14       0.61 r
+  U_multipler/mult_13_G45_G1/S2_2_3/S (FADDX1_RVT)        0.16       0.77 f
+  U_multipler/mult_13_G45_G1/S4_2/S (FADDX1_RVT)          0.17       0.94 r
+  U6041/Y (XOR2X1_RVT)                                    0.13       1.08 f
+  U2190/Y (NAND3X0_RVT)                                   0.07       1.15 r
+  U5395/Y (INVX1_RVT)                                     0.04       1.20 f
+  U2189/Y (AND2X1_RVT)                                    0.07       1.27 f
+  U2188/Y (OA22X1_RVT)                                    0.09       1.36 f
+  U2187/Y (AND2X1_RVT)                                    0.07       1.43 f
+  U2186/Y (OA22X1_RVT)                                    0.09       1.52 f
+  U2185/Y (AND2X1_RVT)                                    0.07       1.59 f
+  U2184/Y (OAI22X1_RVT)                                   0.10       1.69 r
+  U2183/Y (AO21X1_RVT)                                    0.05       1.75 r
+  U2181/Y (AND2X1_RVT)                                    0.07       1.82 r
+  U2180/Y (OR2X1_RVT)                                     0.07       1.88 r
+  U2179/Y (AO22X1_RVT)                                    0.07       1.95 r
+  U6044/Y (XOR2X1_RVT)                                    0.12       2.07 f
+  U_reg_product/out__reg[0][44][11]/D (DFFARX1_RVT)       0.01       2.08 f
+  data arrival time                                                  2.08
+
+  clock clk (rise edge)                                   2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.15       2.35
+  U_reg_product/out__reg[0][44][11]/CLK (DFFARX1_RVT)     0.00       2.35 r
+  library setup time                                     -0.06       2.29
+  data required time                                                 2.29
+  --------------------------------------------------------------------------
+  data required time                                                 2.29
+  data arrival time                                                 -2.08
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.21
+
+
+1

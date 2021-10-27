@@ -1,0 +1,47 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rollover_cnt
+Version: S-2021.06
+Date   : Wed Oct 27 09:44:09 2021
+****************************************
+
+Operating Conditions: tt0p85v25c   Library: saed32rvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: enable (input port clocked by clk)
+  Endpoint: rollover (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  rollover_cnt       ForQA                 saed32rvt_tt0p85v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.25       0.25 r
+  enable (in)                              0.00       0.25 r
+  U18/Y (AND2X1_RVT)                       0.06       0.31 r
+  U17/Y (AND4X1_RVT)                       0.09       0.40 r
+  rollover (out)                           0.01       0.40 r
+  data arrival time                                   0.40
+
+  clock clk (rise edge)                    2.50       2.50
+  clock network delay (ideal)              0.00       2.50
+  clock uncertainty                       -0.15       2.35
+  output external delay                   -0.50       1.85
+  data required time                                  1.85
+  -----------------------------------------------------------
+  data required time                                  1.85
+  data arrival time                                  -0.40
+  -----------------------------------------------------------
+  slack (MET)                                         1.45
+
+
+1

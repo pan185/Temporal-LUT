@@ -2,8 +2,8 @@
 //`define WORKLOAD1
 // `define CONFIG2
 `define WORKLOAD_SMALL_A
-// `define WORKLOAD_MEDIAN_A
-// `define WORKLOAD_LARGE_A
+//`define WORKLOAD_MEDIAN_A
+//`define WORKLOAD_LARGE_A
 
 
 `ifdef CONFIG1

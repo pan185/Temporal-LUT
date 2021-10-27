@@ -22,7 +22,7 @@ module rollover_cnt
     always_comb begin : proc_2
         // grayOut <= (cnt>>1) ^ cnt;
         cntOut <= cnt;
-	rollover = (cnt=='1);
+	rollover = (cnt=='0)&enable;
     end
 
 endmodule

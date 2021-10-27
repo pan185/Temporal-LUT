@@ -25,7 +25,7 @@ module multiplication_baseline
 	.in(in),
 	.out(in_reg));
     //weight register
-    register_input U_reg_weight(
+    register_weight U_reg_weight(
 	.clk(clk),
 	.rst_n(rst_n),
 	.in(weight),
@@ -41,6 +41,7 @@ module multiplication_baseline
     register_product U_reg_product(
 	.clk(clk),
 	.rst_n(rst_n),
+	.enable('1),
 	.in(out_comb),
 	.out(out_reg));
 

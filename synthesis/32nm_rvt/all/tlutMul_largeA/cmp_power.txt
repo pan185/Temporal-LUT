@@ -7,7 +7,7 @@ Report : power
         -analysis_effort low
 Design : cmp
 Version: S-2021.06
-Date   : Tue Oct 26 12:12:58 2021
+Date   : Wed Oct 27 09:39:57 2021
 ****************************************
 
 
@@ -33,12 +33,12 @@ Power-specific unit information :
     Leakage Power Units = 1pW
 
 
-  Cell Internal Power  =  69.4119 uW   (93%)
-  Net Switching Power  =   5.2893 uW    (7%)
+  Cell Internal Power  =  74.7408 uW   (94%)
+  Net Switching Power  =   4.4684 uW    (6%)
                          ---------
-Total Dynamic Power    =  74.7013 uW  (100%)
+Total Dynamic Power    =  79.2091 uW  (100%)
 
-Cell Leakage Power     =  21.3360 uW
+Cell Leakage Power     =  20.1651 uW
 
 
                  Internal         Switching           Leakage            Total
@@ -48,9 +48,9 @@ io_pad             0.0000            0.0000            0.0000            0.0000 
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
 clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
-register          56.0095        3.5192e-02        7.7513e+06           63.7960  (  66.43%)
+register          56.5664        9.4036e-03        7.3168e+06           63.8927  (  64.30%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational     13.4024            5.2541        1.3585e+07           32.2413  (  33.57%)
+combinational     18.1743            4.4589        1.2848e+07           35.4815  (  35.70%)
 --------------------------------------------------------------------------------------------------
-Total             69.4119 uW         5.2893 uW     2.1336e+07 pW        96.0373 uW
+Total             74.7408 uW         4.4684 uW     2.0165e+07 pW        99.3742 uW
 1

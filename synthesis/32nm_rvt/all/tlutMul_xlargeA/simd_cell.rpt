@@ -1,0 +1,422 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+                 Version S-2021.06 for linux64 - Jun 17, 2021 
+
+                    Copyright (c) 1988 - 2021 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+# ECE552 Extra Credit
+read_file -format sverilog {simd_cell.sv}
+Loading db file '/cae/apps/data/saed32_edk-2018/lib/stdcell_rvt/db_nldm/saed32rvt_tt0p85v25c.db'
+Loading db file '/cae/apps/data/saed32_edk-2018/lib/io_std/db_nldm/saed32io_wb_tt1p05v25c_2p5v.db'
+Loading db file '/cae/apps/data/synopsys-2021/syn/S-2021.06/libraries/syn/gtech.db'
+Loading db file '/cae/apps/data/synopsys-2021/syn/S-2021.06/libraries/syn/standard.sldb'
+  Loading link library 'saed32rvt_tt0p85v25c'
+  Loading link library 'saed32io_wb_tt1p05v25c_2p5v'
+  Loading link library 'gtech'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /filespace/z/zpan52/Desktop/syn_script/synthesis/32nm_rvt/all/tlutMul_xlargeA/simd_cell.sv
+Opening include file DEF.sv
+Opening include file accumulator_weight.sv
+Opening include file DEF.sv
+Opening include file cmp.sv
+Opening include file DEF.sv
+Opening include file register_product.sv
+Opening include file DEF.sv
+Opening include file register_weight.sv
+Opening include file DEF.sv
+Opening include file register_input.sv
+Opening include file DEF.sv
+Opening include file rollover_cnt.sv
+Opening include file DEF.sv
+
+Inferred memory devices in process
+	in routine accumulator_weight line 15 in file
+		'accumulator_weight.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      sum__reg       | Flip-flop |  12   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine cmp line 15 in file
+		'cmp.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      cmp__reg       | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine register_product line 16 in file
+		'register_product.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      out__reg       | Flip-flop |  768  |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine register_weight line 13 in file
+		'register_weight.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      out__reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine register_input line 13 in file
+		'register_input.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      out__reg       | Flip-flop |  256  |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine rollover_cnt line 14 in file
+		'rollover_cnt.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       cnt_reg       | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Loaded 7 designs.
+Current design is 'accumulator_weight'.
+accumulator_weight cmp register_product register_weight register_input rollover_cnt simd_cell
+set current_design simd_cell
+simd_cell
+link
+
+  Linking design 'simd_cell'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  simd_cell                   /filespace/z/zpan52/Desktop/syn_script/synthesis/32nm_rvt/all/tlutMul_xlargeA/simd_cell.db
+  saed32rvt_tt0p85v25c (library) /cae/apps/data/saed32_edk-2018/lib/stdcell_rvt/db_nldm/saed32rvt_tt0p85v25c.db
+  saed32io_wb_tt1p05v25c_2p5v (library) /cae/apps/data/saed32_edk-2018/lib/io_std/db_nldm/saed32io_wb_tt1p05v25c_2p5v.db
+  * (6 designs)               /filespace/z/zpan52/Desktop/syn_script/synthesis/32nm_rvt/all/tlutMul_xlargeA/accumulator_weight.db, etc
+
+1
+###########################################
+# Define clock and set don't mess with it #
+###########################################
+# clk with frequency of 400 MHz
+create_clock -name "clk" -period 2.5 -waveform { 0 1.25 } { clk }
+1
+set_dont_touch_network [find port clk]
+1
+# pointer to all inputs except clk
+set prim_inputs [remove_from_collection [all_inputs] [find port clk]]
+{rst_n enable input_bin[63][3] input_bin[63][2] input_bin[63][1] input_bin[63][0] input_bin[62][3] input_bin[62][2] input_bin[62][1] input_bin[62][0] input_bin[61][3] input_bin[61][2] input_bin[61][1] input_bin[61][0] input_bin[60][3] input_bin[60][2] input_bin[60][1] input_bin[60][0] input_bin[59][3] input_bin[59][2] input_bin[59][1] input_bin[59][0] input_bin[58][3] input_bin[58][2] input_bin[58][1] input_bin[58][0] input_bin[57][3] input_bin[57][2] input_bin[57][1] input_bin[57][0] input_bin[56][3] input_bin[56][2] input_bin[56][1] input_bin[56][0] input_bin[55][3] input_bin[55][2] input_bin[55][1] input_bin[55][0] input_bin[54][3] input_bin[54][2] input_bin[54][1] input_bin[54][0] input_bin[53][3] input_bin[53][2] input_bin[53][1] input_bin[53][0] input_bin[52][3] input_bin[52][2] input_bin[52][1] input_bin[52][0] input_bin[51][3] input_bin[51][2] input_bin[51][1] input_bin[51][0] input_bin[50][3] input_bin[50][2] input_bin[50][1] input_bin[50][0] input_bin[49][3] input_bin[49][2] input_bin[49][1] input_bin[49][0] input_bin[48][3] input_bin[48][2] input_bin[48][1] input_bin[48][0] input_bin[47][3] input_bin[47][2] input_bin[47][1] input_bin[47][0] input_bin[46][3] input_bin[46][2] input_bin[46][1] input_bin[46][0] input_bin[45][3] input_bin[45][2] input_bin[45][1] input_bin[45][0] input_bin[44][3] input_bin[44][2] input_bin[44][1] input_bin[44][0] input_bin[43][3] input_bin[43][2] input_bin[43][1] input_bin[43][0] input_bin[42][3] input_bin[42][2] input_bin[42][1] input_bin[42][0] input_bin[41][3] input_bin[41][2] input_bin[41][1] input_bin[41][0] input_bin[40][3] input_bin[40][2] input_bin[40][1] input_bin[40][0] input_bin[39][3] input_bin[39][2] ...}
+# pointer to all inputs except clk and rst_n
+set prim_inputs_no_rst [remove_from_collection $prim_inputs [find port rst_n]]
+{enable input_bin[63][3] input_bin[63][2] input_bin[63][1] input_bin[63][0] input_bin[62][3] input_bin[62][2] input_bin[62][1] input_bin[62][0] input_bin[61][3] input_bin[61][2] input_bin[61][1] input_bin[61][0] input_bin[60][3] input_bin[60][2] input_bin[60][1] input_bin[60][0] input_bin[59][3] input_bin[59][2] input_bin[59][1] input_bin[59][0] input_bin[58][3] input_bin[58][2] input_bin[58][1] input_bin[58][0] input_bin[57][3] input_bin[57][2] input_bin[57][1] input_bin[57][0] input_bin[56][3] input_bin[56][2] input_bin[56][1] input_bin[56][0] input_bin[55][3] input_bin[55][2] input_bin[55][1] input_bin[55][0] input_bin[54][3] input_bin[54][2] input_bin[54][1] input_bin[54][0] input_bin[53][3] input_bin[53][2] input_bin[53][1] input_bin[53][0] input_bin[52][3] input_bin[52][2] input_bin[52][1] input_bin[52][0] input_bin[51][3] input_bin[51][2] input_bin[51][1] input_bin[51][0] input_bin[50][3] input_bin[50][2] input_bin[50][1] input_bin[50][0] input_bin[49][3] input_bin[49][2] input_bin[49][1] input_bin[49][0] input_bin[48][3] input_bin[48][2] input_bin[48][1] input_bin[48][0] input_bin[47][3] input_bin[47][2] input_bin[47][1] input_bin[47][0] input_bin[46][3] input_bin[46][2] input_bin[46][1] input_bin[46][0] input_bin[45][3] input_bin[45][2] input_bin[45][1] input_bin[45][0] input_bin[44][3] input_bin[44][2] input_bin[44][1] input_bin[44][0] input_bin[43][3] input_bin[43][2] input_bin[43][1] input_bin[43][0] input_bin[42][3] input_bin[42][2] input_bin[42][1] input_bin[42][0] input_bin[41][3] input_bin[41][2] input_bin[41][1] input_bin[41][0] input_bin[40][3] input_bin[40][2] input_bin[40][1] input_bin[40][0] input_bin[39][3] input_bin[39][2] input_bin[39][1] ...}
+# Set clk uncertainty (skew)
+set_clock_uncertainty 0.15 clk
+1
+#########################################
+# Set input delay & drive on all inputs #
+#########################################
+set_input_delay -clock clk 0.25 [copy_collection $prim_inputs]
+1
+#set_driving_cell -lib_cell ND2D2BWP -library tcbn40lpbwptc $prim_inputs_no_rst
+# rst_n goes to many places so don't touch
+set_dont_touch_network [find port rst_n]
+1
+##########################################
+# Set output delay & load on all outputs #
+##########################################
+set_output_delay -clock clk 0.5 [all_outputs]
+1
+set_load 0.1 [all_outputs]
+1
+#############################################################
+# Wire load model allows it to estimate internal parasitics #
+#############################################################
+# set_wire_load_model -name TSMC32K_Lowk_Conservative -library tcbn40lpbwptc
+######################################################
+# Max transition time is important for Hot-E reasons #
+######################################################
+set_max_transition 0.1 [current_design]
+1
+########################################
+# Now actually synthesize for 1st time #
+########################################
+compile -map_effort medium
+Warning: Setting attribute 'fix_multiple_port_nets' on design 'simd_cell'. (UIO-59)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | S-2021.06-DWBB_202106.0 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 3 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Warning: Operating condition tt0p85v25c set on design simd_cell has different process,
+voltage and temperatures parameters than the parameters at which target library 
+saed32io_wb_tt1p05v25c_2p5v is characterized. Delays may be inaccurate as a result. (OPT-998)
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'rollover_cnt'
+  Processing 'register_product'
+  Processing 'accumulator_weight'
+  Processing 'cmp'
+  Processing 'register_weight'
+  Processing 'register_input'
+  Processing 'simd_cell'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'accumulator_weight_DW01_add_0_DW01_add_1'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:04   13262.5      0.00       0.0       0.0                          
+    0:00:04   13262.5      0.00       0.0       0.0                          
+    0:00:04   13262.5      0.00       0.0       0.0                          
+    0:00:04   13262.5      0.00       0.0       0.0                          
+    0:00:04   13262.5      0.00       0.0       0.0                          
+    0:00:04   11652.5      0.00       0.0       0.0                          
+    0:00:04   11652.5      0.00       0.0       0.0                          
+    0:00:04   11652.5      0.00       0.0       0.0                          
+    0:00:04   11652.5      0.00       0.0       0.0                          
+    0:00:04   11652.5      0.00       0.0       0.0                          
+    0:00:04   11652.5      0.00       0.0       0.0                          
+    0:00:04   11652.5      0.00       0.0       0.0                          
+    0:00:04   11652.5      0.00       0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:04   11652.5      0.00       0.0       0.0                          
+    0:00:04   11652.5      0.00       0.0       0.0                          
+    0:00:04   11652.5      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:04   11652.5      0.00       0.0       0.0                          
+    0:00:04   11652.5      0.00       0.0       0.0                          
+    0:00:04   11630.9      0.00       0.0       0.0                          
+    0:00:04   11608.5      0.00       0.0       0.0                          
+    0:00:04   11608.5      0.00       0.0       0.0                          
+    0:00:04   11608.5      0.00       0.0       0.0                          
+    0:00:04   11608.5      0.00       0.0       0.0                          
+    0:00:05   11608.5      0.00       0.0       0.0                          
+    0:00:05   11608.5      0.00       0.0       0.0                          
+    0:00:05   11608.5      0.00       0.0       0.0                          
+    0:00:05   11608.5      0.00       0.0       0.0                          
+    0:00:05   11608.5      0.00       0.0       0.0                          
+    0:00:05   11608.5      0.00       0.0       0.0                          
+    0:00:05   11608.5      0.00       0.0       0.0                          
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'simd_cell' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+1
+check_design
+ 
+****************************************
+check_design summary:
+Version:     S-2021.06
+Date:        Wed Oct 27 09:49:36 2021
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      6
+    Unconnected ports (LINT-28)                                     6
+
+Cells                                                               6
+    Connected to power or ground (LINT-32)                          5
+    Nets connected to multiple pins on same cell (LINT-33)          1
+--------------------------------------------------------------------------------
+
+Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_1', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_1', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_1', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_1', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_1', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_1', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_weight', the same net is connected to more than one pin on submodule 'add_22'. (LINT-33)
+   Net 'n1' is connected to pins 'B[11]', 'B[10]'', 'B[9]', 'B[8]', 'CI'.
+1
+# Unflatten design now that its compiled
+ungroup -all -flatten
+Information: Updating graph... (UID-83)
+Warning: Design 'simd_cell' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+1
+# force hold time to be met for all flops
+set_fix_hold clk
+1
+# Compile again with higher effort
+compile -map_effort high
+
+Information: There are 1 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Warning: Operating condition tt0p85v25c set on design simd_cell has different process,
+voltage and temperatures parameters than the parameters at which target library 
+saed32io_wb_tt1p05v25c_2p5v is characterized. Delays may be inaccurate as a result. (OPT-998)
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'simd_cell'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Mapping Optimizations  (High effort)
+  -------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:01   12877.0      0.00       0.0     151.2                                0.00  
+    0:00:01   12877.0      0.00       0.0     151.2                                0.00  
+    0:00:01   12877.0      0.00       0.0     151.2                                0.00  
+    0:00:01   12877.0      0.00       0.0     151.2                                0.00  
+    0:00:01   12877.0      0.00       0.0     151.2                                0.00  
+    0:00:02   11666.7      0.00       0.0       0.0                                0.00  
+    0:00:02   11666.7      0.00       0.0       0.0                                0.00  
+    0:00:02   11666.7      0.00       0.0       0.0                                0.00  
+    0:00:02   11666.7      0.00       0.0       0.0                                0.00  
+    0:00:02   11666.7      0.00       0.0       0.0                                0.00  
+    0:00:02   11666.7      0.00       0.0       0.0                                0.00  
+    0:00:02   11666.7      0.00       0.0       0.0                                0.00  
+    0:00:02   11666.7      0.00       0.0       0.0                                0.00  
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:02   11666.7      0.00       0.0       0.0                                0.00  
+    0:00:02   11666.7      0.00       0.0       0.0                                0.00  
+    0:00:02   11558.7      0.00       0.0       0.0                                0.00  
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:02   11558.7      0.00       0.0       0.0                                0.00  
+    0:00:02   11558.7      0.00       0.0       0.0                                0.00  
+    0:00:02   11536.4      0.00       0.0       0.0                                0.00  
+    0:00:02   11521.9      0.00       0.0       0.0                                0.00  
+    0:00:02   11515.5      0.00       0.0       0.0                                0.00  
+    0:00:02   11514.2      0.00       0.0       0.0                                0.00  
+    0:00:02   11514.2      0.00       0.0       0.0                                0.00  
+    0:00:02   11514.2      0.00       0.0       0.0                                0.00  
+    0:00:02   11514.2      0.00       0.0       0.0                                0.00  
+    0:00:02   11514.2      0.00       0.0       0.0                                0.00  
+    0:00:02   11514.2      0.00       0.0       0.0                                0.00  
+    0:00:02   11514.2      0.00       0.0       0.0                                0.00  
+    0:00:02   11514.2      0.00       0.0       0.0                                0.00  
+    0:00:02   11514.2      0.00       0.0       0.0                                0.00  
+    0:00:02   11514.2      0.00       0.0       0.0                                0.00  
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'simd_cell' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+1
+check_design
+1
+#############################################
+# Take a look at area, max, and min timings #
+#############################################
+report_area > simd_cell_area.txt
+report_power > simd_cell_power.txt
+report_timing -delay min > simd_cell_min_delay.txt
+report_timing -delay max > simd_cell_max_delay.txt
+#### write out final netlist ######
+write -format verilog simd_cell -output simd_cell.vg
+Writing verilog file '/filespace/z/zpan52/Desktop/syn_script/synthesis/32nm_rvt/all/tlutMul_xlargeA/simd_cell.vg'.
+1
+exit
+Memory usage for this session 165 Mbytes.
+Memory usage for this session including child processes 165 Mbytes.
+CPU usage for this session 11 seconds ( 0.00 hours ).
+Elapsed time for this session 13 seconds ( 0.00 hours ).
+
+Thank you...

@@ -71,7 +71,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine register_product line 15 in file
+	in routine register_product line 16 in file
 		'register_product.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -79,8 +79,6 @@ Inferred memory devices in process
 |      out__reg       | Flip-flop |  384  |  Y  | N  | Y  | N  | N  | N  | N  |
 ===============================================================================
 Presto compilation completed successfully.
-Error:  /filespace/z/zpan52/Desktop/syn_script/synthesis/32nm_rvt/all/baslineMul_largeA/multiplication_baseline.sv:28: The width of port in on instance U_reg_weight of design register_input is inconsistent with other instantiations of the same design. (ELAB-369)
-Error:  /filespace/z/zpan52/Desktop/syn_script/synthesis/32nm_rvt/all/baslineMul_largeA/multiplication_baseline.sv:28: The width of port out on instance U_reg_weight of design register_input is inconsistent with other instantiations of the same design. (ELAB-369)
 Loaded 5 designs.
 Current design is 'register_input'.
 register_input register_weight register_product multiplier multiplication_baseline
@@ -154,7 +152,7 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 ============================================================================
 
 
-Information: There are 120 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+Information: There are 64 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
 
 
 Warning: Operating condition tt0p85v25c set on design multiplication_baseline has different process,
@@ -165,7 +163,8 @@ saed32io_wb_tt1p05v25c_2p5v is characterized. Delays may be inaccurate as a resu
   ------------------------
   Processing 'register_product'
   Processing 'multiplier'
-  Processing 'register_input_0'
+  Processing 'register_weight'
+  Processing 'register_input'
   Processing 'multiplication_baseline'
 
   Updating timing information
@@ -262,22 +261,22 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:05   14024.7      0.22       8.1       0.0                          
-    0:00:05   14024.7      0.22       8.1       0.0                          
-    0:00:07   16348.8      0.12       3.6       0.0                          
-    0:00:07   16348.8      0.12       3.6       0.0                          
-    0:00:07   16348.8      0.12       3.6       0.0                          
-    0:00:07   16348.8      0.12       3.6       0.0                          
-    0:00:07   16348.8      0.12       3.6       0.0                          
-    0:00:08   14737.8      0.00       0.0       0.0                          
-    0:00:08   14702.2      0.00       0.0       0.0                          
-    0:00:08   14702.2      0.00       0.0       0.0                          
-    0:00:08   14702.2      0.00       0.0       0.0                          
-    0:00:08   14702.2      0.00       0.0       0.0                          
-    0:00:08   14702.2      0.00       0.0       0.0                          
-    0:00:08   14702.2      0.00       0.0       0.0                          
-    0:00:08   14702.2      0.00       0.0       0.0                          
-    0:00:08   14702.2      0.00       0.0       0.0                          
+    0:00:07   14148.2      0.29      13.9     757.9                          
+    0:00:07   14148.2      0.29      13.9     757.9                          
+    0:00:10   16826.6      0.00       0.0      11.7                          
+    0:00:10   16826.6      0.00       0.0      11.7                          
+    0:00:10   16826.6      0.00       0.0      11.7                          
+    0:00:10   16826.6      0.00       0.0      11.7                          
+    0:00:10   16826.6      0.00       0.0      11.7                          
+    0:00:11   14917.2      0.00       0.0      11.7                          
+    0:00:11   14917.2      0.00       0.0      11.7                          
+    0:00:11   14917.2      0.00       0.0      11.7                          
+    0:00:11   14917.2      0.00       0.0      11.7                          
+    0:00:11   14917.2      0.00       0.0      11.7                          
+    0:00:11   14941.9      0.00       0.0       0.0                          
+    0:00:11   14941.9      0.00       0.0       0.0                          
+    0:00:11   14941.9      0.00       0.0       0.0                          
+    0:00:11   14941.9      0.00       0.0       0.0                          
 
 
 
@@ -288,9 +287,9 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:08   14702.2      0.00       0.0       0.0                          
-    0:00:08   14702.2      0.00       0.0       0.0                          
-    0:00:08   14702.2      0.00       0.0       0.0                          
+    0:00:11   14941.9      0.00       0.0       0.0                          
+    0:00:11   14941.9      0.00       0.0       0.0                          
+    0:00:11   14941.9      0.00       0.0       0.0                          
 
 
   Beginning Area-Recovery Phase  (cleanup)
@@ -300,25 +299,22 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:08   14702.2      0.00       0.0       0.0                          
-    0:00:08   14702.2      0.00       0.0       0.0                          
-    0:00:08   14655.7      0.00       0.0       1.2                          
-    0:00:09   14638.9      0.00       0.0       1.6                          
-    0:00:09   14615.6      0.00       0.0       1.9                          
-    0:00:09   14614.3      0.00       0.0       1.9                          
-    0:00:09   14614.3      0.00       0.0       1.9                          
-    0:00:09   14614.3      0.00       0.0       1.9                          
-    0:00:09   14620.7      0.00       0.0       1.5 U_multipler/in8[0][7]    
-    0:00:09   14641.2      0.00       0.0       0.1 U_multipler/net8838      
-    0:00:09   14640.0      0.00       0.0       0.0                          
-    0:00:09   14625.2      0.00       0.0       0.0                          
-    0:00:09   14622.4      0.00       0.0       0.0                          
-    0:00:09   14622.4      0.00       0.0       0.0                          
-    0:00:09   14622.4      0.00       0.0       0.0                          
-    0:00:09   14622.4      0.00       0.0       0.0                          
-    0:00:09   14622.4      0.00       0.0       0.0                          
-    0:00:09   14622.4      0.00       0.0       0.0                          
-    0:00:09   14622.4      0.00       0.0       0.0                          
+    0:00:11   14941.9      0.00       0.0       0.0                          
+    0:00:11   14941.9      0.00       0.0       0.0                          
+    0:00:11   14889.8      0.00       0.0       0.5                          
+    0:00:11   14873.3      0.00       0.0       0.5                          
+    0:00:12   14856.2      0.00       0.0       0.6                          
+    0:00:12   14855.0      0.00       0.0       0.6                          
+    0:00:12   14853.7      0.00       0.0       0.6                          
+    0:00:12   14853.7      0.00       0.0       0.6                          
+    0:00:12   14864.6      0.00       0.0       0.0                          
+    0:00:12   14856.5      0.00       0.0       0.0                          
+    0:00:12   14856.5      0.00       0.0       0.0                          
+    0:00:12   14856.5      0.00       0.0       0.0                          
+    0:00:12   14856.5      0.00       0.0       0.0                          
+    0:00:12   14856.5      0.00       0.0       0.0                          
+    0:00:12   14856.5      0.00       0.0       0.0                          
+    0:00:12   14856.5      0.00       0.0       0.0                          
 
 
 Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
@@ -332,19 +328,50 @@ check_design
 ****************************************
 check_design summary:
 Version:     S-2021.06
-Date:        Mon Oct 25 19:47:40 2021
+Date:        Wed Oct 27 09:28:39 2021
 ****************************************
 
                    Name                                            Total
 --------------------------------------------------------------------------------
-Inputs/Outputs                                                    224
-    Unconnected ports (LINT-28)                                   224
+Inputs/Outputs                                                    255
+    Unconnected ports (LINT-28)                                   255
 
-Cells                                                             376
-    Connected to power or ground (LINT-32)                        312
-    Nets connected to multiple pins on same cell (LINT-33)         64
+Cells                                                             289
+    Connected to power or ground (LINT-32)                        224
+    Nets connected to multiple pins on same cell (LINT-33)         65
 --------------------------------------------------------------------------------
 
+Warning: In design 'register_product', port 'enable[31]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[30]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[29]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[28]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[25]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[23]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[22]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[21]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[20]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[17]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'register_product', port 'enable[1]' is not connected to any nets. (LINT-28)
 Warning: In design 'multiplier_DW02_mult_0', port 'TC' is not connected to any nets. (LINT-28)
 Warning: In design 'multiplier_DW01_add_0', port 'A[9]' is not connected to any nets. (LINT-28)
 Warning: In design 'multiplier_DW01_add_0', port 'B[2]' is not connected to any nets. (LINT-28)
@@ -569,246 +596,70 @@ Warning: In design 'multiplier_DW01_add_31', port 'B[1]' is not connected to any
 Warning: In design 'multiplier_DW01_add_31', port 'B[0]' is not connected to any nets. (LINT-28)
 Warning: In design 'multiplier_DW01_add_31', port 'CI' is not connected to any nets. (LINT-28)
 Warning: In design 'multiplier_DW01_add_31', port 'CO' is not connected to any nets. (LINT-28)
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[31][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[31][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[31][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[31][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[30][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[30][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[30][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[30][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[29][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[29][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[29][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[29][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[28][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[28][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[28][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[28][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[27][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[27][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[27][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[27][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[26][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[26][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[26][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[26][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[25][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[25][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[25][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[25][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[24][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[24][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[24][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[24][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[23][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[23][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[23][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[23][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[22][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[22][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[22][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[22][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[21][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[21][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[21][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[21][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[20][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[20][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[20][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[20][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[19][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[19][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[19][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[19][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[18][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[18][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[18][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[18][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[17][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[17][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[17][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[17][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[16][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[16][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[16][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[16][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[15][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[15][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[15][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[15][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[14][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[14][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[14][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[14][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[13][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[13][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[13][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[13][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[12][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[12][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[12][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[12][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[11][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[11][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[11][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[11][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[10][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[10][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[10][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[10][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[9][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[9][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[9][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[9][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[8][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[8][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[8][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[8][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[7][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[7][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[7][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[7][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[6][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[6][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[6][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[6][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[5][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[5][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[5][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[5][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[4][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[4][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[4][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[4][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[3][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[3][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[3][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[3][0]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[2][3]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[2][2]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[2][1]' is connected to logic 0. 
-Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_weight' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'in[2][0]' is connected to logic 0. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[31]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[30]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[29]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[28]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[27]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[26]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[25]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[24]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[23]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[22]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[21]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[20]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[19]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[18]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[17]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[16]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[15]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[14]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[13]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[12]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[11]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[10]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[9]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[8]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[7]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[6]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[5]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[4]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[3]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[2]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[1]' is connected to logic 1. 
+Warning: In design 'multiplication_baseline', a pin on submodule 'U_reg_product' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'enable[0]' is connected to logic 1. 
 Warning: In design 'multiplier', a pin on submodule 'mult_13_G32_G1' is connected to logic 1 or logic 0. (LINT-32)
    Pin 'TC' is connected to logic 0. 
 Warning: In design 'multiplier', a pin on submodule 'mult_13_G31_G1' is connected to logic 1 or logic 0. (LINT-32)
@@ -1193,100 +1044,102 @@ Warning: In design 'multiplier_DW02_mult_31', a pin on submodule 'FS_1' is conne
    Pin 'B[0]' is connected to logic 0. 
 Warning: In design 'multiplier_DW02_mult_31', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
    Pin 'CI' is connected to logic 0. 
+Warning: In design 'multiplication_baseline', the same net is connected to more than one pin on submodule 'U_reg_product'. (LINT-33)
+   Net '*Logic1*' is connected to pins 'enable[31]', 'enable[30]'', 'enable[29]', 'enable[28]', 'enable[27]', 'enable[26]', 'enable[25]', 'enable[24]', 'enable[23]', 'enable[22]', 'enable[21]', 'enable[20]', 'enable[19]', 'enable[18]', 'enable[17]', 'enable[16]', 'enable[15]', 'enable[14]', 'enable[13]', 'enable[12]', 'enable[11]', 'enable[10]', 'enable[9]', 'enable[8]', 'enable[7]', 'enable[6]', 'enable[5]', 'enable[4]', 'enable[3]', 'enable[2]', 'enable[1]', 'enable[0]'.
 Warning: In design 'multiplier_DW02_mult_0', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
-   Net 'n8' is connected to pins 'A[9]', 'B[2]''.
+   Net 'n9' is connected to pins 'A[9]', 'B[2]''.
 Warning: In design 'multiplier_DW02_mult_0', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
    Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
 Warning: In design 'multiplier_DW02_mult_1', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
-   Net 'n8' is connected to pins 'A[9]', 'B[2]''.
+   Net 'n9' is connected to pins 'A[9]', 'B[2]''.
 Warning: In design 'multiplier_DW02_mult_1', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
    Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
 Warning: In design 'multiplier_DW02_mult_2', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
-   Net 'n8' is connected to pins 'A[9]', 'B[2]''.
+   Net 'n9' is connected to pins 'A[9]', 'B[2]''.
 Warning: In design 'multiplier_DW02_mult_2', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
    Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
 Warning: In design 'multiplier_DW02_mult_3', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
-   Net 'n8' is connected to pins 'A[9]', 'B[2]''.
+   Net 'n9' is connected to pins 'A[9]', 'B[2]''.
 Warning: In design 'multiplier_DW02_mult_3', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
    Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
 Warning: In design 'multiplier_DW02_mult_4', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
-   Net 'n8' is connected to pins 'A[9]', 'B[2]''.
+   Net 'n9' is connected to pins 'A[9]', 'B[2]''.
 Warning: In design 'multiplier_DW02_mult_4', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
    Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
 Warning: In design 'multiplier_DW02_mult_5', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
-   Net 'n8' is connected to pins 'A[9]', 'B[2]''.
+   Net 'n9' is connected to pins 'A[9]', 'B[2]''.
 Warning: In design 'multiplier_DW02_mult_5', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
    Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
 Warning: In design 'multiplier_DW02_mult_6', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
-   Net 'n8' is connected to pins 'A[9]', 'B[2]''.
+   Net 'n9' is connected to pins 'A[9]', 'B[2]''.
 Warning: In design 'multiplier_DW02_mult_6', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
    Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
 Warning: In design 'multiplier_DW02_mult_7', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
-   Net 'n8' is connected to pins 'A[9]', 'B[2]''.
+   Net 'n9' is connected to pins 'A[9]', 'B[2]''.
 Warning: In design 'multiplier_DW02_mult_7', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
    Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
 Warning: In design 'multiplier_DW02_mult_8', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
-   Net 'n8' is connected to pins 'A[9]', 'B[2]''.
+   Net 'n9' is connected to pins 'A[9]', 'B[2]''.
 Warning: In design 'multiplier_DW02_mult_8', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
    Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
 Warning: In design 'multiplier_DW02_mult_9', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
-   Net 'n8' is connected to pins 'A[9]', 'B[2]''.
+   Net 'n9' is connected to pins 'A[9]', 'B[2]''.
 Warning: In design 'multiplier_DW02_mult_9', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
    Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
 Warning: In design 'multiplier_DW02_mult_10', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
-   Net 'n8' is connected to pins 'A[9]', 'B[2]''.
+   Net 'n9' is connected to pins 'A[9]', 'B[2]''.
 Warning: In design 'multiplier_DW02_mult_10', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
    Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
 Warning: In design 'multiplier_DW02_mult_11', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
-   Net 'n8' is connected to pins 'A[9]', 'B[2]''.
+   Net 'n9' is connected to pins 'A[9]', 'B[2]''.
 Warning: In design 'multiplier_DW02_mult_11', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
    Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
 Warning: In design 'multiplier_DW02_mult_12', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
-   Net 'n8' is connected to pins 'A[9]', 'B[2]''.
+   Net 'n9' is connected to pins 'A[9]', 'B[2]''.
 Warning: In design 'multiplier_DW02_mult_12', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
    Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
 Warning: In design 'multiplier_DW02_mult_13', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
-   Net 'n8' is connected to pins 'A[9]', 'B[2]''.
+   Net 'n9' is connected to pins 'A[9]', 'B[2]''.
 Warning: In design 'multiplier_DW02_mult_13', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
    Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
 Warning: In design 'multiplier_DW02_mult_14', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
-   Net 'n8' is connected to pins 'A[9]', 'B[2]''.
+   Net 'n9' is connected to pins 'A[9]', 'B[2]''.
 Warning: In design 'multiplier_DW02_mult_14', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
    Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
 Warning: In design 'multiplier_DW02_mult_15', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
-   Net 'n8' is connected to pins 'A[9]', 'B[2]''.
+   Net 'n9' is connected to pins 'A[9]', 'B[2]''.
 Warning: In design 'multiplier_DW02_mult_15', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
    Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
 Warning: In design 'multiplier_DW02_mult_16', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
-   Net 'n8' is connected to pins 'A[9]', 'B[2]''.
+   Net 'n9' is connected to pins 'A[9]', 'B[2]''.
 Warning: In design 'multiplier_DW02_mult_16', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
    Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
 Warning: In design 'multiplier_DW02_mult_17', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
-   Net 'n8' is connected to pins 'A[9]', 'B[2]''.
+   Net 'n9' is connected to pins 'A[9]', 'B[2]''.
 Warning: In design 'multiplier_DW02_mult_17', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
    Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
 Warning: In design 'multiplier_DW02_mult_18', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
-   Net 'n8' is connected to pins 'A[9]', 'B[2]''.
+   Net 'n9' is connected to pins 'A[9]', 'B[2]''.
 Warning: In design 'multiplier_DW02_mult_18', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
    Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
 Warning: In design 'multiplier_DW02_mult_19', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
-   Net 'n8' is connected to pins 'A[9]', 'B[2]''.
+   Net 'n9' is connected to pins 'A[9]', 'B[2]''.
 Warning: In design 'multiplier_DW02_mult_19', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
    Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
 Warning: In design 'multiplier_DW02_mult_20', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
-   Net 'n8' is connected to pins 'A[9]', 'B[2]''.
+   Net 'n9' is connected to pins 'A[9]', 'B[2]''.
 Warning: In design 'multiplier_DW02_mult_20', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
    Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
 Warning: In design 'multiplier_DW02_mult_21', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
-   Net 'n8' is connected to pins 'A[9]', 'B[2]''.
+   Net 'n9' is connected to pins 'A[9]', 'B[2]''.
 Warning: In design 'multiplier_DW02_mult_21', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
    Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
 Warning: In design 'multiplier_DW02_mult_22', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
-   Net 'n8' is connected to pins 'A[9]', 'B[2]''.
+   Net 'n9' is connected to pins 'A[9]', 'B[2]''.
 Warning: In design 'multiplier_DW02_mult_22', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
    Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
 Warning: In design 'multiplier_DW02_mult_23', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
-   Net 'n8' is connected to pins 'A[9]', 'B[2]''.
+   Net 'n9' is connected to pins 'A[9]', 'B[2]''.
 Warning: In design 'multiplier_DW02_mult_23', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
    Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
 Warning: In design 'multiplier_DW02_mult_24', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
@@ -1332,7 +1185,7 @@ set_fix_hold clk
 # Compile again with higher effort
 compile -map_effort high
 
-Information: There are 223 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+Information: There are 128 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
 
 
 Warning: Operating condition tt0p85v25c set on design multiplication_baseline has different process,
@@ -1342,126 +1195,6 @@ saed32io_wb_tt1p05v25c_2p5v is characterized. Delays may be inaccurate as a resu
   Beginning Pass 1 Mapping
   ------------------------
   Processing 'multiplication_baseline'
-Information: The register 'U_reg_weight/out__reg[2][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[2][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[2][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[2][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[3][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[3][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[3][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[3][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[4][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[4][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[4][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[4][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[5][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[5][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[5][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[5][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[6][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[6][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[6][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[6][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[7][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[7][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[7][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[7][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[8][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[8][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[8][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[8][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[9][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[9][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[9][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[9][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[10][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[10][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[10][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[10][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[11][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[11][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[11][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[11][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[12][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[12][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[12][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[12][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[13][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[13][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[13][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[13][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[14][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[14][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[14][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[14][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[15][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[15][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[15][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[15][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[16][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[16][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[16][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[16][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[17][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[17][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[17][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[17][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[18][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[18][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[18][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[18][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[19][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[19][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[19][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[19][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[20][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[20][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[20][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[20][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[21][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[21][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[21][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[21][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[22][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[22][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[22][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[22][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[23][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[23][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[23][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[23][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[24][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[24][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[24][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[24][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[25][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[25][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[25][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[25][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[26][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[26][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[26][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[26][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[27][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[27][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[27][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[27][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[28][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[28][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[28][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[28][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[29][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[29][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[29][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[29][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[30][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[30][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[30][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[30][0]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[31][3]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[31][2]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[31][1]' will be removed. (OPT-1207)
-Information: The register 'U_reg_weight/out__reg[31][0]' will be removed. (OPT-1207)
 
   Updating timing information
 Information: Updating design information... (UID-85)
@@ -1473,19 +1206,19 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
   --------- --------- --------- --------- --------- ------------------------- -----------
-    0:00:02   15062.4      0.00       0.0       0.0                                0.00  
-    0:00:02   15062.4      0.00       0.0       0.0                                0.00  
-    0:00:02   15062.4      0.00       0.0       0.0                                0.00  
-    0:00:02   15062.4      0.00       0.0       0.0                                0.00  
-    0:00:02   15062.4      0.00       0.0       0.0                                0.00  
-    0:00:03   13246.2      0.00       0.0       0.0                                0.00  
-    0:00:03   13246.2      0.00       0.0       0.0                                0.00  
-    0:00:03   13246.2      0.00       0.0       0.0                                0.00  
-    0:00:03   13246.2      0.00       0.0       0.0                                0.00  
-    0:00:03   13246.2      0.00       0.0       0.0                                0.00  
-    0:00:03   13246.2      0.00       0.0       0.0                                0.00  
-    0:00:03   13246.2      0.00       0.0       0.0                                0.00  
-    0:00:03   13246.2      0.00       0.0       0.0                                0.00  
+    0:00:02   14774.4      0.00       0.0       0.0                                0.00  
+    0:00:02   14774.4      0.00       0.0       0.0                                0.00  
+    0:00:02   14774.4      0.00       0.0       0.0                                0.00  
+    0:00:02   14774.4      0.00       0.0       0.0                                0.00  
+    0:00:02   14774.4      0.00       0.0       0.0                                0.00  
+    0:00:02   13069.4      0.00       0.0       0.0                                0.00  
+    0:00:02   13069.4      0.00       0.0       0.0                                0.00  
+    0:00:02   13069.4      0.00       0.0       0.0                                0.00  
+    0:00:02   13069.4      0.00       0.0       0.0                                0.00  
+    0:00:02   13069.4      0.00       0.0       0.0                                0.00  
+    0:00:02   13069.4      0.00       0.0       0.0                                0.00  
+    0:00:02   13069.4      0.00       0.0       0.0                                0.00  
+    0:00:02   13069.4      0.00       0.0       0.0                                0.00  
 
 
 
@@ -1496,20 +1229,9 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
   --------- --------- --------- --------- --------- ------------------------- -----------
-    0:00:03   13246.2      0.00       0.0       0.0                                0.00  
-    0:00:03   13246.2      0.00       0.0       0.0                                0.00  
-    0:00:03   13053.1      0.00       0.0       9.5                                0.00  
-
-
-  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
-  ----------------------------
-
-                                  TOTAL                                                  
-   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
-    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
-  --------- --------- --------- --------- --------- ------------------------- -----------
-    0:00:03   13053.1      0.00       0.0       9.5                                0.00  
-    0:00:03   13055.6      0.00       0.0       0.0                                0.00  
+    0:00:02   13069.4      0.00       0.0       0.0                                0.00  
+    0:00:02   13069.4      0.00       0.0       0.0                                0.00  
+    0:00:03   12896.5      0.00       0.0       0.0                                0.00  
 
 
   Beginning Area-Recovery Phase  (cleanup)
@@ -1519,20 +1241,21 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
   --------- --------- --------- --------- --------- ------------------------- -----------
-    0:00:03   13055.6      0.00       0.0       0.0                                0.00  
-    0:00:03   13055.6      0.00       0.0       0.0                                0.00  
-    0:00:03   13042.9      0.00       0.0       0.0                                0.00  
-    0:00:03   13032.8      0.00       0.0       0.0                                0.00  
-    0:00:03   13032.8      0.00       0.0       0.0                                0.00  
-    0:00:03   13032.8      0.00       0.0       0.0                                0.00  
-    0:00:03   13032.8      0.00       0.0       0.0                                0.00  
-    0:00:03   13032.8      0.00       0.0       0.0                                0.00  
-    0:00:03   13032.8      0.00       0.0       0.0                                0.00  
-    0:00:03   13032.8      0.00       0.0       0.0                                0.00  
-    0:00:03   13032.8      0.00       0.0       0.0                                0.00  
-    0:00:03   13032.8      0.00       0.0       0.0                                0.00  
-    0:00:03   13032.8      0.00       0.0       0.0                                0.00  
-    0:00:03   13032.8      0.00       0.0       0.0                                0.00  
+    0:00:03   12896.5      0.00       0.0       0.0                                0.00  
+    0:00:03   12896.5      0.00       0.0       0.0                                0.00  
+    0:00:03   12886.4      0.00       0.0       0.0                                0.00  
+    0:00:03   12876.2      0.00       0.0       0.0                                0.00  
+    0:00:03   12866.0      0.00       0.0       0.0                                0.00  
+    0:00:03   12864.8      0.00       0.0       0.1                                0.00  
+    0:00:03   12864.8      0.00       0.0       0.1                                0.00  
+    0:00:03   12864.8      0.00       0.0       0.1                                0.00  
+    0:00:03   12864.8      0.00       0.0       0.1                                0.00  
+    0:00:03   12864.8      0.00       0.0       0.1                                0.00  
+    0:00:03   12864.8      0.00       0.0       0.1                                0.00  
+    0:00:03   12864.8      0.00       0.0       0.1                                0.00  
+    0:00:03   12864.8      0.00       0.0       0.1                                0.00  
+    0:00:03   12864.8      0.00       0.0       0.1                                0.00  
+    0:00:04   12864.8      0.00       0.0       0.1                                0.00  
 
 
 Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
@@ -1557,7 +1280,7 @@ Writing verilog file '/filespace/z/zpan52/Desktop/syn_script/synthesis/32nm_rvt/
 exit
 Memory usage for this session 165 Mbytes.
 Memory usage for this session including child processes 165 Mbytes.
-CPU usage for this session 16 seconds ( 0.00 hours ).
-Elapsed time for this session 20 seconds ( 0.01 hours ).
+CPU usage for this session 19 seconds ( 0.01 hours ).
+Elapsed time for this session 23 seconds ( 0.01 hours ).
 
 Thank you...
