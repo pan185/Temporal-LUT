@@ -6,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : rollover_cnt
 Version: S-2021.06
-Date   : Wed Oct 27 09:41:37 2021
+Date   : Thu Oct 28 19:22:15 2021
 ****************************************
 
 Operating Conditions: tt0p85v25c   Library: saed32rvt_tt0p85v25c
@@ -27,7 +27,7 @@ Wire Load Model Mode: enclosed
   clock network delay (ideal)              0.00       0.00
   cnt_reg[3]/CLK (DFFARX1_RVT)             0.00       0.00 r
   cnt_reg[3]/QN (DFFARX1_RVT)              0.10       0.10 f
-  U22/Y (XOR2X1_RVT)                       0.09       0.19 r
+  U21/Y (XOR2X1_RVT)                       0.09       0.20 r
   cnt_reg[3]/D (DFFARX1_RVT)               0.01       0.21 r
   data arrival time                                   0.21
 

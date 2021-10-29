@@ -7,7 +7,7 @@ Report : power
         -analysis_effort low
 Design : rollover_cnt
 Version: S-2021.06
-Date   : Wed Oct 27 09:49:17 2021
+Date   : Thu Oct 28 19:43:32 2021
 ****************************************
 
 
@@ -33,12 +33,12 @@ Power-specific unit information :
     Leakage Power Units = 1pW
 
 
-  Cell Internal Power  =   8.6283 uW   (95%)
-  Net Switching Power  = 469.3929 nW    (5%)
+  Cell Internal Power  =   8.4554 uW   (95%)
+  Net Switching Power  = 412.7316 nW    (5%)
                          ---------
-Total Dynamic Power    =   9.0977 uW  (100%)
+Total Dynamic Power    =   8.8681 uW  (100%)
 
-Cell Leakage Power     =   1.5234 uW
+Cell Leakage Power     =   1.4726 uW
 
 
                  Internal         Switching           Leakage            Total
@@ -48,9 +48,9 @@ io_pad             0.0000            0.0000            0.0000            0.0000 
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
 clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
-register           7.7222            0.2637        9.7688e+05            8.9627  (  84.39%)
+register           7.6809            0.2176        9.7688e+05            8.8753  (  85.83%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational      0.9061            0.2057        5.4650e+05            1.6583  (  15.61%)
+combinational      0.7746            0.1951        4.9575e+05            1.4655  (  14.17%)
 --------------------------------------------------------------------------------------------------
-Total              8.6283 uW         0.4694 uW     1.5234e+06 pW        10.6211 uW
+Total              8.4554 uW         0.4127 uW     1.4726e+06 pW        10.3408 uW
 1

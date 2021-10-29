@@ -3,7 +3,7 @@
 Report : area
 Design : simd_cell
 Version: S-2021.06
-Date   : Wed Oct 27 09:41:56 2021
+Date   : Thu Oct 28 19:22:34 2021
 ****************************************
 
 Information: Updating design information... (UID-85)
@@ -12,20 +12,20 @@ Library(s) Used:
     saed32rvt_tt0p85v25c (File: /cae/apps/data/saed32_edk-2018/lib/stdcell_rvt/db_nldm/saed32rvt_tt0p85v25c.db)
 
 Number of ports:                          523
-Number of nets:                          1401
-Number of cells:                         1213
-Number of combinational cells:            645
-Number of sequential cells:               568
+Number of nets:                          1334
+Number of cells:                         1178
+Number of combinational cells:            642
+Number of sequential cells:               536
 Number of macros/black boxes:               0
-Number of buf/inv:                         29
-Number of references:                      19
+Number of buf/inv:                         58
+Number of references:                      18
 
-Combinational area:               1844.577149
-Buf/Inv area:                       50.574656
-Noncombinational area:            4042.922822
+Combinational area:               1833.648951
+Buf/Inv area:                       87.679680
+Noncombinational area:            3816.734658
 Macro/Black Box area:                0.000000
-Net Interconnect area:            1755.457177
+Net Interconnect area:            1691.418395
 
-Total cell area:                  5887.499971
-Total area:                       7642.957148
+Total cell area:                  5650.383608
+Total area:                       7341.802003
 1

@@ -43,15 +43,6 @@ Reading with Presto HDL Compiler (equivalent to -rtl option).
 Running PRESTO HDLC
 Compiling source file /filespace/z/zpan52/Desktop/syn_script/synthesis/32nm_rvt/all/tlutMul_medianA/cmp.sv
 Opening include file DEF.sv
-
-Inferred memory devices in process
-	in routine cmp line 15 in file
-		'/filespace/z/zpan52/Desktop/syn_script/synthesis/32nm_rvt/all/tlutMul_medianA/cmp.sv'.
-===============================================================================
-|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-===============================================================================
-|      cmp__reg       | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
-===============================================================================
 Presto compilation completed successfully.
 Loaded 1 design.
 Current design is 'cmp'.
@@ -125,7 +116,7 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 ============================================================================
 
 
-Information: There are 1 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+Information: There are 3 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
 
 
 Warning: Operating condition tt0p85v25c set on design cmp has different process,
@@ -146,19 +137,19 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:01     479.8      0.00       0.0       0.0                          
-    0:00:01     479.8      0.00       0.0       0.0                          
-    0:00:01     479.8      0.00       0.0       0.0                          
-    0:00:01     479.8      0.00       0.0       0.0                          
-    0:00:01     479.8      0.00       0.0       0.0                          
-    0:00:01     463.6      0.00       0.0       0.0                          
-    0:00:01     463.6      0.00       0.0       0.0                          
-    0:00:01     463.6      0.00       0.0       0.0                          
-    0:00:01     463.6      0.00       0.0       0.0                          
-    0:00:01     463.6      0.00       0.0       0.0                          
-    0:00:01     463.6      0.00       0.0       0.0                          
-    0:00:01     463.6      0.00       0.0       0.0                          
-    0:00:01     463.6      0.00       0.0       0.0                          
+    0:00:01     333.4      0.00       0.0       0.0                          
+    0:00:01     333.4      0.00       0.0       0.0                          
+    0:00:01     333.4      0.00       0.0       0.0                          
+    0:00:01     333.4      0.00       0.0       0.0                          
+    0:00:01     333.4      0.00       0.0       0.0                          
+    0:00:01     317.2      0.00       0.0       0.0                          
+    0:00:01     317.2      0.00       0.0       0.0                          
+    0:00:01     317.2      0.00       0.0       0.0                          
+    0:00:01     317.2      0.00       0.0       0.0                          
+    0:00:01     317.2      0.00       0.0       0.0                          
+    0:00:01     317.2      0.00       0.0       0.0                          
+    0:00:01     317.2      0.00       0.0       0.0                          
+    0:00:01     317.2      0.00       0.0       0.0                          
 
 
 
@@ -169,9 +160,9 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:01     463.6      0.00       0.0       0.0                          
-    0:00:01     463.6      0.00       0.0       0.0                          
-    0:00:01     463.6      0.00       0.0       0.0                          
+    0:00:01     317.2      0.00       0.0       0.0                          
+    0:00:01     317.2      0.00       0.0       0.0                          
+    0:00:01     317.2      0.00       0.0       0.0                          
 
 
   Beginning Area-Recovery Phase  (cleanup)
@@ -181,17 +172,17 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:01     463.6      0.00       0.0       0.0                          
-    0:00:01     463.6      0.00       0.0       0.0                          
-    0:00:01     463.6      0.00       0.0       0.0                          
-    0:00:01     463.6      0.00       0.0       0.0                          
-    0:00:01     463.6      0.00       0.0       0.0                          
-    0:00:01     463.6      0.00       0.0       0.0                          
-    0:00:01     463.6      0.00       0.0       0.0                          
-    0:00:01     463.6      0.00       0.0       0.0                          
-    0:00:01     463.6      0.00       0.0       0.0                          
-    0:00:01     463.6      0.00       0.0       0.0                          
-    0:00:01     463.6      0.00       0.0       0.0                          
+    0:00:01     317.2      0.00       0.0       0.0                          
+    0:00:01     317.2      0.00       0.0       0.0                          
+    0:00:01     317.2      0.00       0.0       0.0                          
+    0:00:01     317.2      0.00       0.0       0.0                          
+    0:00:01     317.2      0.00       0.0       0.0                          
+    0:00:01     317.2      0.00       0.0       0.0                          
+    0:00:01     317.2      0.00       0.0       0.0                          
+    0:00:01     317.2      0.00       0.0       0.0                          
+    0:00:01     317.2      0.00       0.0       0.0                          
+    0:00:01     317.2      0.00       0.0       0.0                          
+    0:00:01     317.2      0.00       0.0       0.0                          
 
 
 Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
@@ -201,6 +192,22 @@ Note: Symbol # after min delay cost means estimated hold TNS across all active s
   ---------------------
 1
 check_design
+ 
+****************************************
+check_design summary:
+Version:     S-2021.06
+Date:        Thu Oct 28 19:37:40 2021
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      3
+    Unconnected ports (LINT-28)                                     3
+--------------------------------------------------------------------------------
+
+Warning: In design 'cmp', port 'clk' is not connected to any nets. (LINT-28)
+Warning: In design 'cmp', port 'rst_n' is not connected to any nets. (LINT-28)
+Warning: In design 'cmp', port 'enable' is not connected to any nets. (LINT-28)
 1
 # Unflatten design now that its compiled
 ungroup -all -flatten
@@ -211,6 +218,9 @@ set_fix_hold clk
 1
 # Compile again with higher effort
 compile -map_effort high
+
+Information: There are 3 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
 
 Warning: Operating condition tt0p85v25c set on design cmp has different process,
 voltage and temperatures parameters than the parameters at which target library 
@@ -230,19 +240,19 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
   --------- --------- --------- --------- --------- ------------------------- -----------
-    0:00:00     479.8      0.00       0.0       0.0                                0.00  
-    0:00:00     479.8      0.00       0.0       0.0                                0.00  
-    0:00:00     479.8      0.00       0.0       0.0                                0.00  
-    0:00:00     479.8      0.00       0.0       0.0                                0.00  
-    0:00:00     479.8      0.00       0.0       0.0                                0.00  
-    0:00:00     463.6      0.00       0.0       0.0                                0.00  
-    0:00:00     463.6      0.00       0.0       0.0                                0.00  
-    0:00:00     463.6      0.00       0.0       0.0                                0.00  
-    0:00:00     463.6      0.00       0.0       0.0                                0.00  
-    0:00:00     463.6      0.00       0.0       0.0                                0.00  
-    0:00:00     463.6      0.00       0.0       0.0                                0.00  
-    0:00:00     463.6      0.00       0.0       0.0                                0.00  
-    0:00:00     463.6      0.00       0.0       0.0                                0.00  
+    0:00:00     333.4      0.00       0.0       0.0                                0.00  
+    0:00:00     333.4      0.00       0.0       0.0                                0.00  
+    0:00:00     333.4      0.00       0.0       0.0                                0.00  
+    0:00:00     333.4      0.00       0.0       0.0                                0.00  
+    0:00:00     333.4      0.00       0.0       0.0                                0.00  
+    0:00:00     317.2      0.00       0.0       0.0                                0.00  
+    0:00:00     317.2      0.00       0.0       0.0                                0.00  
+    0:00:00     317.2      0.00       0.0       0.0                                0.00  
+    0:00:00     317.2      0.00       0.0       0.0                                0.00  
+    0:00:00     317.2      0.00       0.0       0.0                                0.00  
+    0:00:00     317.2      0.00       0.0       0.0                                0.00  
+    0:00:00     317.2      0.00       0.0       0.0                                0.00  
+    0:00:00     317.2      0.00       0.0       0.0                                0.00  
 
 
 
@@ -253,9 +263,9 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
   --------- --------- --------- --------- --------- ------------------------- -----------
-    0:00:00     463.6      0.00       0.0       0.0                                0.00  
-    0:00:00     463.6      0.00       0.0       0.0                                0.00  
-    0:00:00     463.6      0.00       0.0       0.0                                0.00  
+    0:00:00     317.2      0.00       0.0       0.0                                0.00  
+    0:00:00     317.2      0.00       0.0       0.0                                0.00  
+    0:00:00     317.2      0.00       0.0       0.0                                0.00  
 
 
   Beginning Area-Recovery Phase  (cleanup)
@@ -265,17 +275,17 @@ Information: Updating design information... (UID-85)
    ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
   --------- --------- --------- --------- --------- ------------------------- -----------
-    0:00:00     463.6      0.00       0.0       0.0                                0.00  
-    0:00:00     463.6      0.00       0.0       0.0                                0.00  
-    0:00:00     463.6      0.00       0.0       0.0                                0.00  
-    0:00:00     463.6      0.00       0.0       0.0                                0.00  
-    0:00:00     463.6      0.00       0.0       0.0                                0.00  
-    0:00:00     463.6      0.00       0.0       0.0                                0.00  
-    0:00:00     463.6      0.00       0.0       0.0                                0.00  
-    0:00:00     463.6      0.00       0.0       0.0                                0.00  
-    0:00:00     463.6      0.00       0.0       0.0                                0.00  
-    0:00:00     463.6      0.00       0.0       0.0                                0.00  
-    0:00:00     463.6      0.00       0.0       0.0                                0.00  
+    0:00:00     317.2      0.00       0.0       0.0                                0.00  
+    0:00:00     317.2      0.00       0.0       0.0                                0.00  
+    0:00:00     317.2      0.00       0.0       0.0                                0.00  
+    0:00:00     317.2      0.00       0.0       0.0                                0.00  
+    0:00:00     317.2      0.00       0.0       0.0                                0.00  
+    0:00:00     317.2      0.00       0.0       0.0                                0.00  
+    0:00:00     317.2      0.00       0.0       0.0                                0.00  
+    0:00:00     317.2      0.00       0.0       0.0                                0.00  
+    0:00:00     317.2      0.00       0.0       0.0                                0.00  
+    0:00:00     317.2      0.00       0.0       0.0                                0.00  
+    0:00:00     317.2      0.00       0.0       0.0                                0.00  
 
 
 Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
@@ -285,6 +295,22 @@ Note: Symbol # after min delay cost means estimated hold TNS across all active s
   ---------------------
 1
 check_design
+ 
+****************************************
+check_design summary:
+Version:     S-2021.06
+Date:        Thu Oct 28 19:37:41 2021
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      3
+    Unconnected ports (LINT-28)                                     3
+--------------------------------------------------------------------------------
+
+Warning: In design 'cmp', port 'clk' is not connected to any nets. (LINT-28)
+Warning: In design 'cmp', port 'rst_n' is not connected to any nets. (LINT-28)
+Warning: In design 'cmp', port 'enable' is not connected to any nets. (LINT-28)
 1
 #############################################
 # Take a look at area, max, and min timings #
@@ -300,7 +326,7 @@ Writing verilog file '/filespace/z/zpan52/Desktop/syn_script/synthesis/32nm_rvt/
 exit
 Memory usage for this session 153 Mbytes.
 Memory usage for this session including child processes 153 Mbytes.
-CPU usage for this session 5 seconds ( 0.00 hours ).
+CPU usage for this session 4 seconds ( 0.00 hours ).
 Elapsed time for this session 7 seconds ( 0.00 hours ).
 
 Thank you...

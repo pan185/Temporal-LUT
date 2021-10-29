@@ -3,7 +3,7 @@
 Report : area
 Design : register_bit2
 Version: S-2021.06
-Date   : Wed Oct 27 09:38:16 2021
+Date   : Thu Oct 28 19:19:13 2021
 ****************************************
 
 Information: Updating design information... (UID-85)

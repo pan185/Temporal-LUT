@@ -6,44 +6,42 @@ Report : timing
         -max_paths 1
 Design : cmp
 Version: S-2021.06
-Date   : Wed Oct 27 09:45:02 2021
+Date   : Thu Oct 28 19:39:55 2021
 ****************************************
 
 Operating Conditions: tt0p85v25c   Library: saed32rvt_tt0p85v25c
 Wire Load Model Mode: enclosed
 
-  Startpoint: enable (input port clocked by clk)
-  Endpoint: cmp__reg[0]
-            (rising edge-triggered flip-flop clocked by clk)
+  Startpoint: rng[3] (input port clocked by clk)
+  Endpoint: cmp_out[0] (output port clocked by clk)
   Path Group: clk
   Path Type: min
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  cmp                8000                  saed32rvt_tt0p85v25c
+  cmp                ForQA                 saed32rvt_tt0p85v25c
 
   Point                                    Incr       Path
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  input external delay                     0.25       0.25 f
-  enable (in)                              0.00       0.25 f
-  U90/Y (AND2X1_RVT)                       0.05       0.30 f
-  U89/Y (AND4X1_RVT)                       0.08       0.38 f
-  cmp__reg[0]/D (DFFARX1_RVT)              0.01       0.39 f
-  data arrival time                                   0.39
+  input external delay                     0.25       0.25 r
+  rng[3] (in)                              0.00       0.25 r
+  U81/Y (XNOR2X1_RVT)                      0.08       0.33 r
+  U80/Y (AND4X1_RVT)                       0.08       0.41 r
+  cmp_out[0] (out)                         0.01       0.42 r
+  data arrival time                                   0.42
 
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
   clock uncertainty                        0.15       0.15
-  cmp__reg[0]/CLK (DFFARX1_RVT)            0.00       0.15 r
-  library hold time                       -0.02       0.13
-  data required time                                  0.13
+  output external delay                   -0.50      -0.35
+  data required time                                 -0.35
   -----------------------------------------------------------
-  data required time                                  0.13
-  data arrival time                                  -0.39
+  data required time                                 -0.35
+  data arrival time                                  -0.42
   -----------------------------------------------------------
-  slack (MET)                                         0.26
+  slack (MET)                                         0.77
 
 
 1

@@ -7,7 +7,7 @@ Report : power
         -analysis_effort low
 Design : accumulator_weight
 Version: S-2021.06
-Date   : Wed Oct 27 09:44:45 2021
+Date   : Thu Oct 28 19:39:38 2021
 ****************************************
 
 

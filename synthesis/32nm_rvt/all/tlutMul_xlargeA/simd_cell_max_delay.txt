@@ -6,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : simd_cell
 Version: S-2021.06
-Date   : Wed Oct 27 09:49:40 2021
+Date   : Thu Oct 28 19:43:55 2021
 ****************************************
 
  # A fanout number of 1000 was used for high fanout net computations.
@@ -31,8 +31,8 @@ Wire Load Model Mode: enclosed
   clock network delay (ideal)                             0.00       0.00
   U_accumulator/sum__reg[0][0]/CLK (DFFARX1_RVT)          0.00 #     0.00 r
   U_accumulator/sum__reg[0][0]/QN (DFFARX1_RVT)           0.12       0.12 f
-  U1281/Y (INVX1_RVT)                                     0.10       0.21 r
-  U1260/Y (AND2X1_RVT)                                    0.09       0.31 r
+  U1205/Y (INVX1_RVT)                                     0.10       0.21 r
+  U1196/Y (AND2X1_RVT)                                    0.09       0.31 r
   U_accumulator/add_22/U1_1/CO (FADDX1_RVT)               0.11       0.42 r
   U_accumulator/add_22/U1_2/CO (FADDX1_RVT)               0.12       0.53 r
   U_accumulator/add_22/U1_3/CO (FADDX1_RVT)               0.12       0.65 r
@@ -40,10 +40,10 @@ Wire Load Model Mode: enclosed
   U_accumulator/add_22/U1_5/CO (FADDX1_RVT)               0.12       0.88 r
   U_accumulator/add_22/U1_6/CO (FADDX1_RVT)               0.12       1.00 r
   U_accumulator/add_22/U1_7/CO (FADDX1_RVT)               0.13       1.12 r
-  U1248/Y (NAND3X0_RVT)                                   0.08       1.20 f
-  U1247/Y (AO21X1_RVT)                                    0.11       1.31 f
-  U1246/Y (AO21X1_RVT)                                    0.06       1.37 f
-  U1244/Y (AO21X1_RVT)                                    0.08       1.45 f
+  U1183/Y (NAND3X0_RVT)                                   0.08       1.20 f
+  U1182/Y (AO21X1_RVT)                                    0.11       1.31 f
+  U1181/Y (AO21X1_RVT)                                    0.06       1.37 f
+  U1179/Y (AO21X1_RVT)                                    0.08       1.45 f
   U_accumulator/sum__reg[0][11]/D (DFFARX1_RVT)           0.01       1.46 f
   data arrival time                                                  1.46
 

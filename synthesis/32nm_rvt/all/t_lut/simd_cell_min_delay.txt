@@ -6,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : simd_cell
 Version: S-2021.06
-Date   : Wed Oct 27 09:39:23 2021
+Date   : Thu Oct 28 19:20:19 2021
 ****************************************
 
  # A fanout number of 1000 was used for high fanout net computations.

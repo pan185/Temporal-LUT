@@ -244,7 +244,7 @@ check_design
 ****************************************
 check_design summary:
 Version:     S-2021.06
-Date:        Wed Oct 27 09:30:53 2021
+Date:        Thu Oct 28 19:11:46 2021
 ****************************************
 
                    Name                                            Total
@@ -662,18 +662,18 @@ Information: Design 'multiplier' has no optimization constraints set. (OPT-108)
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:01    4223.4      0.00       0.0       2.3                          
-    0:00:01    4223.4      0.00       0.0       2.3                          
-    0:00:01    4223.4      0.00       0.0       2.3                          
-    0:00:01    4223.4      0.00       0.0       2.3                          
-    0:00:01    4223.4      0.00       0.0       2.3                          
-    0:00:01    4223.4      0.00       0.0       2.3                          
-    0:00:01    4223.4      0.00       0.0       2.3                          
-    0:00:01    4223.4      0.00       0.0       2.3                          
-    0:00:01    4223.4      0.00       0.0       2.3                          
-    0:00:01    4223.4      0.00       0.0       2.3                          
-    0:00:01    4223.4      0.00       0.0       2.3                          
-    0:00:01    4223.4      0.00       0.0       2.3                          
+    0:00:00    4223.4      0.00       0.0       2.3                          
+    0:00:00    4223.4      0.00       0.0       2.3                          
+    0:00:00    4223.4      0.00       0.0       2.3                          
+    0:00:00    4223.4      0.00       0.0       2.3                          
+    0:00:00    4223.4      0.00       0.0       2.3                          
+    0:00:00    4223.4      0.00       0.0       2.3                          
+    0:00:00    4223.4      0.00       0.0       2.3                          
+    0:00:00    4223.4      0.00       0.0       2.3                          
+    0:00:00    4223.4      0.00       0.0       2.3                          
+    0:00:00    4223.4      0.00       0.0       2.3                          
+    0:00:00    4223.4      0.00       0.0       2.3                          
+    0:00:00    4223.4      0.00       0.0       2.3                          
 
 
 
@@ -684,9 +684,9 @@ Information: Design 'multiplier' has no optimization constraints set. (OPT-108)
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:01    4223.4      0.00       0.0       2.3                          
-    0:00:01    4223.4      0.00       0.0       2.3                          
-    0:00:01    4223.4      0.00       0.0       2.3                          
+    0:00:00    4223.4      0.00       0.0       2.3                          
+    0:00:00    4223.4      0.00       0.0       2.3                          
+    0:00:00    4223.4      0.00       0.0       2.3                          
 
 
   Beginning Design Rule Fixing  (max_transition)
@@ -696,7 +696,7 @@ Information: Design 'multiplier' has no optimization constraints set. (OPT-108)
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:01    4223.4      0.00       0.0       2.3                          
+    0:00:00    4223.4      0.00       0.0       2.3                          
 
 
   Beginning Area-Recovery Phase  (cleanup)
@@ -742,6 +742,6 @@ exit
 Memory usage for this session 153 Mbytes.
 Memory usage for this session including child processes 153 Mbytes.
 CPU usage for this session 7 seconds ( 0.00 hours ).
-Elapsed time for this session 9 seconds ( 0.00 hours ).
+Elapsed time for this session 10 seconds ( 0.00 hours ).
 
 Thank you...

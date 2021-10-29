@@ -1,0 +1,55 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : register_product
+Version: S-2021.06
+Date   : Thu Oct 28 18:51:15 2021
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: tt0p85v25c   Library: saed32rvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: enable[0] (input port clocked by clk)
+  Endpoint: out__reg[0][3][4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  register_product   70000                 saed32rvt_tt0p85v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.25       0.25 f
+  enable[0] (in)                           0.00       0.25 f
+  U12941/Y (INVX0_RVT)                     0.28       0.53 r
+  U12867/Y (INVX1_RVT)                     0.37       0.90 f
+  U12681/Y (INVX1_RVT)                     0.40       1.30 r
+  U12551/Y (INVX0_RVT)                     0.32       1.62 f
+  U12951/Y (INVX0_RVT)                     0.31       1.92 r
+  U6647/Y (AO22X1_RVT)                     0.26       2.19 r
+  out__reg[0][3][4]/D (DFFARX1_RVT)        0.10       2.29 r
+  data arrival time                                   2.29
+
+  clock clk (rise edge)                    2.50       2.50
+  clock network delay (ideal)              0.00       2.50
+  clock uncertainty                       -0.15       2.35
+  out__reg[0][3][4]/CLK (DFFARX1_RVT)      0.00       2.35 r
+  library setup time                      -0.06       2.29
+  data required time                                  2.29
+  -----------------------------------------------------------
+  data required time                                  2.29
+  data arrival time                                  -2.29
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+1

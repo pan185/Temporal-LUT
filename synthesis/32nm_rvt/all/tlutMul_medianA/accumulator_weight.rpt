@@ -209,7 +209,7 @@ check_design
 ****************************************
 check_design summary:
 Version:     S-2021.06
-Date:        Wed Oct 27 09:42:12 2021
+Date:        Thu Oct 28 19:37:23 2021
 ****************************************
 
                    Name                                            Total
@@ -343,6 +343,6 @@ exit
 Memory usage for this session 153 Mbytes.
 Memory usage for this session including child processes 153 Mbytes.
 CPU usage for this session 4 seconds ( 0.00 hours ).
-Elapsed time for this session 6 seconds ( 0.00 hours ).
+Elapsed time for this session 7 seconds ( 0.00 hours ).
 
 Thank you...

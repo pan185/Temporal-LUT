@@ -1,0 +1,47 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : cmp
+Version: S-2021.06
+Date   : Thu Oct 28 19:34:42 2021
+****************************************
+
+Operating Conditions: tt0p85v25c   Library: saed32rvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: in[0][3] (input port clocked by clk)
+  Endpoint: cmp_out[0] (output port clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cmp                8000                  saed32rvt_tt0p85v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.25       0.25 r
+  in[0][3] (in)                            0.00       0.25 r
+  U429/Y (XNOR2X1_RVT)                     0.08       0.33 r
+  U320/Y (AND4X1_RVT)                      0.07       0.40 r
+  cmp_out[0] (out)                         0.00       0.41 r
+  data arrival time                                   0.41
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.15       0.15
+  output external delay                   -0.50      -0.35
+  data required time                                 -0.35
+  -----------------------------------------------------------
+  data required time                                 -0.35
+  data arrival time                                  -0.41
+  -----------------------------------------------------------
+  slack (MET)                                         0.76
+
+
+1

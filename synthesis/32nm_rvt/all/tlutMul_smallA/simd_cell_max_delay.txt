@@ -6,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : simd_cell
 Version: S-2021.06
-Date   : Wed Oct 27 09:46:57 2021
+Date   : Thu Oct 28 19:41:33 2021
 ****************************************
 
 Operating Conditions: tt0p85v25c   Library: saed32rvt_tt0p85v25c
@@ -29,7 +29,7 @@ Wire Load Model Mode: enclosed
   clock network delay (ideal)                             0.00       0.00
   U_accumulator/sum__reg[0][0]/CLK (DFFARX1_RVT)          0.00       0.00 r
   U_accumulator/sum__reg[0][0]/Q (DFFARX1_RVT)            0.18       0.18 r
-  U196/Y (AND2X1_RVT)                                     0.09       0.27 r
+  U189/Y (AND2X1_RVT)                                     0.09       0.27 r
   U_accumulator/add_22/U1_1/CO (FADDX1_RVT)               0.12       0.38 r
   U_accumulator/add_22/U1_2/CO (FADDX1_RVT)               0.12       0.50 r
   U_accumulator/add_22/U1_3/CO (FADDX1_RVT)               0.12       0.62 r
@@ -37,10 +37,10 @@ Wire Load Model Mode: enclosed
   U_accumulator/add_22/U1_5/CO (FADDX1_RVT)               0.12       0.86 r
   U_accumulator/add_22/U1_6/CO (FADDX1_RVT)               0.12       0.98 r
   U_accumulator/add_22/U1_7/CO (FADDX1_RVT)               0.13       1.11 r
-  U184/Y (NAND3X0_RVT)                                    0.08       1.19 f
-  U183/Y (AO21X1_RVT)                                     0.11       1.30 f
-  U182/Y (AO21X1_RVT)                                     0.06       1.36 f
-  U180/Y (AO21X1_RVT)                                     0.08       1.44 f
+  U176/Y (NAND3X0_RVT)                                    0.08       1.19 f
+  U175/Y (AO21X1_RVT)                                     0.11       1.30 f
+  U174/Y (AO21X1_RVT)                                     0.06       1.36 f
+  U172/Y (AO21X1_RVT)                                     0.08       1.44 f
   U_accumulator/sum__reg[0][11]/D (DFFARX1_RVT)           0.01       1.45 f
   data arrival time                                                  1.45
 

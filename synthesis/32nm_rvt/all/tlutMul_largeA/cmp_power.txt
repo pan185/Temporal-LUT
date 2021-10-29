@@ -1,13 +1,12 @@
 Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
 Warning: Design has unannotated primary inputs. (PWR-414)
-Warning: Design has unannotated sequential cell outputs. (PWR-415)
  
 ****************************************
 Report : power
         -analysis_effort low
 Design : cmp
 Version: S-2021.06
-Date   : Wed Oct 27 09:39:57 2021
+Date   : Thu Oct 28 19:20:53 2021
 ****************************************
 
 
@@ -33,12 +32,12 @@ Power-specific unit information :
     Leakage Power Units = 1pW
 
 
-  Cell Internal Power  =  74.7408 uW   (94%)
-  Net Switching Power  =   4.4684 uW    (6%)
+  Cell Internal Power  =  16.7622 uW   (82%)
+  Net Switching Power  =   3.6538 uW   (18%)
                          ---------
-Total Dynamic Power    =  79.2091 uW  (100%)
+Total Dynamic Power    =  20.4159 uW  (100%)
 
-Cell Leakage Power     =  20.1651 uW
+Cell Leakage Power     =  11.0932 uW
 
 
                  Internal         Switching           Leakage            Total
@@ -48,9 +47,9 @@ io_pad             0.0000            0.0000            0.0000            0.0000 
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
 clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
-register          56.5664        9.4036e-03        7.3168e+06           63.8927  (  64.30%)
+register           0.0000            0.0000            0.0000            0.0000  (   0.00%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational     18.1743            4.4589        1.2848e+07           35.4815  (  35.70%)
+combinational     16.7622            3.6538        1.1093e+07           31.5092  ( 100.00%)
 --------------------------------------------------------------------------------------------------
-Total             74.7408 uW         4.4684 uW     2.0165e+07 pW        99.3742 uW
+Total             16.7622 uW         3.6538 uW     1.1093e+07 pW        31.5092 uW
 1

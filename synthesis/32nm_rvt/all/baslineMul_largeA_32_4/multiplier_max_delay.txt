@@ -1,0 +1,49 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : multiplier
+Version: S-2021.06
+Date   : Thu Oct 28 18:58:58 2021
+****************************************
+
+Operating Conditions: tt0p85v25c   Library: saed32rvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: in8[2][6] (input port)
+  Endpoint: out12[2][31][10]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  multiplier         35000                 saed32rvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 f
+  in8[2][6] (in)                                          0.00       0.00 f
+  U11570/Y (INVX1_RVT)                                    0.07       0.07 r
+  U11418/Y (INVX1_RVT)                                    0.09       0.16 f
+  U11185/Y (AND2X2_RVT)                                   0.16       0.32 f
+  U17813/Y (AO221X1_RVT)                                  0.20       0.52 f
+  mult_13_G32_G3/S2_2_4/S (FADDX1_RVT)                    0.17       0.69 r
+  mult_13_G32_G3/S4_3/S (FADDX1_RVT)                      0.17       0.86 f
+  U13190/Y (XNOR2X1_RVT)                                  0.14       1.00 f
+  U13189/Y (INVX0_RVT)                                    0.05       1.05 r
+  U13188/Y (NAND3X0_RVT)                                  0.06       1.11 f
+  U13187/Y (OA21X1_RVT)                                   0.09       1.20 f
+  U13184/Y (OA21X1_RVT)                                   0.08       1.28 f
+  U13181/Y (OAI21X1_RVT)                                  0.12       1.40 r
+  U13178/Y (AO221X1_RVT)                                  0.11       1.51 r
+  U13175/Y (XOR2X1_RVT)                                   0.12       1.63 f
+  out12[2][31][10] (out)                                  0.00       1.64 f
+  data arrival time                                                  1.64
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

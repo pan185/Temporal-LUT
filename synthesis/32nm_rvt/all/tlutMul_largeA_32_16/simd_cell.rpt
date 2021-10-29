@@ -1,0 +1,1056 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+                 Version S-2021.06 for linux64 - Jun 17, 2021 
+
+                    Copyright (c) 1988 - 2021 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+# ECE552 Extra Credit
+read_file -format sverilog {simd_cell.sv}
+Loading db file '/cae/apps/data/saed32_edk-2018/lib/stdcell_rvt/db_nldm/saed32rvt_tt0p85v25c.db'
+Loading db file '/cae/apps/data/saed32_edk-2018/lib/io_std/db_nldm/saed32io_wb_tt1p05v25c_2p5v.db'
+Loading db file '/cae/apps/data/synopsys-2021/syn/S-2021.06/libraries/syn/gtech.db'
+Loading db file '/cae/apps/data/synopsys-2021/syn/S-2021.06/libraries/syn/standard.sldb'
+  Loading link library 'saed32rvt_tt0p85v25c'
+  Loading link library 'saed32io_wb_tt1p05v25c_2p5v'
+  Loading link library 'gtech'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /filespace/z/zpan52/Desktop/syn_script/synthesis/32nm_rvt/all/tlutMul_largeA_32_16/simd_cell.sv
+Opening include file DEF.sv
+Opening include file accumulator_weight.sv
+Opening include file DEF.sv
+Opening include file cmp.sv
+Opening include file DEF.sv
+Opening include file register_product.sv
+Opening include file DEF.sv
+Opening include file register_weight.sv
+Opening include file DEF.sv
+Opening include file register_input.sv
+Opening include file DEF.sv
+Opening include file rollover_cnt.sv
+Opening include file DEF.sv
+
+Inferred memory devices in process
+	in routine accumulator_weight line 15 in file
+		'accumulator_weight.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      sum__reg       | Flip-flop |  192  |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine register_product line 16 in file
+		'register_product.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      out__reg       | Flip-flop | 6144  |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine register_weight line 13 in file
+		'register_weight.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      out__reg       | Flip-flop |  128  |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine register_input line 13 in file
+		'register_input.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      out__reg       | Flip-flop |  128  |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine rollover_cnt line 14 in file
+		'rollover_cnt.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       cnt_reg       | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Loaded 7 designs.
+Current design is 'accumulator_weight'.
+accumulator_weight cmp register_product register_weight register_input rollover_cnt simd_cell
+set current_design simd_cell
+simd_cell
+link
+
+  Linking design 'simd_cell'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  simd_cell                   /filespace/z/zpan52/Desktop/syn_script/synthesis/32nm_rvt/all/tlutMul_largeA_32_16/simd_cell.db
+  saed32rvt_tt0p85v25c (library) /cae/apps/data/saed32_edk-2018/lib/stdcell_rvt/db_nldm/saed32rvt_tt0p85v25c.db
+  saed32io_wb_tt1p05v25c_2p5v (library) /cae/apps/data/saed32_edk-2018/lib/io_std/db_nldm/saed32io_wb_tt1p05v25c_2p5v.db
+  * (6 designs)               /filespace/z/zpan52/Desktop/syn_script/synthesis/32nm_rvt/all/tlutMul_largeA_32_16/accumulator_weight.db, etc
+
+1
+###########################################
+# Define clock and set don't mess with it #
+###########################################
+# clk with frequency of 400 MHz
+create_clock -name "clk" -period 2.5 -waveform { 0 1.25 } { clk }
+1
+set_dont_touch_network [find port clk]
+1
+# pointer to all inputs except clk
+set prim_inputs [remove_from_collection [all_inputs] [find port clk]]
+{rst_n enable input_bin[31][3] input_bin[31][2] input_bin[31][1] input_bin[31][0] input_bin[30][3] input_bin[30][2] input_bin[30][1] input_bin[30][0] input_bin[29][3] input_bin[29][2] input_bin[29][1] input_bin[29][0] input_bin[28][3] input_bin[28][2] input_bin[28][1] input_bin[28][0] input_bin[27][3] input_bin[27][2] input_bin[27][1] input_bin[27][0] input_bin[26][3] input_bin[26][2] input_bin[26][1] input_bin[26][0] input_bin[25][3] input_bin[25][2] input_bin[25][1] input_bin[25][0] input_bin[24][3] input_bin[24][2] input_bin[24][1] input_bin[24][0] input_bin[23][3] input_bin[23][2] input_bin[23][1] input_bin[23][0] input_bin[22][3] input_bin[22][2] input_bin[22][1] input_bin[22][0] input_bin[21][3] input_bin[21][2] input_bin[21][1] input_bin[21][0] input_bin[20][3] input_bin[20][2] input_bin[20][1] input_bin[20][0] input_bin[19][3] input_bin[19][2] input_bin[19][1] input_bin[19][0] input_bin[18][3] input_bin[18][2] input_bin[18][1] input_bin[18][0] input_bin[17][3] input_bin[17][2] input_bin[17][1] input_bin[17][0] input_bin[16][3] input_bin[16][2] input_bin[16][1] input_bin[16][0] input_bin[15][3] input_bin[15][2] input_bin[15][1] input_bin[15][0] input_bin[14][3] input_bin[14][2] input_bin[14][1] input_bin[14][0] input_bin[13][3] input_bin[13][2] input_bin[13][1] input_bin[13][0] input_bin[12][3] input_bin[12][2] input_bin[12][1] input_bin[12][0] input_bin[11][3] input_bin[11][2] input_bin[11][1] input_bin[11][0] input_bin[10][3] input_bin[10][2] input_bin[10][1] input_bin[10][0] input_bin[9][3] input_bin[9][2] input_bin[9][1] input_bin[9][0] input_bin[8][3] input_bin[8][2] input_bin[8][1] input_bin[8][0] input_bin[7][3] input_bin[7][2] ...}
+# pointer to all inputs except clk and rst_n
+set prim_inputs_no_rst [remove_from_collection $prim_inputs [find port rst_n]]
+{enable input_bin[31][3] input_bin[31][2] input_bin[31][1] input_bin[31][0] input_bin[30][3] input_bin[30][2] input_bin[30][1] input_bin[30][0] input_bin[29][3] input_bin[29][2] input_bin[29][1] input_bin[29][0] input_bin[28][3] input_bin[28][2] input_bin[28][1] input_bin[28][0] input_bin[27][3] input_bin[27][2] input_bin[27][1] input_bin[27][0] input_bin[26][3] input_bin[26][2] input_bin[26][1] input_bin[26][0] input_bin[25][3] input_bin[25][2] input_bin[25][1] input_bin[25][0] input_bin[24][3] input_bin[24][2] input_bin[24][1] input_bin[24][0] input_bin[23][3] input_bin[23][2] input_bin[23][1] input_bin[23][0] input_bin[22][3] input_bin[22][2] input_bin[22][1] input_bin[22][0] input_bin[21][3] input_bin[21][2] input_bin[21][1] input_bin[21][0] input_bin[20][3] input_bin[20][2] input_bin[20][1] input_bin[20][0] input_bin[19][3] input_bin[19][2] input_bin[19][1] input_bin[19][0] input_bin[18][3] input_bin[18][2] input_bin[18][1] input_bin[18][0] input_bin[17][3] input_bin[17][2] input_bin[17][1] input_bin[17][0] input_bin[16][3] input_bin[16][2] input_bin[16][1] input_bin[16][0] input_bin[15][3] input_bin[15][2] input_bin[15][1] input_bin[15][0] input_bin[14][3] input_bin[14][2] input_bin[14][1] input_bin[14][0] input_bin[13][3] input_bin[13][2] input_bin[13][1] input_bin[13][0] input_bin[12][3] input_bin[12][2] input_bin[12][1] input_bin[12][0] input_bin[11][3] input_bin[11][2] input_bin[11][1] input_bin[11][0] input_bin[10][3] input_bin[10][2] input_bin[10][1] input_bin[10][0] input_bin[9][3] input_bin[9][2] input_bin[9][1] input_bin[9][0] input_bin[8][3] input_bin[8][2] input_bin[8][1] input_bin[8][0] input_bin[7][3] input_bin[7][2] input_bin[7][1] ...}
+# Set clk uncertainty (skew)
+set_clock_uncertainty 0.15 clk
+1
+#########################################
+# Set input delay & drive on all inputs #
+#########################################
+set_input_delay -clock clk 0.25 [copy_collection $prim_inputs]
+1
+#set_driving_cell -lib_cell ND2D2BWP -library tcbn40lpbwptc $prim_inputs_no_rst
+# rst_n goes to many places so don't touch
+set_dont_touch_network [find port rst_n]
+1
+##########################################
+# Set output delay & load on all outputs #
+##########################################
+set_output_delay -clock clk 0.5 [all_outputs]
+1
+set_load 0.1 [all_outputs]
+1
+#############################################################
+# Wire load model allows it to estimate internal parasitics #
+#############################################################
+# set_wire_load_model -name TSMC32K_Lowk_Conservative -library tcbn40lpbwptc
+######################################################
+# Max transition time is important for Hot-E reasons #
+######################################################
+set_max_transition 0.1 [current_design]
+1
+########################################
+# Now actually synthesize for 1st time #
+########################################
+compile -map_effort medium
+Warning: Setting attribute 'fix_multiple_port_nets' on design 'simd_cell'. (UIO-59)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | S-2021.06-DWBB_202106.0 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 7 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Warning: Operating condition tt0p85v25c set on design simd_cell has different process,
+voltage and temperatures parameters than the parameters at which target library 
+saed32io_wb_tt1p05v25c_2p5v is characterized. Delays may be inaccurate as a result. (OPT-998)
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'rollover_cnt'
+  Processing 'register_product'
+  Processing 'accumulator_weight'
+  Processing 'cmp'
+  Processing 'register_weight'
+  Processing 'register_input'
+  Processing 'simd_cell'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'accumulator_weight_DW01_add_0_DW01_add_1'
+  Processing 'accumulator_weight_DW01_add_1_DW01_add_2'
+  Processing 'accumulator_weight_DW01_add_2_DW01_add_3'
+  Processing 'accumulator_weight_DW01_add_3_DW01_add_4'
+  Processing 'accumulator_weight_DW01_add_4_DW01_add_5'
+  Processing 'accumulator_weight_DW01_add_5_DW01_add_6'
+  Processing 'accumulator_weight_DW01_add_6_DW01_add_7'
+  Processing 'accumulator_weight_DW01_add_7_DW01_add_8'
+  Processing 'accumulator_weight_DW01_add_8_DW01_add_9'
+  Processing 'accumulator_weight_DW01_add_9_DW01_add_10'
+  Processing 'accumulator_weight_DW01_add_10_DW01_add_11'
+  Processing 'accumulator_weight_DW01_add_11_DW01_add_12'
+  Processing 'accumulator_weight_DW01_add_12_DW01_add_13'
+  Processing 'accumulator_weight_DW01_add_13_DW01_add_14'
+  Processing 'accumulator_weight_DW01_add_14_DW01_add_15'
+  Processing 'accumulator_weight_DW01_add_15_DW01_add_16'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:16   89213.9     10.04   61070.1    6797.6                          
+    0:00:16   89213.9     10.04   61070.1    6797.6                          
+    0:00:16   92544.3     10.04   61004.7    4400.9                          
+    0:00:16   95874.6     10.04   60938.8    2032.7                          
+    0:00:52   82794.8      0.41    1532.1      44.4                          
+    0:00:52   82767.1      0.41    1531.8      46.8                          
+    0:00:52   82767.1      0.41    1531.8      46.8                          
+    0:00:52   82767.1      0.41    1531.8      46.8                          
+    0:00:52   82767.1      0.41    1531.8      46.8                          
+    0:00:54   69171.1      0.62    1237.3      26.0                          
+    0:00:56   69141.1      0.32     350.7      28.2                          
+    0:00:56   69129.5      0.25     426.5      28.9                          
+    0:00:57   69129.5      0.22     385.8      29.6                          
+    0:00:57   69133.3      0.22     385.2      29.4                          
+    0:00:57   69134.5      0.19     189.5      29.4                          
+    0:00:57   69140.9      0.18     187.6      28.8                          
+    0:00:58   69151.6      0.16     174.0      27.8                          
+    0:00:58   69152.8      0.13     154.3      27.9                          
+    0:00:58   69152.8      0.13     154.3      27.9                          
+    0:00:58   69152.8      0.13     154.3      27.9                          
+    0:00:58   69152.8      0.13     154.3      27.9                          
+    0:00:58   69152.8      0.13     154.3      27.9                          
+    0:00:58   69152.8      0.13     154.3      27.9                          
+    0:00:58   69152.8      0.13     154.3      27.9                          
+    0:00:59   69160.5      0.13     151.5      25.7 U_reg_product/net92700   
+    0:00:59   69174.4      0.13     152.0      21.8 U_reg_product/net84061   
+    0:00:59   69185.9      0.13     149.4      18.9 U_reg_product/net85987   
+    0:00:59   69188.4      0.13     147.5      17.5 U_reg_product/net87041   
+    0:00:59   69194.8      0.13     142.9      16.3 U_reg_product/net84523   
+    0:01:00   69203.7      0.13     142.1      14.0 U_reg_product/net84891   
+    0:01:00   69215.1      0.13     137.2      12.3 U_reg_product/net85863   
+    0:01:00   69222.7      0.13     137.2      11.4 U_reg_product/net85497   
+    0:01:00   69230.4      0.14     134.4      10.1 U_reg_product/net85603   
+    0:01:00   69234.2      0.14     134.4       8.8 U_reg_product/net86089   
+    0:01:00   69244.3      0.14     132.5       7.4 U_reg_product/net84773   
+    0:01:00   69250.7      0.14     128.5       6.2 U_reg_product/net84407   
+    0:01:00   69264.7      0.14     127.1       4.9 U_reg_product/net86215   
+    0:01:01   69268.5      0.14     125.5       3.7 U_reg_product/net87293   
+    0:01:01   69277.4      0.14     125.1       2.3 U_reg_product/net84907   
+    0:01:01   69282.5      0.14     121.7       1.1 U_reg_product/net84651   
+    0:01:01   69286.0      0.14     119.3       0.2 U_reg_product/net87063   
+    0:01:01   69285.5      0.15     124.8       0.0 U_reg_product/net86005   
+    0:01:01   69284.2      0.15     124.8       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:01:01   69284.2      0.15     124.8       0.0                          
+    0:01:02   69282.2      0.14     122.0       0.0 U_reg_product/out__reg[0][14][3]/D
+    0:01:02   69284.2      0.13     122.2       0.0 U_reg_product/out__reg[7][19][2]/D
+    0:01:02   69281.4      0.13     119.6       0.0 U_reg_product/out__reg[5][19][5]/D
+    0:01:02   69275.8      0.12      79.1       0.0 U_reg_product/out__reg[3][27][9]/D
+    0:01:02   69275.8      0.11      71.5       0.0 U_reg_product/out__reg[8][0][6]/D
+    0:01:03   69279.1      0.10      71.0       0.0 U_reg_product/out__reg[8][22][11]/D
+    0:01:03   69273.3      0.08      44.0       0.0 U_reg_product/out__reg[8][27][1]/D
+    0:01:03   69268.5      0.07      17.0       0.0 U_reg_product/out__reg[10][16][6]/D
+    0:01:03   69265.7      0.05       9.1       0.0 U_reg_product/out__reg[7][5][7]/D
+    0:01:03   69265.2      0.05       7.0       0.0 U_reg_product/out__reg[9][4][2]/D
+    0:01:04   69263.9      0.04       6.0       0.0 U_reg_product/out__reg[5][4][2]/D
+    0:01:04   69257.5      0.03       2.7       0.0 U_reg_product/out__reg[0][19][1]/D
+    0:01:04   69257.5      0.03       2.4       0.0 U_reg_product/out__reg[8][21][1]/D
+    0:01:04   69254.5      0.02       0.8       0.0 U_reg_product/out__reg[6][24][4]/D
+    0:01:04   69254.5      0.02       0.6       0.0 U_reg_product/out__reg[5][9][4]/D
+    0:01:04   69254.5      0.00       0.2       0.0 U_reg_product/out__reg[9][9][2]/D
+    0:01:05   69252.5      0.00       0.1       0.0 U_reg_product/out__reg[10][24][1]/D
+    0:01:05   69255.0      0.00       0.0       0.0 U_reg_product/out__reg[14][18][0]/D
+    0:01:05   69255.0      0.00       0.0       0.0                          
+    0:01:05   69255.0      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:01:05   69255.0      0.00       0.0       0.0                          
+    0:01:05   69255.0      0.00       0.0       0.0                          
+    0:01:06   68811.3      0.06      27.0       1.0                          
+    0:01:07   68729.7      0.05      16.0       0.7                          
+    0:01:08   68650.4      0.05      17.8       1.1                          
+    0:01:08   68594.0      0.05      23.2       2.7                          
+    0:01:09   68547.0      0.09      44.0       3.2                          
+    0:01:09   68496.4      0.13      52.5       4.1                          
+    0:01:10   68453.7      0.12      73.8       4.6                          
+    0:01:10   68406.7      0.14      93.0       5.4                          
+    0:01:10   68364.2      0.17     103.2       6.2                          
+    0:01:11   68326.1      0.14     110.0       7.2                          
+    0:01:11   68293.6      0.15     145.4       7.9                          
+    0:01:11   68265.6      0.15     149.0       7.5                          
+    0:01:12   68237.7      0.15     152.0       8.7                          
+    0:01:12   68213.5      0.15     193.9       9.7                          
+    0:01:12   68198.3      0.16     227.5      10.4                          
+    0:01:12   68185.6      0.15     232.3      10.7                          
+    0:01:12   68174.1      0.16     235.4      10.7                          
+    0:01:12   68163.7      0.15     233.1      11.8                          
+    0:01:12   68154.8      0.15     234.8      13.1                          
+    0:01:12   68145.2      0.15     247.8      13.3                          
+    0:01:12   68137.5      0.16     249.2      13.4                          
+    0:01:12   68137.5      0.16     249.2      13.4                          
+    0:01:13   68141.3      0.16     252.3      12.0 U_reg_product/net86063   
+    0:01:13   68147.7      0.16     262.1       9.4 U_reg_product/net83949   
+    0:01:13   68151.5      0.16     274.5       7.8 U_reg_product/net85645   
+    0:01:13   68160.4      0.16     267.2       5.6 U_reg_product/net86337   
+    0:01:14   68166.8      0.18     275.7       4.3 U_reg_product/net84161   
+    0:01:14   68171.8      0.18     270.6       2.8 U_reg_product/net86801   
+    0:01:14   68174.4      0.18     268.8       2.1 U_reg_product/net85579   
+    0:01:14   68179.5      0.18     260.7       1.2 U_reg_product/net85365   
+    0:01:14   68182.0      0.18     259.3       0.9 U_reg_product/net91379   
+    0:01:15   68185.8      0.18     261.9       0.8 U_reg_product/net84881   
+    0:01:15   68187.1      0.16     258.6       0.5 U_reg_product/out__reg[9][3][9]/D
+    0:01:15   68199.8      0.15     235.2       0.5 U_reg_product/out__reg[9][25][3]/D
+    0:01:16   68204.1      0.13     180.9       0.5 U_reg_product/out__reg[8][7][6]/D
+    0:01:16   68208.4      0.13     156.4       0.5 U_reg_product/out__reg[10][26][1]/D
+    0:01:16   68210.5      0.12     162.4       0.5 U_reg_product/out__reg[2][23][9]/D
+    0:01:16   68207.2      0.10      74.7       0.5 U_reg_product/out__reg[12][13][5]/D
+    0:01:17   68219.1      0.07      41.8       0.5 U_reg_product/out__reg[12][9][0]/D
+    0:01:17   68220.9      0.07      39.2       0.5 U_reg_product/out__reg[9][25][3]/D
+    0:01:18   68219.4      0.04      13.4       0.5 U_reg_product/out__reg[0][7][4]/D
+    0:01:18   68217.3      0.03       7.4       0.5 U_reg_product/out__reg[0][9][0]/D
+    0:01:18   68215.3      0.00       0.0       0.5                          
+    0:01:19   68174.1      0.00       0.0       0.6                          
+    0:01:19   68174.1      0.00       0.0       0.6                          
+    0:01:19   68174.1      0.00       0.0       0.6                          
+    0:01:19   68174.1      0.00       0.0       0.6                          
+    0:01:19   68174.1      0.00       0.0       0.6                          
+    0:01:19   68174.1      0.00       0.0       0.6                          
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'simd_cell' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+1
+check_design
+ 
+****************************************
+check_design summary:
+Version:     S-2021.06
+Date:        Thu Oct 28 19:27:51 2021
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     99
+    Unconnected ports (LINT-28)                                    99
+
+Cells                                                              96
+    Connected to power or ground (LINT-32)                         80
+    Nets connected to multiple pins on same cell (LINT-33)         16
+--------------------------------------------------------------------------------
+
+Warning: In design 'cmp', port 'clk' is not connected to any nets. (LINT-28)
+Warning: In design 'cmp', port 'rst_n' is not connected to any nets. (LINT-28)
+Warning: In design 'cmp', port 'enable' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_1', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_1', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_1', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_1', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_1', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_0_DW01_add_1', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_1_DW01_add_2', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_1_DW01_add_2', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_1_DW01_add_2', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_1_DW01_add_2', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_1_DW01_add_2', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_1_DW01_add_2', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_2_DW01_add_3', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_2_DW01_add_3', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_2_DW01_add_3', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_2_DW01_add_3', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_2_DW01_add_3', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_2_DW01_add_3', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_3_DW01_add_4', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_3_DW01_add_4', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_3_DW01_add_4', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_3_DW01_add_4', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_3_DW01_add_4', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_3_DW01_add_4', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_4_DW01_add_5', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_4_DW01_add_5', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_4_DW01_add_5', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_4_DW01_add_5', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_4_DW01_add_5', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_4_DW01_add_5', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_5_DW01_add_6', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_5_DW01_add_6', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_5_DW01_add_6', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_5_DW01_add_6', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_5_DW01_add_6', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_5_DW01_add_6', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_6_DW01_add_7', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_6_DW01_add_7', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_6_DW01_add_7', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_6_DW01_add_7', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_6_DW01_add_7', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_6_DW01_add_7', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_7_DW01_add_8', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_7_DW01_add_8', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_7_DW01_add_8', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_7_DW01_add_8', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_7_DW01_add_8', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_7_DW01_add_8', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_8_DW01_add_9', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_8_DW01_add_9', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_8_DW01_add_9', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_8_DW01_add_9', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_8_DW01_add_9', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_8_DW01_add_9', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_9_DW01_add_10', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_9_DW01_add_10', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_9_DW01_add_10', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_9_DW01_add_10', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_9_DW01_add_10', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_9_DW01_add_10', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_10_DW01_add_11', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_10_DW01_add_11', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_10_DW01_add_11', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_10_DW01_add_11', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_10_DW01_add_11', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_10_DW01_add_11', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_11_DW01_add_12', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_11_DW01_add_12', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_11_DW01_add_12', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_11_DW01_add_12', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_11_DW01_add_12', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_11_DW01_add_12', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_12_DW01_add_13', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_12_DW01_add_13', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_12_DW01_add_13', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_12_DW01_add_13', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_12_DW01_add_13', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_12_DW01_add_13', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_13_DW01_add_14', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_13_DW01_add_14', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_13_DW01_add_14', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_13_DW01_add_14', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_13_DW01_add_14', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_13_DW01_add_14', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_14_DW01_add_15', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_14_DW01_add_15', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_14_DW01_add_15', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_14_DW01_add_15', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_14_DW01_add_15', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_14_DW01_add_15', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_15_DW01_add_16', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_15_DW01_add_16', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_15_DW01_add_16', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_15_DW01_add_16', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_15_DW01_add_16', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight_DW01_add_15_DW01_add_16', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G16' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G16' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G16' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G16' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G16' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G15' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G15' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G15' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G15' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G15' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G14' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G14' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G14' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G14' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G14' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G13' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G13' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G13' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G13' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G13' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G12' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G12' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G12' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G12' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G12' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G11' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G11' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G11' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G11' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G11' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G10' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G10' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G10' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G10' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G10' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G9' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G9' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G9' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G9' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G9' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G8' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G8' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G8' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G8' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G8' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G7' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G7' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G7' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G7' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G7' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G6' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G6' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G6' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G6' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G6' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G4' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G3' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22_G2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'accumulator_weight', a pin on submodule 'add_22' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'accumulator_weight', the same net is connected to more than one pin on submodule 'add_22_G16'. (LINT-33)
+   Net 'n1' is connected to pins 'B[11]', 'B[10]'', 'B[9]', 'B[8]', 'CI'.
+Warning: In design 'accumulator_weight', the same net is connected to more than one pin on submodule 'add_22_G15'. (LINT-33)
+   Net 'n2' is connected to pins 'B[11]', 'B[10]'', 'B[9]', 'B[8]', 'CI'.
+Warning: In design 'accumulator_weight', the same net is connected to more than one pin on submodule 'add_22_G14'. (LINT-33)
+   Net 'n3' is connected to pins 'B[11]', 'B[10]'', 'B[9]', 'B[8]', 'CI'.
+Warning: In design 'accumulator_weight', the same net is connected to more than one pin on submodule 'add_22_G13'. (LINT-33)
+   Net 'n4' is connected to pins 'B[11]', 'B[10]'', 'B[9]', 'B[8]', 'CI'.
+Warning: In design 'accumulator_weight', the same net is connected to more than one pin on submodule 'add_22_G12'. (LINT-33)
+   Net 'n5' is connected to pins 'B[11]', 'B[10]'', 'B[9]', 'B[8]', 'CI'.
+Warning: In design 'accumulator_weight', the same net is connected to more than one pin on submodule 'add_22_G11'. (LINT-33)
+   Net 'n6' is connected to pins 'B[11]', 'B[10]'', 'B[9]', 'B[8]', 'CI'.
+Warning: In design 'accumulator_weight', the same net is connected to more than one pin on submodule 'add_22_G10'. (LINT-33)
+   Net 'n7' is connected to pins 'B[11]', 'B[10]'', 'B[9]', 'B[8]', 'CI'.
+Warning: In design 'accumulator_weight', the same net is connected to more than one pin on submodule 'add_22_G9'. (LINT-33)
+   Net 'n8' is connected to pins 'B[11]', 'B[10]'', 'B[9]', 'B[8]', 'CI'.
+Warning: In design 'accumulator_weight', the same net is connected to more than one pin on submodule 'add_22_G8'. (LINT-33)
+   Net 'n9' is connected to pins 'B[11]', 'B[10]'', 'B[9]', 'B[8]', 'CI'.
+Warning: In design 'accumulator_weight', the same net is connected to more than one pin on submodule 'add_22_G7'. (LINT-33)
+   Net 'n10' is connected to pins 'B[11]', 'B[10]'', 'B[9]', 'B[8]', 'CI'.
+Warning: In design 'accumulator_weight', the same net is connected to more than one pin on submodule 'add_22_G6'. (LINT-33)
+   Net 'n11' is connected to pins 'B[11]', 'B[10]'', 'B[9]', 'B[8]', 'CI'.
+Warning: In design 'accumulator_weight', the same net is connected to more than one pin on submodule 'add_22_G5'. (LINT-33)
+   Net 'n12' is connected to pins 'B[11]', 'B[10]'', 'B[9]', 'B[8]', 'CI'.
+Warning: In design 'accumulator_weight', the same net is connected to more than one pin on submodule 'add_22_G4'. (LINT-33)
+   Net 'n13' is connected to pins 'B[11]', 'B[10]'', 'B[9]', 'B[8]', 'CI'.
+Warning: In design 'accumulator_weight', the same net is connected to more than one pin on submodule 'add_22_G3'. (LINT-33)
+   Net 'n14' is connected to pins 'B[11]', 'B[10]'', 'B[9]', 'B[8]', 'CI'.
+Warning: In design 'accumulator_weight', the same net is connected to more than one pin on submodule 'add_22_G2'. (LINT-33)
+   Net 'n15' is connected to pins 'B[11]', 'B[10]'', 'B[9]', 'B[8]', 'CI'.
+Warning: In design 'accumulator_weight', the same net is connected to more than one pin on submodule 'add_22'. (LINT-33)
+   Net 'n16' is connected to pins 'B[11]', 'B[10]'', 'B[9]', 'B[8]', 'CI'.
+1
+# Unflatten design now that its compiled
+ungroup -all -flatten
+Information: Updating graph... (UID-83)
+Warning: Design 'simd_cell' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+1
+# force hold time to be met for all flops
+set_fix_hold clk
+1
+# Compile again with higher effort
+compile -map_effort high
+
+Information: There are 16 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Warning: Operating condition tt0p85v25c set on design simd_cell has different process,
+voltage and temperatures parameters than the parameters at which target library 
+saed32io_wb_tt1p05v25c_2p5v is characterized. Delays may be inaccurate as a result. (OPT-998)
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'simd_cell'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Mapping Optimizations  (High effort)
+  -------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:07   89439.9     10.97   49419.0   21303.3                                0.00  
+    0:00:07   89439.9     10.97   49419.0   21303.3                                0.00  
+    0:00:18   79982.7      4.80    6406.8      84.5                                0.00  
+    0:00:19   79509.2      5.02    6674.1      84.5                                0.00  
+    0:00:19   79509.2      5.02    6674.1      84.5                                0.00  
+    0:00:20   79509.2      5.02    6674.1      84.5                                0.00  
+    0:00:20   79509.2      5.02    6674.1      84.5                                0.00  
+    0:00:22   69761.0      3.83    3972.7      45.7                                0.00  
+    0:00:23   69850.7      2.58    2702.8      51.3                                0.00  
+    0:00:23   69858.8      2.57    2688.7      51.9                                0.00  
+    0:00:24   69932.6      2.33    2679.5      51.9                                0.00  
+    0:00:24   70037.0      2.27    2664.7      52.2                                0.00  
+    0:00:24   70083.8      2.02    2656.6      52.1                                0.00  
+    0:00:25   70117.1      1.94    2649.9      52.0                                0.00  
+    0:00:25   70143.2      1.94    2632.2      52.0                                0.00  
+    0:00:26   70133.1      1.83    2620.9      52.3                                0.00  
+    0:00:26   70133.1      1.83    2620.9      52.3                                0.00  
+    0:00:26   70133.1      1.83    2620.9      52.3                                0.00  
+    0:00:26   70133.6      1.83    2620.9      18.9                                0.00  
+    0:00:26   70133.6      1.83    2620.9      18.9                                0.00  
+    0:00:26   70133.6      1.83    2620.9      18.9                                0.00  
+    0:00:26   70133.6      1.83    2620.9      18.9                                0.00  
+    0:00:27   70265.5      1.82    2537.7       8.8                                0.00  
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:27   70265.5      1.82    2537.7       8.8                                0.00  
+    0:00:27   70367.1      1.70    2534.9       8.5 U_accumulator/sum__reg[0][11]/D      0.00  
+    0:00:27   70402.0      1.64    2533.3       8.5 U_accumulator/sum__reg[7][11]/D      0.00  
+    0:00:27   70406.0      1.61    2529.0       8.6 U_accumulator/sum__reg[0][9]/D      0.00  
+    0:00:27   70464.0      1.56    2526.7       8.5 U_accumulator/sum__reg[7][9]/D      0.00  
+    0:00:27   70476.9      1.54    2522.0       8.3 U_accumulator/sum__reg[15][11]/D      0.00  
+    0:00:28   70479.7      1.54    2521.7       8.3 U_accumulator/sum__reg[15][11]/D      0.00  
+    0:00:28   70542.8      1.53    2520.1       8.3                                0.00  
+    0:00:29   70572.0      1.51    2513.8       8.3 U_accumulator/sum__reg[3][9]/D      0.00  
+    0:00:29   70580.6      1.50    2510.5       8.3 U_accumulator/sum__reg[7][9]/D      0.00  
+    0:00:29   70617.7      1.49    2505.9       8.3 U_accumulator/sum__reg[1][9]/D      0.00  
+    0:00:29   70628.9      1.48    2499.7       8.3 U_accumulator/sum__reg[11][11]/D      0.00  
+    0:00:29   70636.5      1.43    2494.5       8.3 U_accumulator/sum__reg[9][11]/D      0.00  
+    0:00:29   70654.6      1.33    2493.1       8.2 U_accumulator/sum__reg[15][11]/D      0.00  
+    0:00:29   70705.4      1.29    2491.8       8.2 U_accumulator/sum__reg[8][11]/D      0.00  
+    0:00:30   70719.6      1.25    2491.7       8.2 U_accumulator/sum__reg[15][11]/D      0.00  
+    0:00:30   70766.9      1.22    2491.3       8.2 U_accumulator/sum__reg[15][11]/D      0.00  
+    0:00:30   70834.8      1.21    2491.3       8.2 U_accumulator/sum__reg[2][11]/D      0.00  
+    0:00:30   70843.7      1.21    2490.6       8.2 U_accumulator/sum__reg[14][11]/D      0.00  
+    0:00:30   70862.7      1.20    2488.2       8.2                                0.00  
+    0:00:31   70895.2      1.19    2487.0       8.2 U_accumulator/sum__reg[15][11]/D      0.00  
+    0:00:31   70926.0      1.19    2486.8       8.1 U_accumulator/sum__reg[1][11]/D      0.00  
+    0:00:31   70971.7      1.19    2486.4       8.1 U_accumulator/sum__reg[12][11]/D      0.00  
+    0:00:31   71018.8      1.18    2486.0       8.1 U_accumulator/sum__reg[11][11]/D      0.00  
+    0:00:31   71040.1      1.18    2485.9       8.1 U_accumulator/sum__reg[12][11]/D      0.00  
+    0:00:31   71053.1      1.18    2485.9       8.1 U_accumulator/sum__reg[2][11]/D      0.00  
+    0:00:31   71071.6      1.18    2485.8       8.1 U_accumulator/sum__reg[15][11]/D      0.00  
+    0:00:31   71073.4      1.18    2485.8       8.1 U_accumulator/sum__reg[11][11]/D      0.00  
+    0:00:31   71118.4      1.16    2485.6       8.1 U_accumulator/sum__reg[11][11]/D      0.00  
+    0:00:32   71177.3      1.16    2485.8       8.1                                0.00  
+    0:00:32   71196.9      1.16    2485.9       8.1 U_accumulator/sum__reg[4][11]/D      0.00  
+    0:00:32   71222.1      1.16    2485.6       8.1 U_accumulator/sum__reg[1][11]/D      0.00  
+    0:00:32   71241.1      1.16    2485.4       8.2 U_accumulator/sum__reg[8][11]/D      0.00  
+    0:00:33   71284.6      1.15    2485.2       8.2 U_accumulator/sum__reg[11][11]/D      0.00  
+    0:00:33   71286.9      1.15    2485.2       8.1 U_accumulator/sum__reg[2][11]/D      0.00  
+    0:00:33   71287.6      1.15    2485.2       8.1 U_accumulator/sum__reg[2][11]/D      0.00  
+    0:00:33   71302.4      1.15    2485.0       8.1 U_accumulator/sum__reg[6][11]/D      0.00  
+    0:00:33   71310.0      1.15    2485.0       8.1 U_accumulator/sum__reg[15][11]/D      0.00  
+    0:00:33   71321.2      1.14    2484.5       8.1 U_accumulator/sum__reg[6][11]/D      0.00  
+    0:00:33   71318.1      1.14    2484.4       8.1 U_accumulator/sum__reg[12][11]/D      0.00  
+    0:00:33   71330.3      1.14    2484.5       8.1                                0.00  
+    0:00:34   71326.0      1.13    2482.3       8.0 U_accumulator/sum__reg[7][9]/D      0.00  
+    0:00:34   71337.0      1.13    2482.4       8.0 U_accumulator/sum__reg[11][11]/D      0.00  
+    0:00:34   71338.0      1.13    2482.3       8.0 U_accumulator/sum__reg[15][11]/D      0.00  
+    0:00:34   71356.0      1.13    2482.2       8.0 U_accumulator/sum__reg[6][11]/D      0.00  
+    0:00:34   71368.0      1.13    2482.7       8.0 U_accumulator/sum__reg[11][11]/D      0.00  
+    0:00:34   71372.0      1.13    2482.5       7.9 U_accumulator/sum__reg[12][11]/D      0.00  
+    0:00:34   71381.9      1.13    2481.0       7.9 U_accumulator/sum__reg[4][11]/D      0.00  
+    0:00:35   71383.2      1.13    2480.9       7.9 U_accumulator/sum__reg[2][11]/D      0.00  
+    0:00:35   71393.1      1.13    2480.8       7.8 U_accumulator/sum__reg[12][11]/D      0.00  
+    0:00:35   71402.5      1.12    2480.6       7.8 U_accumulator/sum__reg[8][11]/D      0.00  
+    0:00:35   71408.1      1.12    2480.4       7.7 U_accumulator/sum__reg[11][11]/D      0.00  
+    0:00:35   71408.6      1.12    2480.1       7.7 U_accumulator/sum__reg[8][11]/D      0.00  
+    0:00:35   71420.1      1.12    2480.0       7.7 U_accumulator/sum__reg[15][11]/D      0.00  
+    0:00:35   71423.9      1.12    2479.9       7.7 U_accumulator/sum__reg[9][11]/D      0.00  
+    0:00:35   71419.0      1.12    2478.3       7.7 U_accumulator/sum__reg[7][11]/D      0.00  
+    0:00:35   71430.7      1.12    2478.3       7.7 U_accumulator/sum__reg[0][11]/D      0.00  
+    0:00:35   71436.3      1.12    2478.3       7.6 U_accumulator/sum__reg[0][11]/D      0.00  
+    0:00:35   71439.6      1.12    2478.1       7.6 U_accumulator/sum__reg[5][11]/D      0.00  
+    0:00:36   71455.1      1.11    2478.1       7.6 U_accumulator/sum__reg[2][11]/D      0.00  
+    0:00:36   71457.2      1.11    2477.7       7.5 U_accumulator/sum__reg[9][11]/D      0.00  
+    0:00:36   71483.8      1.11    2476.3       7.5                                0.00  
+    0:00:36   71495.8      1.11    2476.2       7.5 U_accumulator/sum__reg[6][11]/D      0.00  
+    0:00:36   71507.5      1.10    2476.0       7.4 U_accumulator/sum__reg[1][11]/D      0.00  
+    0:00:36   71503.4      1.10    2474.1       7.4                                0.00  
+    0:00:36   71496.8      1.10    2473.1       7.4 U_accumulator/sum__reg[10][11]/D      0.00  
+    0:00:36   71499.6      1.10    2473.2       7.4 U_accumulator/sum__reg[15][11]/D      0.00  
+    0:00:36   71497.6      1.10    2473.1       7.4 U_accumulator/sum__reg[12][11]/D      0.00  
+    0:00:37   71514.1      1.09    2471.7       7.4                                0.00  
+    0:00:37   71518.7      1.09    2471.3       7.4 U_accumulator/sum__reg[1][11]/D      0.00  
+    0:00:37   71511.8      1.09    2471.1       7.4 U_accumulator/sum__reg[10][11]/D      0.00  
+    0:00:37   71512.1      1.09    2471.1       7.4 U_accumulator/sum__reg[9][11]/D      0.00  
+    0:00:37   71523.2      1.09    2470.9       7.4 U_accumulator/sum__reg[0][11]/D      0.00  
+    0:00:37   71527.1      1.09    2468.9       7.4                                0.00  
+    0:00:37   71528.8      1.09    2468.9       7.3 U_accumulator/sum__reg[5][11]/D      0.00  
+    0:00:37   71530.1      1.08    2467.7       7.2                                0.00  
+    0:00:37   71539.8      1.08    2467.6       7.2 U_accumulator/sum__reg[9][11]/D      0.00  
+    0:00:38   71550.4      1.08    2465.7       7.2 U_accumulator/sum__reg[0][11]/D      0.00  
+    0:00:38   71554.5      1.08    2463.9       7.2                                0.00  
+    0:00:38   71556.0      1.08    2463.9       7.2 U_accumulator/sum__reg[15][11]/D      0.00  
+    0:00:38   71567.2      1.08    2463.4       7.2                                0.00  
+    0:00:38   71564.7      1.07    2463.3       7.2 U_accumulator/sum__reg[11][11]/D      0.00  
+    0:00:38   71566.2      1.07    2463.0       7.2 U_accumulator/sum__reg[1][11]/D      0.00  
+    0:00:38   71596.7      1.05    2463.1       7.2 U_accumulator/sum__reg[15][11]/D      0.00  
+    0:00:38   71605.3      1.04    2463.0       7.2                                0.00  
+    0:00:38   71608.4      1.04    2463.0       7.2 U_accumulator/sum__reg[15][11]/D      0.00  
+    0:00:38   71601.0      1.04    2463.2       7.2                                0.00  
+    0:00:38   71602.3      1.03    2463.2       7.2 U_accumulator/sum__reg[10][11]/D      0.00  
+    0:00:39   71604.6      1.02    2462.7       7.2 U_accumulator/sum__reg[8][11]/D      0.00  
+    0:00:39   71597.4      1.01    2462.1       7.2 U_accumulator/sum__reg[1][9]/D      0.00  
+    0:00:39   71609.6      1.01    2461.5       7.2                                0.00  
+    0:00:39   71613.7      1.01    2461.5       7.1 U_accumulator/sum__reg[15][11]/D      0.00  
+    0:00:39   71617.5      0.98    2460.7       7.1 U_accumulator/sum__reg[8][11]/D      0.00  
+    0:00:39   71625.9      0.97    2459.8       7.1 U_accumulator/sum__reg[11][11]/D      0.00  
+    0:00:39   71638.4      0.96    2459.7       7.1 U_accumulator/sum__reg[1][9]/D      0.00  
+    0:00:39   71643.7      0.96    2458.5       7.1                                0.00  
+    0:00:39   71662.3      0.94    2457.9       7.1 U_accumulator/sum__reg[15][11]/D      0.00  
+    0:00:39   71680.0      0.91    2457.4       7.1 U_accumulator/sum__reg[11][11]/D      0.00  
+    0:00:39   71680.0      0.91    2457.3       7.1 U_accumulator/sum__reg[11][11]/D      0.00  
+    0:00:40   71704.7      0.90    2457.0       7.1                                0.00  
+    0:00:40   71716.4      0.89    2456.2       7.1 U_accumulator/sum__reg[4][11]/D      0.00  
+    0:00:40   71732.4      0.88    2456.1       7.1 U_accumulator/sum__reg[10][11]/D      0.00  
+    0:00:40   71759.3      0.87    2455.9       7.1 U_accumulator/sum__reg[5][11]/D      0.00  
+    0:00:40   71759.3      0.87    2455.9       7.1 U_accumulator/sum__reg[11][11]/D      0.00  
+    0:00:41   71753.5      0.87    3698.1       7.6                                0.00  
+    0:00:41   71763.9      0.86    3697.7       7.6 U_accumulator/sum__reg[8][11]/D      0.00  
+    0:00:41   71765.2      0.85    3697.5       7.6 U_accumulator/sum__reg[11][10]/D      0.00  
+    0:00:41   71776.6      0.85    3697.8       7.6 U_accumulator/sum__reg[5][11]/D      0.00  
+    0:00:41   71780.2      0.85    3697.9       7.6 U_accumulator/sum__reg[15][11]/D      0.00  
+    0:00:42   71770.0      0.84    3697.5       7.2                                0.00  
+    0:00:42   71773.6      0.83    3697.5       7.2 U_accumulator/sum__reg[15][11]/D      0.00  
+    0:00:42   71782.0      0.83    3697.4       7.2                                0.00  
+    0:00:42   71818.0      0.83    3694.1       7.2 U_reg_product/out__reg[6][5][1]/D      0.00  
+    0:00:42   71826.7      0.82    3692.8       7.2 U_accumulator/sum__reg[9][11]/D      0.00  
+    0:00:42   71832.5      0.82    3692.6       7.2 U_accumulator/sum__reg[4][11]/D      0.00  
+    0:00:43   71844.0      0.82    3692.5       7.2 U_accumulator/sum__reg[14][11]/D      0.00  
+    0:00:43   71837.4      0.82    2636.5       7.2 U_accumulator/sum__reg[14][11]/D      0.00  
+    0:00:43   71852.6      0.81    2635.8       7.2 U_accumulator/sum__reg[15][11]/D      0.00  
+    0:00:43   71875.5      0.80    2635.7       7.2 U_accumulator/sum__reg[10][11]/D      0.00  
+    0:00:43   71881.3      0.79    2635.0       7.2 U_accumulator/sum__reg[3][11]/D      0.00  
+    0:00:43   71893.8      0.78    2635.0       7.2 U_accumulator/sum__reg[10][11]/D      0.00  
+    0:00:43   71907.0      0.78    2634.9       7.2 U_accumulator/sum__reg[10][11]/D      0.00  
+    0:00:43   71928.9      0.78    2635.0       7.2 U_accumulator/sum__reg[10][11]/D      0.00  
+    0:00:43   71924.8      0.78    2634.9       7.2 U_accumulator/sum__reg[3][11]/D      0.00  
+    0:00:43   71922.2      0.78    2634.4       7.2                                0.00  
+    0:00:44   71916.9      0.76    2631.5       6.8 U_accumulator/sum__reg[12][11]/D      0.00  
+    0:00:44   71911.8      0.71    2623.9       6.8 U_accumulator/sum__reg[4][11]/D      0.00  
+    0:00:44   71893.8      0.65    2562.3       6.7 U_accumulator/sum__reg[10][11]/D      0.00  
+    0:00:44   71897.8      0.64    2450.3       6.7 U_accumulator/sum__reg[12][11]/D      0.00  
+    0:00:45   71899.4      0.64    2450.2       6.7 U_accumulator/sum__reg[15][7]/D      0.00  
+    0:00:45   71907.0      0.64    2449.9       6.7 U_accumulator/sum__reg[13][9]/D      0.00  
+    0:00:45   71909.0      0.64    2449.9       6.7 U_accumulator/sum__reg[9][11]/D      0.00  
+    0:00:45   71911.6      0.63    2390.6       6.7 U_accumulator/sum__reg[15][7]/D      0.00  
+    0:00:45   71914.4      0.63    2389.9       6.7 U_accumulator/sum__reg[15][7]/D      0.00  
+    0:00:45   71915.9      0.63    2389.8       6.7 U_accumulator/sum__reg[15][7]/D      0.00  
+    0:00:46   71920.0      0.63    2389.1       6.7 U_accumulator/sum__reg[7][11]/D      0.00  
+    0:00:46   71924.8      0.62    2386.4       6.7 U_accumulator/sum__reg[11][9]/D      0.00  
+    0:00:46   71926.3      0.62    2386.4       6.7 U_accumulator/sum__reg[4][11]/D      0.00  
+    0:00:46   71928.9      0.62    2386.4       6.7 U_accumulator/sum__reg[15][7]/D      0.00  
+    0:00:46   71932.4      0.62    2386.3       6.7 U_accumulator/sum__reg[7][11]/D      0.00  
+    0:00:46   71933.9      0.62    2386.3       6.7 U_accumulator/sum__reg[15][7]/D      0.00  
+    0:00:47   71945.1      0.62    2385.7       6.7 U_accumulator/sum__reg[14][11]/D      0.00  
+    0:00:47   71948.2      0.62    2385.2       6.7 U_accumulator/sum__reg[4][11]/D      0.00  
+    0:00:47   71951.2      0.62    2385.2       6.7 U_accumulator/sum__reg[15][7]/D      0.00  
+    0:00:47   71954.8      0.62    2385.0       6.7 U_accumulator/sum__reg[7][11]/D      0.00  
+    0:00:48   71957.3      0.61    2385.0       6.7 U_accumulator/sum__reg[15][7]/D      0.00  
+    0:00:48   71958.8      0.61    2385.0       6.7 U_accumulator/sum__reg[15][7]/D      0.00  
+    0:00:48   71960.4      0.61    2385.0       6.7 U_accumulator/sum__reg[15][7]/D      0.00  
+    0:00:48   71961.6      0.61    2384.7       6.7 U_reg_product/out__reg[9][22][10]/D      0.00  
+    0:00:48   71965.2      0.61    2383.7       6.7 U_reg_product/out__reg[11][22][0]/D      0.00  
+    0:00:49   71963.7      0.61    2383.3       6.7                                0.00  
+    0:00:50   71764.4      0.61    2383.4      40.5                                0.00  
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:51   71764.4      0.61    2383.4      40.5                                0.00  
+    0:00:51   71810.7      0.61    2383.2       6.8 net138055                      0.00  
+    0:00:51   71810.7      0.61    2383.1       6.8 net138143                      0.00  
+    0:00:51   71825.7      0.61    2377.1       5.8 net138533                      0.00  
+    0:00:51   71834.1      0.61    2373.3       4.9 U_accumulator/sum__reg[5][11]/D      0.00  
+    0:00:51   71843.2      0.60    2370.1       4.9 U_accumulator/sum__reg[11][9]/D      0.00  
+    0:00:52   71840.9      0.60    2368.5       4.9 U_accumulator/sum__reg[9][11]/D      0.00  
+    0:00:52   71846.0      0.59    2368.5       6.4 U_accumulator/sum__reg[11][9]/D      0.00  
+    0:00:52   71850.3      0.59    2345.4       6.4 U_accumulator/sum__reg[12][11]/D      0.00  
+    0:00:52   71860.7      0.59    2345.3       4.9 net178464                      0.00  
+    0:00:52   71864.6      0.59    2342.6       4.7 net143039                      0.00  
+    0:00:52   71872.2      0.59    2339.9       3.9 net142815                      0.00  
+    0:00:52   71881.1      0.59    2335.0       3.6 net138231                      0.00  
+    0:00:53   71881.1      0.59    2335.0       3.6 net138505                      0.00  
+    0:00:53   71885.4      0.59    2332.9       1.9 net137907                      0.00  
+    0:00:53   71890.7      0.59    2332.4       1.4 net138533                      0.00  
+    0:00:53   71890.7      0.59    2332.4       1.3 net138617                      0.00  
+    0:00:53   71893.3      0.59    2332.4       1.1 net137955                      0.00  
+    0:00:53   71893.3      0.59    2332.4       1.1 net137955                      0.00  
+    0:00:53   71894.5      0.59    2332.4       1.1 net137955                      0.00  
+    0:00:54   71894.5      0.59    2332.3       1.1 net137983                      0.00  
+    0:00:54   71894.5      0.59    2332.3       1.1 net138433                      0.00  
+    0:00:54   71897.1      0.59    2332.3       1.0 net138433                      0.00  
+    0:00:54   71897.1      0.59    2332.3       1.0 net138433                      0.00  
+    0:00:54   71896.1      0.59    2332.2       1.0 U_accumulator/sum__reg[4][11]/D      0.00  
+    0:00:54   71898.1      0.59    2332.1       1.0 U_accumulator/sum__reg[9][11]/D      0.00  
+    0:00:54   71789.6      0.58    2326.2       1.0 U_reg_product/out__reg[2][7][11]/D      0.00  
+    0:00:55   71792.4      0.58    2314.0       1.0 U_accumulator/sum__reg[4][11]/D      0.00  
+    0:00:55   71793.6      0.58    2314.0       1.0 U_accumulator/sum__reg[7][11]/D      0.00  
+    0:00:55   71804.1      0.58    2314.2       1.0                                0.00  
+    0:00:55   71805.1      0.59    2314.2       1.0                                0.00  
+    0:00:55   71806.9      0.59    2313.2       1.0                                0.00  
+    0:00:55   71804.8      0.59    2312.8       1.0                                0.00  
+    0:00:55   71797.2      0.59    2312.7       1.0                                0.00  
+    0:00:56   71797.2      0.59    2312.3       1.0                                0.00  
+    0:00:56   71806.1      0.59    2248.3       1.0                                0.00  
+    0:00:56   71813.2      0.59    2248.2       1.0                                0.00  
+    0:00:56   71812.5      0.59    2243.4       1.0                                0.00  
+    0:00:56   71813.5      0.59    2215.2       1.0                                0.00  
+    0:00:56   71811.7      0.59    2210.3       1.0                                0.00  
+    0:00:56   71823.1      0.59    2168.3       1.0                                0.00  
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:56   71823.1      0.59    2168.3       1.0                                0.00  
+    0:00:56   71823.1      0.59    2168.3       1.0                                0.00  
+    0:00:58   71377.6      0.60    1989.4       3.4                                0.00  
+    0:00:59   71201.2      0.60    1786.0       5.0                                0.00  
+    0:01:00   71125.5      0.60    1627.8       4.9                                0.00  
+    0:01:01   71047.5      0.58    1616.9       5.2                                0.00  
+    0:01:01   70977.8      0.58    1577.2       5.9                                0.00  
+    0:01:02   70897.3      0.58    1516.7       6.2                                0.00  
+    0:01:03   70826.1      0.58    1487.0       8.1                                0.00  
+    0:01:03   70756.5      0.58    1452.0       8.8                                0.00  
+    0:01:03   70689.9      0.58    1438.4       9.3                                0.00  
+    0:01:04   70625.1      0.58    1434.4      10.0                                0.00  
+    0:01:04   70569.7      0.58    1409.4      10.0                                0.00  
+    0:01:04   70513.8      0.58    1405.6      10.5                                0.00  
+    0:01:05   70460.4      0.58    1402.4      10.5                                0.00  
+    0:01:05   70404.5      0.58    1397.7      10.6                                0.00  
+    0:01:05   70348.6      0.58    1395.3      10.6                                0.00  
+    0:01:05   70300.3      0.58    1385.9      10.6                                0.00  
+    0:01:06   70245.7      0.58    1382.3      10.7                                0.00  
+    0:01:06   70191.0      0.58    1377.2      11.0                                0.00  
+    0:01:06   70130.0      0.58    1369.5      11.2                                0.00  
+    0:01:06   70080.5      0.58    1364.3      12.1                                0.00  
+    0:01:06   70022.0      0.58    1358.3      12.1                                0.00  
+    0:01:07   69971.2      0.58    1353.7      12.4                                0.00  
+    0:01:07   69917.8      0.58    1348.5      12.8                                0.00  
+    0:01:07   69868.3      0.58    1348.6      12.9                                0.00  
+    0:01:07   69812.3      0.58    1344.9      13.1                                0.00  
+    0:01:07   69766.6      0.58    1341.2      13.2                                0.00  
+    0:01:07   69715.8      0.58    1340.8      13.3                                0.00  
+    0:01:07   69668.7      0.58    1336.9      13.6                                0.00  
+    0:01:08   69623.0      0.58    1335.0      13.8                                0.00  
+    0:01:08   69574.7      0.58    1332.0      13.8                                0.00  
+    0:01:08   69521.3      0.58    1329.3      13.9                                0.00  
+    0:01:08   69478.1      0.58    1327.6      13.9                                0.00  
+    0:01:08   69436.2      0.58    1329.8      14.3                                0.00  
+    0:01:08   69394.3      0.58    1328.4      14.3                                0.00  
+    0:01:08   69363.8      0.58    1326.8      14.9                                0.00  
+    0:01:08   69363.8      0.58    1326.8      14.9                                0.00  
+    0:01:09   69376.7      0.58    1322.5      10.5 net142267                      0.00  
+    0:01:09   69387.4      0.58    1321.4       8.4 net149375                      0.00  
+    0:01:09   69396.3      0.58    1321.2       7.0 net143655                      0.00  
+    0:01:09   69407.5      0.58    1321.1       5.5 net145967                      0.00  
+    0:01:09   69408.8      0.58    1321.1       5.1 net142201                      0.00  
+    0:01:09   69415.1      0.58    1321.1       4.2 net148505                      0.00  
+    0:01:10   69415.1      0.58    1321.1       4.0 net149916                      0.00  
+    0:01:10   69417.9      0.58    1319.6       2.8 net138521                      0.00  
+    0:01:10   69417.9      0.58    1319.6       2.8 net138521                      0.00  
+    0:01:10   69423.0      0.58    1319.6       2.6 net137881                      0.00  
+    0:01:10   69436.0      0.58    1319.6       2.4                                0.00  
+    0:01:11   69299.5      0.64    1309.4       2.4                                0.00  
+    0:01:11   69280.2      0.64    1310.2       2.4                                0.00  
+    0:01:11   69279.7      0.64    1310.2       2.4                                0.00  
+    0:01:11   69279.7      0.64    1310.2       2.4                                0.00  
+    0:01:11   69279.7      0.64    1310.2       2.4                                0.00  
+    0:01:11   69279.7      0.64    1310.2       2.4                                0.00  
+    0:01:11   69279.7      0.64    1310.2       2.4                                0.00  
+    0:01:11   69279.7      0.64    1310.2       2.4                                0.00  
+    0:01:11   69298.7      0.59    1308.3       2.4 U_accumulator/sum__reg[8][11]/D      0.00  
+    0:01:11   69297.4      0.58    1308.3       2.4                                0.00  
+    0:01:11   69313.7      0.58    1308.1       2.4                                0.00  
+    0:01:11   69316.3      0.58    1307.8       2.4                                0.00  
+    0:01:12   69316.3      0.58    1307.8       2.4                                0.00  
+    0:01:12   69328.2      0.58    1307.4       2.4                                0.00  
+    0:01:12   69330.7      0.58    1307.1       2.4                                0.00  
+    0:01:12   69337.9      0.58    1306.9       2.4                                0.00  
+    0:01:12   69350.3      0.58    1306.8       2.4                                0.00  
+    0:01:12   69357.9      0.58    1306.8       2.4                                0.00  
+    0:01:12   69365.3      0.58    1306.8       2.4                                0.00  
+    0:01:12   69373.7      0.58    1306.6       2.4                                0.00  
+    0:01:12   69376.2      0.58    1306.6       2.4                                0.00  
+    0:01:12   69379.3      0.58    1306.5       2.4                                0.00  
+    0:01:12   69380.0      0.58    1306.5       2.4                                0.00  
+    0:01:12   69380.0      0.58    1306.4       2.4 U_accumulator/sum__reg[9][11]/D      0.00  
+    0:01:12   69380.6      0.57    1306.4       2.4 U_accumulator/sum__reg[8][11]/D      0.00  
+    0:01:12   69386.1      0.57    1306.7       2.4 U_accumulator/sum__reg[7][11]/D      0.00  
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'simd_cell' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+1
+check_design
+1
+#############################################
+# Take a look at area, max, and min timings #
+#############################################
+report_area > simd_cell_area.txt
+report_power > simd_cell_power.txt
+report_timing -delay min > simd_cell_min_delay.txt
+report_timing -delay max > simd_cell_max_delay.txt
+#### write out final netlist ######
+write -format verilog simd_cell -output simd_cell.vg
+Writing verilog file '/filespace/z/zpan52/Desktop/syn_script/synthesis/32nm_rvt/all/tlutMul_largeA_32_16/simd_cell.vg'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+exit
+Memory usage for this session 309 Mbytes.
+Memory usage for this session including child processes 309 Mbytes.
+CPU usage for this session 164 seconds ( 0.05 hours ).
+Elapsed time for this session 167 seconds ( 0.05 hours ).
+
+Thank you...

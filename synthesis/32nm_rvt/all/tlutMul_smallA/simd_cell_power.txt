@@ -7,7 +7,7 @@ Report : power
         -analysis_effort low
 Design : simd_cell
 Version: S-2021.06
-Date   : Wed Oct 27 09:46:57 2021
+Date   : Thu Oct 28 19:41:33 2021
 ****************************************
 
 
@@ -33,12 +33,12 @@ Power-specific unit information :
     Leakage Power Units = 1pW
 
 
-  Cell Internal Power  = 298.8070 uW   (98%)
-  Net Switching Power  =   5.5369 uW    (2%)
+  Cell Internal Power  = 283.0558 uW   (98%)
+  Net Switching Power  =   6.2876 uW    (2%)
                          ---------
-Total Dynamic Power    = 304.3439 uW  (100%)
+Total Dynamic Power    = 289.3434 uW  (100%)
 
-Cell Leakage Power     =  48.2109 uW
+Cell Leakage Power     =  45.8828 uW
 
 
                  Internal         Switching           Leakage            Total
@@ -48,9 +48,9 @@ io_pad             0.0000            0.0000            0.0000            0.0000 
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
 clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
-register         289.2057            3.8506        3.8319e+07          331.3755  (  93.99%)
+register         273.3376            2.6962        3.6535e+07          312.5691  (  93.24%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational      9.6012            1.6862        9.8919e+06           21.1794  (   6.01%)
+combinational      9.7181            3.5914        9.3475e+06           22.6570  (   6.76%)
 --------------------------------------------------------------------------------------------------
-Total            298.8070 uW         5.5369 uW     4.8211e+07 pW       352.5549 uW
+Total            283.0558 uW         6.2876 uW     4.5883e+07 pW       335.2261 uW
 1

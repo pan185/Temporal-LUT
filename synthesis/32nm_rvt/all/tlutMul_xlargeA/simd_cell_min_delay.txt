@@ -6,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : simd_cell
 Version: S-2021.06
-Date   : Wed Oct 27 09:49:40 2021
+Date   : Thu Oct 28 19:43:55 2021
 ****************************************
 
  # A fanout number of 1000 was used for high fanout net computations.
@@ -31,7 +31,7 @@ Wire Load Model Mode: enclosed
   clock network delay (ideal)                             0.00       0.00
   U_reg_product/out__reg[0][0][0]/CLK (DFFARX1_RVT)       0.00 #     0.00 r
   U_reg_product/out__reg[0][0][0]/Q (DFFARX1_RVT)         0.14       0.14 f
-  U367/Y (AO22X1_RVT)                                     0.05       0.20 f
+  U366/Y (AO22X1_RVT)                                     0.05       0.20 f
   U_reg_product/out__reg[0][0][0]/D (DFFARX1_RVT)         0.01       0.20 f
   data arrival time                                                  0.20
 

@@ -6,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : rollover_cnt
 Version: S-2021.06
-Date   : Wed Oct 27 09:49:17 2021
+Date   : Thu Oct 28 19:43:32 2021
 ****************************************
 
 Operating Conditions: tt0p85v25c   Library: saed32rvt_tt0p85v25c
@@ -27,10 +27,11 @@ Wire Load Model Mode: enclosed
   clock network delay (ideal)              0.00       0.00
   input external delay                     0.25       0.25 r
   enable (in)                              0.00       0.25 r
-  U18/Y (AND2X1_RVT)                       0.06       0.31 r
-  U17/Y (AND4X1_RVT)                       0.09       0.40 r
-  rollover (out)                           0.01       0.40 r
-  data arrival time                                   0.40
+  U20/Y (INVX1_RVT)                        0.03       0.28 f
+  U18/Y (OR3X1_RVT)                        0.09       0.37 f
+  U16/Y (NOR3X0_RVT)                       0.10       0.47 r
+  rollover (out)                           0.01       0.48 r
+  data arrival time                                   0.48
 
   clock clk (rise edge)                    2.50       2.50
   clock network delay (ideal)              0.00       2.50
@@ -39,9 +40,9 @@ Wire Load Model Mode: enclosed
   data required time                                  1.85
   -----------------------------------------------------------
   data required time                                  1.85
-  data arrival time                                  -0.40
+  data arrival time                                  -0.48
   -----------------------------------------------------------
-  slack (MET)                                         1.45
+  slack (MET)                                         1.37
 
 
 1

@@ -6,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : simd_cell
 Version: S-2021.06
-Date   : Wed Oct 27 09:44:28 2021
+Date   : Thu Oct 28 19:39:21 2021
 ****************************************
 
 Operating Conditions: tt0p85v25c   Library: saed32rvt_tt0p85v25c
@@ -36,10 +36,10 @@ Wire Load Model Mode: enclosed
   U_accumulator/add_22/U1_5/CO (FADDX1_RVT)               0.12       0.92 r
   U_accumulator/add_22/U1_6/CO (FADDX1_RVT)               0.12       1.04 r
   U_accumulator/add_22/U1_7/CO (FADDX1_RVT)               0.13       1.17 r
-  U337/Y (NAND3X0_RVT)                                    0.08       1.25 f
-  U336/Y (AO21X1_RVT)                                     0.11       1.36 f
-  U335/Y (AO21X1_RVT)                                     0.06       1.42 f
-  U333/Y (AO21X1_RVT)                                     0.08       1.49 f
+  U319/Y (NAND3X0_RVT)                                    0.08       1.25 f
+  U318/Y (AO21X1_RVT)                                     0.11       1.36 f
+  U317/Y (AO21X1_RVT)                                     0.06       1.42 f
+  U315/Y (AO21X1_RVT)                                     0.08       1.49 f
   U_accumulator/sum__reg[0][11]/D (DFFARX1_RVT)           0.01       1.51 f
   data arrival time                                                  1.51
 

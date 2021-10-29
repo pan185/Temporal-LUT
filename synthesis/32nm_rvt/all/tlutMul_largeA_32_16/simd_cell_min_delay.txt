@@ -1,0 +1,50 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : simd_cell
+Version: S-2021.06
+Date   : Thu Oct 28 19:29:09 2021
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: tt0p85v25c   Library: saed32rvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: weight_bin[0][3]
+              (input port clocked by clk)
+  Endpoint: U_reg_weight/out__reg[0][3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  simd_cell          70000                 saed32rvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.25       0.25 f
+  weight_bin[0][3] (in)                                   0.00       0.25 f
+  U_reg_weight/out__reg[0][3]/D (DFFARX2_RVT)             0.07       0.32 f
+  data arrival time                                                  0.32
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.15       0.15
+  U_reg_weight/out__reg[0][3]/CLK (DFFARX2_RVT)           0.00       0.15 r
+  library hold time                                       0.00       0.15
+  data required time                                                 0.15
+  --------------------------------------------------------------------------
+  data required time                                                 0.15
+  data arrival time                                                 -0.32
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.17
+
+
+1
