@@ -1,0 +1,46 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : multiplier_isoschedule
+Version: S-2021.06
+Date   : Sat Nov 20 21:05:45 2021
+****************************************
+
+Operating Conditions: tt0p85v25c   Library: saed32rvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: in4[0] (input port)
+  Endpoint: out12[10] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  multiplier_isoschedule
+                     8000                  saed32rvt_tt0p85v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  in4[0] (in)                              0.00       0.00 r
+  U150/Y (AND2X1_RVT)                      0.07       0.07 r
+  U141/Y (XOR2X1_RVT)                      0.14       0.21 f
+  mult_17/S2_2_3/S (FADDX1_RVT)            0.18       0.39 r
+  mult_17/S4_2/S (FADDX1_RVT)              0.17       0.56 f
+  U120/Y (NAND2X0_RVT)                     0.09       0.65 r
+  U119/Y (NAND4X0_RVT)                     0.12       0.76 f
+  U116/Y (AO21X1_RVT)                      0.12       0.89 f
+  U114/Y (AO21X1_RVT)                      0.09       0.98 f
+  U110/Y (OAI21X1_RVT)                     0.13       1.11 r
+  U107/Y (AO221X1_RVT)                     0.11       1.22 r
+  U104/Y (XOR2X1_RVT)                      0.12       1.34 f
+  out12[10] (out)                          0.00       1.34 f
+  data arrival time                                   1.34
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
