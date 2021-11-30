@@ -1,7 +1,9 @@
-`define CONFIG1
+//`define CONFIG1
+`define CONFIG_MATMUL_1D
 //`define WORKLOAD1
 // `define CONFIG2
-`define WORKLOAD_SMALL_A
+//`define WORKLOAD_SMALL_A
+`define WORKLOAD_MATMUL_1D
 //`define WORKLOAD_MEDIAN_A
 //`define WORKLOAD_LARGE_A
 
@@ -10,6 +12,12 @@
     `define INPUT_WIDTH 4
     `define WEIGHT_WIDTH 8
     `define ACC_WIDTH 12
+`endif
+
+`ifdef CONFIG_MATMUL_1D
+    `define INPUT_WIDTH 4
+    `define WEIGHT_WIDTH 4
+    `define ACC_WIDTH 8
 `endif
 
 `ifdef CONFIG2
@@ -42,3 +50,8 @@
     `define DIM_C 1
 `endif
 
+`ifdef WORKLOAD_MATMUL_1D
+    `define DIM_A 9
+    `define DIM_B 1 //Mapped temporally (scheduling)
+    `define DIM_C 9
+`endif

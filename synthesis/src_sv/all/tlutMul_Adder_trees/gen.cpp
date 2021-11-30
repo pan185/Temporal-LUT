@@ -18,7 +18,8 @@ int main(int argc, char* argv[])
 
     for (int i = 0; i < dim; i++) {
       for (int j = 0; j < dim; j++) {
-            cout << "mul_temp[" << i <<"][" << j << "] = ";
+            //cout << "mul_temp[" << i <<"][" << j << "] = ";
+            cout << "mul_temp[" << i*dim+j << "] = ";
             for (int k = 0; k < dim; k++) {
                 cout << "prod[" << i*dim+k << "][" <<k*dim+j <<"]";
                 if (k!=dim-1) cout <<" + ";

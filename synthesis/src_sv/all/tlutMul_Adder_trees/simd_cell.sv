@@ -22,22 +22,17 @@ module simd_cell
     input  logic enable,
     input  logic [`DIM_A-1:0][`INPUT_WIDTH-1:0]input_bin,    // input in binary
     input  logic [`DIM_C-1:0][`WEIGHT_WIDTH-1:0]weight_bin,  // weight in binary
+    output logic [`DIM_C-1:0][`DIM_A-1:0][`ACC_WIDTH-1:0] product_reg
     //prajyotg :: updating the output dimensions :: output logic [`DIM_C-1:0][`DIM_A-1:0][`ACC_WIDTH-1:0] product_reg
-    output logic [`DIM_A-1:0][`ACC_WIDTH-1:0] product_reg
+    output logic  [`DIM_A-1:0][`ACC_WIDTH-1:0] accumulated_mult;
 );
     logic [`DIM_A-1:0][`INPUT_WIDTH-1:0]input_reg;
     logic [`DIM_C-1:0][`WEIGHT_WIDTH-1:0]weight_reg;
-    //logic [`DIM_C-1:0][`DIM_A-1:0][`ACC_WIDTH-1:0] product_;
     logic [`DIM_A-1:0]temporal; //single bit
     //logic enable_reg;
     logic [`DIM_C-1:0][`ACC_WIDTH-1:0] weight_acc;
     logic  rollover; //rollover signal for accumulating products
-    //logic  rollover_reg; //one cycle delayed version of rollover signal
-    //logic  rollover_reg2; //two cycle delayed version of rollover signal
-    //logic [`INPUT_WIDTH-1:0] cnt_unused;
     logic [`INPUT_WIDTH-1:0] cntOut;
-    genvar i; // loop thru input (DIM_A)
-    genvar j; // loop thru weight(DIM_C)
 
     //input register
     register_input U_reg_input(
@@ -83,22 +78,6 @@ module simd_cell
 	);
 
 
-    // product accumulators
-    // note: use roll over counter of length=input bitwidth as enable signal
-    // note: for early termination, use different enable signal
-    //generate
-	//for (j = 0; j < DIM_C; j = j+1) begin: test_gen_c_product_acc
-	/*accumulator_prod U_accumulator_prod(//[DIM_C-1:0][DIM_A-1:0](
-        .clk(clk),
-        .rst_n(rst_n),
-        .enable(rollover_reg2),
-	.clear('0),
-	.val(product_reg),
-	.sum(product_acc)
-        );*/
-	//end
-	//endgenerate
-
     // rollover counter
     rollover_cnt U_rollovercnt(
         .clk(clk),
@@ -107,27 +86,12 @@ module simd_cell
         .cntOut(cntOut),
 	    .rollover(rollover)
         );
-    //enable reg
-    /*register_enable U_reg_enable(
-        .clk(clk),
-        .rst_n(rst_n),
-        .in(enable),
-        .out(enable_reg)
-        );*/
-    // rollover reg
-    /*register_bit1 #(1) U_reg_rollover(
-        .clk(clk),
-        .rst_n(rst_n),
-        .in(rollover),
-        .out(rollover_reg)
-        );
-    // rollover reg
+    
     register_bit2 #(1) U_reg_rollover2(
         .clk(clk),
         .rst_n(rst_n),
         .in(rollover_reg),
         .out(rollover_reg2)
         );*/
-
 
 endmodule
