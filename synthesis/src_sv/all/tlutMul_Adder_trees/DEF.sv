@@ -52,6 +52,7 @@
 
 `ifdef WORKLOAD_MATMUL_1D
     `define DIM_A 9
-    `define DIM_B 1 //Mapped temporally (scheduling)
+    //`define DIM_B 1 //Mapped temporally (scheduling)
     `define DIM_C 9
+    `define DIM_MULT 9
 `endif

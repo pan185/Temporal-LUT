@@ -12,7 +12,7 @@
 `include "register_product.sv"
 `include "register_weight.sv"
 `include "register_input.sv"
-
+`include "adder_tree.sv" 
 `include "rollover_cnt.sv"
 
 module simd_cell 
@@ -22,9 +22,8 @@ module simd_cell
     input  logic enable,
     input  logic [`DIM_A-1:0][`INPUT_WIDTH-1:0]input_bin,    // input in binary
     input  logic [`DIM_C-1:0][`WEIGHT_WIDTH-1:0]weight_bin,  // weight in binary
-    output logic [`DIM_C-1:0][`DIM_A-1:0][`ACC_WIDTH-1:0] product_reg
-    //prajyotg :: updating the output dimensions :: output logic [`DIM_C-1:0][`DIM_A-1:0][`ACC_WIDTH-1:0] product_reg
-    output logic  [`DIM_A-1:0][`ACC_WIDTH-1:0] accumulated_mult;
+    //prajyotg :: moving it from output to logic :: output logic [`DIM_C-1:0][`DIM_A-1:0][`ACC_WIDTH-1:0] product_reg
+    output logic  [`DIM_MULT-1:0][`ACC_WIDTH-1:0] accumulated_mult;
 );
     logic [`DIM_A-1:0][`INPUT_WIDTH-1:0]input_reg;
     logic [`DIM_C-1:0][`WEIGHT_WIDTH-1:0]weight_reg;
@@ -33,6 +32,8 @@ module simd_cell
     logic [`DIM_C-1:0][`ACC_WIDTH-1:0] weight_acc;
     logic  rollover; //rollover signal for accumulating products
     logic [`INPUT_WIDTH-1:0] cntOut;
+    //prajyotg:: updated it to logic
+    logic [`DIM_C-1:0][`DIM_A-1:0][`ACC_WIDTH-1:0] product_reg
 
     //input register
     register_input U_reg_input(
@@ -50,6 +51,7 @@ module simd_cell
 	    .out(weight_reg)
     );
 
+    // Temporal Signal Generator
 	cmp  U_cmp(
         .clk(clk),
         .rst_n(rst_n),
@@ -59,7 +61,7 @@ module simd_cell
 	    .cmp_out(temporal)
     );
 
-    // weight accumulators
+    // Weight accumulators
     accumulator_weight U_accumulator(
         .clk(clk),
         .rst_n(rst_n),
@@ -69,6 +71,7 @@ module simd_cell
 	    .sum(weight_acc)
     );
 
+    // Generates the product terms in TLUT
 	register_product U_reg_product(//[DIM_C-1:0][DIM_A-1:0](
 		.clk(clk),
 		.rst_n(rst_n),//&(~rollover_reg2)),
@@ -77,6 +80,14 @@ module simd_cell
 		.out(product_reg)
 	);
 
+    // Accumulate Data-flow
+    // Sums the products to give final matrix 
+    adder_tree U_adder_tree(
+        .clk(clk),
+        .rst_n(rst_n),
+        .prod(product_reg),
+        .mult(accumulated_mult)
+    );
 
     // rollover counter
     rollover_cnt U_rollovercnt(
