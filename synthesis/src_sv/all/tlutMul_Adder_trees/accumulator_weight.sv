@@ -12,13 +12,13 @@ module accumulator_weight
     input logic rst_n,  // Asynchronous reset active low
     input logic enable,
     input logic clear,
-    input logic [`DIM_C-1:0][`WEIGHT_WIDTH-1:0]val, // input val to be accumulated
-    output logic [`DIM_C-1:0][`ACC_WIDTH-1:0]sum
+    input logic [`DIM_ROW2 * `DIM_COL2-1:0][`WEIGHT_WIDTH-1:0]val, // input val to be accumulated
+    output logic [`DIM_ROW2 * `DIM_COL2-1:0][`ACC_WIDTH-1:0]sum
 );
-    logic[`DIM_C-1:0][`ACC_WIDTH-1:0] sum_;
+    logic[`DIM_ROW2 * `DIM_COL2-1:0][`ACC_WIDTH-1:0] sum_;
     genvar i;
     generate
-    for (i=0; i<`DIM_C; i = i+1) begin
+    for (i=0; i<`DIM_ROW2 * `DIM_COL2; i = i+1) begin
     always_ff @(posedge clk or negedge rst_n) begin : proc_1
         if(~rst_n) begin
             sum_[i] <= 0;
