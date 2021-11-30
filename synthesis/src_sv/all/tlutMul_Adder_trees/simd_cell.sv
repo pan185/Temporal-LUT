@@ -20,20 +20,20 @@ module simd_cell
     input  logic clk,    // Clock
     input  logic rst_n,  // Asynchronous reset active low
     input  logic enable,
-    input  logic [`DIM_A-1:0][`INPUT_WIDTH-1:0]input_bin,    // input in binary
-    input  logic [`DIM_C-1:0][`WEIGHT_WIDTH-1:0]weight_bin,  // weight in binary
+    input  logic [`DIM_ROW1 * `DIM_COL1-1:0][`INPUT_WIDTH-1:0]input_bin,    // input in binary
+    input  logic [`DIM_ROW2 * `DIM_COL2-1:0][`WEIGHT_WIDTH-1:0]weight_bin,  // weight in binary
     //prajyotg :: moving it from output to logic :: output logic [`DIM_C-1:0][`DIM_A-1:0][`ACC_WIDTH-1:0] product_reg
-    output logic  [`DIM_MULT-1:0][`ACC_WIDTH-1:0] accumulated_mult
+    output logic  [`DIM_ROW1 * `DIM_COL2-1:0][`ACC_WIDTH-1:0] accumulated_mult
 );
-    logic [`DIM_A-1:0][`INPUT_WIDTH-1:0]input_reg;
-    logic [`DIM_C-1:0][`WEIGHT_WIDTH-1:0]weight_reg;
-    logic [`DIM_A-1:0]temporal; //single bit
+    logic [`DIM_ROW1 * `DIM_COL1-1:0][`INPUT_WIDTH-1:0]input_reg;
+    logic [`DIM_ROW2 * `DIM_COL2-1:0][`WEIGHT_WIDTH-1:0]weight_reg;
+    logic [`DIM_ROW1 * `DIM_COL1-1:0]temporal; //single bit
     //logic enable_reg;
-    logic [`DIM_C-1:0][`ACC_WIDTH-1:0] weight_acc;
+    logic [`DIM_ROW2 * `DIM_COL2-1:0][`ACC_WIDTH-1:0] weight_acc;
     logic  rollover; //rollover signal for accumulating products
     logic [`INPUT_WIDTH-1:0] cntOut;
     //prajyotg:: updated it to logic
-    logic [`DIM_C-1:0][`DIM_A-1:0][`ACC_WIDTH-1:0] product_reg;
+    logic [`DIM_ROW2 * `DIM_COL2-1:0][`DIM_ROW1 * `DIM_COL1-1:0][`ACC_WIDTH-1:0] product_reg;
 
     //input register
     register_input U_reg_input(

@@ -10,20 +10,21 @@
 
 module t_lut_tb ();
     //prajyotg :: Updating DEFs 
-    parameter DIM_A = 9;
-    parameter DIM_C = 9;
-    parameter DIM_MULT = 9;
-    parameter INPUT_WIDTH = 4;
-    parameter WEIGHT_WIDTH = 4;
+    localparam DIM_ROW1 = 3;
+    localparam DIM_COL1 = 3;
+    localparam DIM_ROW2 = 3;
+    localparam DIM_COL2 = 3;
+    localparam INPUT_WIDTH = 4;
+    localparam WEIGHT_WIDTH = 4;
     //prajyotg :: updating ACC_WIDTH parameter ACC_WIDTH = 16;
-    parameter ACC_WIDTH = 8;
+    localparam ACC_WIDTH = 8;
 
     logic   clk;
     logic   rst_n;
     logic   enable;
-    logic   [DIM_A-1:0][INPUT_WIDTH-1:0]input_bin;
-    logic   [DIM_C-1:0][WEIGHT_WIDTH-1:0]weight_bin;
-    logic   [DIM_MULT-1:0][ACC_WIDTH-1:0]product;
+    logic   [DIM_ROW1*DIM_COL1-1:0][INPUT_WIDTH-1:0]input_bin;
+    logic   [DIM_ROW2*DIM_COL2-1:0][WEIGHT_WIDTH-1:0]weight_bin;
+    logic   [DIM_ROW1*DIM_COL2-1:0][ACC_WIDTH-1:0]product;
     integer i=0;
     
 
