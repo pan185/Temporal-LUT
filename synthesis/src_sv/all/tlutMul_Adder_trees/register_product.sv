@@ -1,8 +1,15 @@
+////////////////////////////////////////////////////////////////////////////
+// Author       : Prajyot 
+// Coursework   : ECE 751
+// Module       : simd_cell.sv
+// Description  : Complete TLUT with adder trees implemented
+////////////////////////////////////////////////////////////////////////////
+
 `include "DEF.sv"
 module register_product
 (
-    input logic clk,    // Clock
-    input logic rst_n,  // Asynchronous reset active lo
+    input logic clk,                            // Clock
+    input logic rst_n,                          // Asynchronous reset active lo
     input logic [`DIM_A-1:0] enable,
     input logic [`DIM_C-1:0][`ACC_WIDTH-1:0]in, // Val to be written to reg
     output logic [`DIM_C-1:0][`DIM_A-1:0][`ACC_WIDTH-1:0]out // Val read out
