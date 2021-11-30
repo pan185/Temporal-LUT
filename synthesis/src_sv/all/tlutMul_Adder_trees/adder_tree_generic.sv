@@ -26,7 +26,12 @@ module adder_tree(
     for (i=0; i<`DIM_C; i=i+1)begin
         for (j=0; j<`DIM_A; j=j+1) begin
             for (k=0; k<`DIM_MULT; k=k+1) begin
-                mul_temp[`DIM_A*i+j] = mul_temp[`DIM_A*i+j] + prod[`DIM_A*i+k][`DIM_A*k+j]; 
+                always_ff @(posedge clk or negedge rst_n) begin: matmul
+                    if(~rst_n)
+                        mul_temp[`DIM_A*i+j] <=0;
+                    else
+                    mul_temp[`DIM_A*i+j] = mul_temp[`DIM_A*i+j] + prod[`DIM_A*i+k][`DIM_A*k+j]; 
+                end
             end
         end
     end
