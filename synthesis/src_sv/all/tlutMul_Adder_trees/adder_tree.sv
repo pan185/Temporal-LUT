@@ -11,12 +11,15 @@
 module adder_tree(
     input  logic clk,
     input  logic rst_n,
-    input  logic [`DIM_C-1:0][`DIM_A-1:0][`ACC_WIDTH-1:0]prod,
-    output logic [`DIM_MULT-1:0][`ACC_WIDTH-1:0]mult
+    input  logic [`DIM_ROW2 * `DIM_COL2 -1:0][`DIM_ROW1 * `DIM_COL1 -1:0][`ACC_WIDTH-1:0]prod,
+    output logic [`DIM_ROW1 * `DIM_COL2 -1:0][`ACC_WIDTH-1:0]mult
     //TODO: Update the DIM of the output
     //for now, it is = DIM_A
+    //Aish: Changed DIM_A = DIM_ROW1 * DIM_COL1
+    //Aish: Changed DIM_C = DIM_ROW2 * DIM_COL2
+    //Aish: Changed DIM_MULT = DIM_ROW1 * DIM_COL2
 );
-    logic [`DIM_MULT-1:0][`ACC_WIDTH-1:0] mul_temp;
+    logic [`DIM_ROW1 * `DIM_COL2 -1:0][`ACC_WIDTH-1:0] mul_temp;
 
     always_ff @(posedge clk or negedge rst_n)
     begin
