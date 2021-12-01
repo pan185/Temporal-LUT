@@ -6,18 +6,9 @@
 ////////////////////////////////////////////////////////////////////////////
 `timescale 1ns/1ns
 `include "simd_cell.sv"
-
+`include "DEF.sv"
 
 module t_lut_tb ();
-    //prajyotg :: Updating DEFs 
-    localparam DIM_ROW1 = 3;
-    localparam DIM_COL1 = 3;
-    localparam DIM_ROW2 = 3;
-    localparam DIM_COL2 = 3;
-    localparam INPUT_WIDTH = 4;
-    localparam WEIGHT_WIDTH = 4;
-    //prajyotg :: updating ACC_WIDTH parameter ACC_WIDTH = 16;
-    localparam ACC_WIDTH = 8;
 
     logic   clk;
     logic   rst_n;
