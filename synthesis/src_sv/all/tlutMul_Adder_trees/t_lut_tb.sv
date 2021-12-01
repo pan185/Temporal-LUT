@@ -49,6 +49,26 @@ module t_lut_tb ();
 	    weight_bin = {4'd0,4'd1,4'd2,4'd3,4'd4,4'd5,4'd6,4'd7,4'd8};
         
         #30;
+        
+        if(product != {13'd30,13'd36,13'd42,13'd66,13'd81,13'd96,13'd90,13'd111,13'd132}) begin   
+            $display("test 1 SUCCESS");
+        end else begin
+            $display("test 2 FAILED");
+        end
+
+        #30;
+
+
+	    input_bin = {4'd4, 4'd4, 4'd4, 4'd4, 4'd4, 4'd4, 4'd4, 4'd4, 4'd4};
+	    weight_bin = {4'd1, 4'd1, 4'd1, 4'd1, 4'd1, 4'd1, 4'd1, 4'd1, 4'd1};
+        #30;
+        if(product == {13'd12, 13'd12, 13'd12, 13'd12, 13'd12, 13'd12, 13'd12, 13'd12, 13'd12}) begin 
+            $display("test 2 SUCCESS");
+        end else begin
+            $display("test 2 FAILED");
+        end
+
+        #30;
 	    @(negedge clk);
         rst_n = 1;
 	   
