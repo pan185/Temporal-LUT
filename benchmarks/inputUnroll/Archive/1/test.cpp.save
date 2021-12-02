@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main() {
+
+FILE *fp; 
+fp = fopen ("input_small.mat","r");
+if (fp){
+
+std::cout << fp.rdbuf();
+
+printf("hello world");
+}
+
+return 0;
+}
