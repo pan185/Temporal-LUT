@@ -7,10 +7,10 @@ VCOM = $(PREFIX) vcom
 VLIB = $(PREFIX) vlib
 
 VLOG_OPTS = -suppress vlog-2583 +acc
-DIM_ROW1 = 2
-DIM_COL1 = 2
-DIM_ROW2 = 2
-DIM_COL2 = 2
+DIM_ROW1 = 1
+DIM_COL1 = 784
+DIM_ROW2 = 784
+DIM_COL2 = 10
 
 compile: gen_file rtl tb
 
