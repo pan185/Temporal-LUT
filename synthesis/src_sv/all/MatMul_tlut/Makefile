@@ -10,7 +10,7 @@ VLOG_OPTS = -suppress vlog-2583 +acc
 DIM_ROW1 = 1
 DIM_COL1 = 784
 DIM_ROW2 = 784
-DIM_COL2 = 10
+DIM_COL2 = 1
 
 compile: gen_file rtl tb
 

@@ -61,7 +61,7 @@
     `define DIM_ROW1 1
     `define DIM_COL1 784
     `define DIM_ROW2 784
-    `define DIM_COL2 10
+    `define DIM_COL2 1
     // DIM_A = DIM_ROW1 * `DIM_COL1
     // DIM_C = DIM_ROW2 * `DIM_COL2
     // DIM_MUL = DIM_ROW1 * `DIM_COL2
