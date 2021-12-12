@@ -19,18 +19,18 @@ if not (cap.isOpened()):
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
 
-x0 = int(1280 / 2 - 224)+1
-x1 = int(1280 / 2 + 224)+1
+x0 = int(1280 / 2 - 224) + 1
+x1 = int(1280 / 2 + 224) + 1
 
-y0 = int(720 / 2 - 224 )+1
-y1 = int(720 / 2 + 224)+1
+y0 = int(720 / 2 - 224 ) + 1
+y1 = int(720 / 2 + 224) + 1
 
 while(True):    
     # Capture frame-by-frame    
     ret, frame = cap.read()    
     image1 = cv2.rectangle(frame, (x0,y0), (x1,y1), (0, 0, 255), 1)
     # Display the resulting frame
-    cv2.imshow('preview',image1)    
+    cv2.imshow('preview',image1)
     #cv2.imshow('frame', frame)
     cropped = frame[y0:y1, x0:x1]
     #cv2.imshow('preview',cropped) 
@@ -47,10 +47,18 @@ while(True):
     if cv2.waitKey(1) & 0xFF == ord(' '):
         gray = cv2.resize(gray,(28,28))
         #print(gray2)
-        cv2.imshow('frame', gray)
-        gray= gray.flatten()
+        #gray = cv2.inRange( gray , 50 , 255)
+        #th, gray = cv2.threshold(gray,127,255, cv2.THRESH_BINARY);
+        #gray = 255 - gray 
+        cv2.imshow('frame', gray) 
+        
+        cv2.imwrite("input.jpg", gray)
+    
+        gray_flat= gray.flatten()
+        
+    
         with open("input.txt", "w") as f:
-            for item in gray:
+            for item in gray_flat:
                 f.write("8'd" + str(item) + " ")
         
         #a_file = open("test.txt", "w")
