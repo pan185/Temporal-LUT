@@ -40,6 +40,7 @@ while(True):
         #print(gray2)
         #cv2.imshow('frame', gray2)
         gray2= gray2.flatten()
+        cv2.imwrite(input.jpg,gray2)
         with open("input.txt", "w") as f:
             for item in gray2:
                 f.write("8'd" + str(item) + " ")
