@@ -23,15 +23,19 @@ module simd_cell
     input  logic [`DIM_ROW1 * `DIM_COL1-1:0][`INPUT_WIDTH-1:0]input_bin,    // input in binary
     input  logic [`DIM_ROW2 * `DIM_COL2-1:0][`WEIGHT_WIDTH-1:0]weight_bin,  // weight in binary
     //prajyotg :: moving it from output to logic :: output logic [`DIM_C-1:0][`DIM_A-1:0][`ACC_WIDTH-1:0] product_reg
-    output logic  [`DIM_ROW1 * `DIM_COL2-1:0][`ACC_WIDTH-1:0] accumulated_mult
+    output logic  [`DIM_ROW1 * `DIM_COL2-1:0][`ACC_WIDTH-1:0] accumulated_mult,
+    output logic  [`INPUT_WIDTH-1:0] cntOut,
+    output logic finish
 );
     logic [`DIM_ROW1 * `DIM_COL1-1:0][`INPUT_WIDTH-1:0]input_reg;
     logic [`DIM_ROW2 * `DIM_COL2-1:0][`WEIGHT_WIDTH-1:0]weight_reg;
     logic [`DIM_ROW1 * `DIM_COL1-1:0]temporal; //single bit
     //logic enable_reg;
     logic [`DIM_ROW2 * `DIM_COL2-1:0][`ACC_WIDTH-1:0] weight_acc;
+    // prajyotg :: Adding cntOut as output
     logic  rollover; //rollover signal for accumulating products
-    logic [`INPUT_WIDTH-1:0] cntOut;
+    // logic [`INPUT_WIDTH-1:0] cntOut;
+    logic [`INPUT_WIDTH-1:0] cntOut_;
     //prajyotg:: updated it to logic
     logic [`DIM_ROW2 * `DIM_COL2-1:0][`DIM_ROW1 * `DIM_COL1-1:0][`ACC_WIDTH-1:0] product_reg;
 
@@ -56,7 +60,7 @@ module simd_cell
         .clk(clk),
         .rst_n(rst_n),
         .enable(enable),
-        .rng(cntOut),
+        .rng(cntOut_),
 	    .in(input_reg),
 	    .cmp_out(temporal)
     );
@@ -94,8 +98,12 @@ module simd_cell
         .clk(clk),
         .rst_n(rst_n),
         .enable(enable),
-        .cntOut(cntOut),
+        .cntOut(cntOut_),
 	    .rollover(rollover)
         );
+
+    // Adding signals to check for finish
+    assign finish = rollover;
+    assign cntOut = cntOut_;
     
 endmodule
