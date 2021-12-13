@@ -7,16 +7,18 @@ VCOM = $(PREFIX) vcom
 VLIB = $(PREFIX) vlib
 
 VLOG_OPTS = -suppress vlog-2583 +acc
-DIM_ROW1 = 1
-DIM_COL1 = 784
-DIM_ROW2 = 784
-DIM_COL2 = 1
+DIM_ROW1 = 2
+DIM_COL1 = 2
+DIM_ROW2 = 2
+DIM_COL2 = 2
 
 compile: gen_file rtl tb
 
 gen_file:
 	g++ -o _app.out gen.cpp
 	./_app.out $(DIM_ROW1) $(DIM_COL1) $(DIM_ROW2) $(DIM_COL2) > c.txt
+	touch adder_tree.sv
+	rm -rf adder_tree.sv
 	cat adder_tree.txt > adder_tree.sv 
 	cat c.txt >> adder_tree.sv 
 	cat d.txt >> adder_tree.sv
