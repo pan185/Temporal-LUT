@@ -12,7 +12,7 @@ module accumulator_weight
     input logic rst_n,  // Asynchronous reset active low
     input logic enable,
     input logic clear,
-    input logic [`DIM_ROW2 * `DIM_COL2-1:0][`WEIGHT_WIDTH-1:0]val, // input val to be accumulated
+    input logic  [`DIM_ROW2 * `DIM_COL2-1:0][`WEIGHT_WIDTH-1:0]val, // input val to be accumulated
     output logic [`DIM_ROW2 * `DIM_COL2-1:0][`ACC_WIDTH-1:0]sum
 );
     logic[`DIM_ROW2 * `DIM_COL2-1:0][`ACC_WIDTH-1:0] sum_;
@@ -26,7 +26,9 @@ module accumulator_weight
 	    sum_[i] <= 0;
         end else begin
 		if (enable) begin
-			sum_[i] <= sum_[i]+val[i];
+		//prajyotg :: Updated logic for sign extension 
+			sum_[i] <= sum_[i]+{{(`ACC_WIDTH - `WEIGHT_WIDTH){val[i][`WEIGHT_WIDTH-1]}},val[i]};
+
 		end
 		else begin
 			sum_[i] <= sum_[i];

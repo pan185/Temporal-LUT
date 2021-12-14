@@ -16,9 +16,9 @@
 `endif
 
 `ifdef CONFIG_MATMUL
-    `define INPUT_WIDTH 8
-    `define WEIGHT_WIDTH 8
-    `define ACC_WIDTH 32
+    `define INPUT_WIDTH  4
+    `define WEIGHT_WIDTH 4
+    `define ACC_WIDTH    8
 `endif
 
 `ifdef CONFIG2
@@ -58,12 +58,11 @@
 `endif
 
 `ifdef WORKLOAD_MATMUL_2D
-    `define DIM_ROW1 1
-    `define DIM_COL1 784
-    `define DIM_ROW2 784
-    `define DIM_COL2 1
+    `define DIM_ROW1 2
+    `define DIM_COL1 2
+    `define DIM_ROW2 2
+    `define DIM_COL2 2
     // DIM_A = DIM_ROW1 * `DIM_COL1
     // DIM_C = DIM_ROW2 * `DIM_COL2
     // DIM_MUL = DIM_ROW1 * `DIM_COL2
 `endif
-
