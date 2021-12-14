@@ -35,7 +35,10 @@ while(True):
     cropped = frame[y0:y1, x0:x1]
     #cv2.imshow('preview',cropped) 
     gray = cv2.cvtColor(cropped, cv2.COLOR_RGB2GRAY)
-    
+    #gray_4bit =  map(int, (gray/255 * 15) )
+    #for item in gray:
+        
+    #print("I am hereee")
     #print(gray.shape)
     #print(gray.min())
     #print(gray.max())
@@ -45,22 +48,36 @@ while(True):
     
     
     if cv2.waitKey(1) & 0xFF == ord(' '):
+        print(gray)
+        print("gray 4 bit:")
+        
         gray = cv2.resize(gray,(28,28))
         #print(gray2)
         #gray = cv2.inRange( gray , 50 , 255)
         #th, gray = cv2.threshold(gray,127,255, cv2.THRESH_BINARY);
-        #gray = 255 - gray 
+        gray = 255 - gray 
         cv2.imshow('frame', gray) 
         
         cv2.imwrite("input.jpg", gray)
     
         gray_flat= gray.flatten()
+        gray_4bit =  map(int, (gray_flat/255 * 15))
+        print("gray 4 bit:")
+        print(list(gray_4bit))
+        #with open("input.txt", "w") as f:
+          #  for item in gray_flat:
+          #      f.write("8'd" + str(item) + " ")
         
-    
-        with open("input.txt", "w") as f:
+        with open("input.h", "w") as f:
+            f.write("__attribute__((aligned(16))) uint8_t stim_a[] = {\n")
             for item in gray_flat:
-                f.write("8'd" + str(item) + " ")
-        
+                f.write(str(hex(item)) + ",\n")
+            f.write("};")
+            
+        with open("input2.h", "w") as f:
+            my_string ="__attribute__((aligned(16))) uint8_t stim_a[] = {\n" + ',\n'.join(map(str, map(hex,gray_4bit))) + "\n};"
+            f.write(my_string)
+            f.close()
         #a_file = open("test.txt", "w")
         
         #content = str(gray2)
