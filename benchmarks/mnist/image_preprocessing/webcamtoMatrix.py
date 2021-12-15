@@ -64,9 +64,9 @@ while(True):
         gray_4bit =  map(int, (gray_flat/255 * 15))
         print("gray 4 bit:")
         print(list(gray_4bit))
-        #with open("input.txt", "w") as f:
-          #  for item in gray_flat:
-          #      f.write("8'd" + str(item) + " ")
+        with open("input_decimal.txt", "w") as f:
+            for item in gray_4bit:
+                f.write("8'd" + str(item) + " ")
         
         with open("input.h", "w") as f:
             f.write("__attribute__((aligned(16))) uint8_t stim_a[] = {\n")
@@ -74,7 +74,7 @@ while(True):
                 f.write(str(hex(item)) + ",\n")
             f.write("};")
             
-        with open("input2.h", "w") as f:
+        with open("input_hex.h", "w") as f:
             my_string ="__attribute__((aligned(16))) uint8_t stim_a[] = {\n" + ',\n'.join(map(str, map(hex,gray_4bit))) + "\n};"
             f.write(my_string)
             f.close()
